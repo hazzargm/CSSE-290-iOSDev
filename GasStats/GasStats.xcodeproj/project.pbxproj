@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0A829F7E1A79D3FC00F2FF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F7D1A79D3FC00F2FF8E /* AppDelegate.swift */; };
-		0A829F801A79D3FC00F2FF8E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F7F1A79D3FC00F2FF8E /* FirstViewController.swift */; };
-		0A829F821A79D3FC00F2FF8E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F811A79D3FC00F2FF8E /* SecondViewController.swift */; };
+		0A829F801A79D3FC00F2FF8E /* FuelUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F7F1A79D3FC00F2FF8E /* FuelUpViewController.swift */; };
+		0A829F821A79D3FC00F2FF8E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F811A79D3FC00F2FF8E /* HistoryViewController.swift */; };
 		0A829F851A79D3FC00F2FF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A829F831A79D3FC00F2FF8E /* Main.storyboard */; };
 		0A829F871A79D3FC00F2FF8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A829F861A79D3FC00F2FF8E /* Images.xcassets */; };
 		0A829F8A1A79D3FC00F2FF8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A829F881A79D3FC00F2FF8E /* LaunchScreen.xib */; };
 		0A829F961A79D3FC00F2FF8E /* GasStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F951A79D3FC00F2FF8E /* GasStatsTests.swift */; };
+		57FED49D1A7C24D200B0458A /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FED49C1A7C24D200B0458A /* GarageViewController.swift */; };
+		57FED49F1A7C287B00B0458A /* CompeteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FED49E1A7C287B00B0458A /* CompeteViewController.swift */; };
+		57FED4A11A7C28AC00B0458A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FED4A01A7C28AC00B0458A /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +33,17 @@
 		0A829F781A79D3FC00F2FF8E /* GasStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A829F7C1A79D3FC00F2FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A829F7D1A79D3FC00F2FF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A829F7F1A79D3FC00F2FF8E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		0A829F811A79D3FC00F2FF8E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0A829F7F1A79D3FC00F2FF8E /* FuelUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelUpViewController.swift; sourceTree = "<group>"; };
+		0A829F811A79D3FC00F2FF8E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		0A829F841A79D3FC00F2FF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A829F861A79D3FC00F2FF8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0A829F891A79D3FC00F2FF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0A829F8F1A79D3FC00F2FF8E /* GasStatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasStatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A829F941A79D3FC00F2FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A829F951A79D3FC00F2FF8E /* GasStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStatsTests.swift; sourceTree = "<group>"; };
+		57FED49C1A7C24D200B0458A /* GarageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageViewController.swift; sourceTree = "<group>"; };
+		57FED49E1A7C287B00B0458A /* CompeteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompeteViewController.swift; sourceTree = "<group>"; };
+		57FED4A01A7C28AC00B0458A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +86,11 @@
 			isa = PBXGroup;
 			children = (
 				0A829F7D1A79D3FC00F2FF8E /* AppDelegate.swift */,
-				0A829F7F1A79D3FC00F2FF8E /* FirstViewController.swift */,
-				0A829F811A79D3FC00F2FF8E /* SecondViewController.swift */,
+				0A829F7F1A79D3FC00F2FF8E /* FuelUpViewController.swift */,
+				0A829F811A79D3FC00F2FF8E /* HistoryViewController.swift */,
+				57FED49C1A7C24D200B0458A /* GarageViewController.swift */,
+				57FED49E1A7C287B00B0458A /* CompeteViewController.swift */,
+				57FED4A01A7C28AC00B0458A /* AccountViewController.swift */,
 				0A829F831A79D3FC00F2FF8E /* Main.storyboard */,
 				0A829F861A79D3FC00F2FF8E /* Images.xcassets */,
 				0A829F881A79D3FC00F2FF8E /* LaunchScreen.xib */,
@@ -215,9 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A829F821A79D3FC00F2FF8E /* SecondViewController.swift in Sources */,
+				0A829F821A79D3FC00F2FF8E /* HistoryViewController.swift in Sources */,
 				0A829F7E1A79D3FC00F2FF8E /* AppDelegate.swift in Sources */,
-				0A829F801A79D3FC00F2FF8E /* FirstViewController.swift in Sources */,
+				57FED4A11A7C28AC00B0458A /* AccountViewController.swift in Sources */,
+				57FED49D1A7C24D200B0458A /* GarageViewController.swift in Sources */,
+				0A829F801A79D3FC00F2FF8E /* FuelUpViewController.swift in Sources */,
+				57FED49F1A7C287B00B0458A /* CompeteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +421,7 @@
 				0A829F9B1A79D3FC00F2FF8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A829F9C1A79D3FC00F2FF8E /* Build configuration list for PBXNativeTarget "GasStatsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +430,7 @@
 				0A829F9E1A79D3FC00F2FF8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
