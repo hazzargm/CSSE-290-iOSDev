@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  GasStats
 //
 //  Created by CSSE Department on 1/28/15.
@@ -8,18 +8,11 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class FuelUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
