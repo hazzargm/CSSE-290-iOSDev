@@ -9,7 +9,11 @@
 import UIKit
 
 class HistoryViewController: UIViewController {
-
+    
+    var showCarFuelLogSequeIdentifier = "ShowCarFuelLogSequeIdentifier"
+    var carHistoryCellIdentifier = "CarHistoryCellIdentifier"
+    var carRecordsCellIdentifier = "CarRecordsCellIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
