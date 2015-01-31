@@ -10,6 +10,8 @@ import UIKit
 
 class CompeteViewController: UIViewController {
 
+    var leaderboardCellIdentifier = "LeaderBoardIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

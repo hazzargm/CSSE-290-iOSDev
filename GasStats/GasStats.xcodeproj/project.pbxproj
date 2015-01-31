@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1875B31A7C8BE70046B9F2 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1875B21A7C8BE70046B9F2 /* CarViewController.swift */; };
+		0A1875B51A7C8DF20046B9F2 /* CarFuelLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1875B41A7C8DF20046B9F2 /* CarFuelLogViewController.swift */; };
 		0A829F7E1A79D3FC00F2FF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F7D1A79D3FC00F2FF8E /* AppDelegate.swift */; };
 		0A829F801A79D3FC00F2FF8E /* FuelUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F7F1A79D3FC00F2FF8E /* FuelUpViewController.swift */; };
 		0A829F821A79D3FC00F2FF8E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F811A79D3FC00F2FF8E /* HistoryViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1875B21A7C8BE70046B9F2 /* CarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
+		0A1875B41A7C8DF20046B9F2 /* CarFuelLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarFuelLogViewController.swift; sourceTree = "<group>"; };
 		0A829F781A79D3FC00F2FF8E /* GasStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A829F7C1A79D3FC00F2FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A829F7D1A79D3FC00F2FF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +92,9 @@
 				0A829F7D1A79D3FC00F2FF8E /* AppDelegate.swift */,
 				0A829F7F1A79D3FC00F2FF8E /* FuelUpViewController.swift */,
 				0A829F811A79D3FC00F2FF8E /* HistoryViewController.swift */,
+				0A1875B41A7C8DF20046B9F2 /* CarFuelLogViewController.swift */,
 				57FED49C1A7C24D200B0458A /* GarageViewController.swift */,
+				0A1875B21A7C8BE70046B9F2 /* CarViewController.swift */,
 				57FED49E1A7C287B00B0458A /* CompeteViewController.swift */,
 				57FED4A01A7C28AC00B0458A /* AccountViewController.swift */,
 				0A829F831A79D3FC00F2FF8E /* Main.storyboard */,
@@ -227,6 +233,8 @@
 				0A829F821A79D3FC00F2FF8E /* HistoryViewController.swift in Sources */,
 				0A829F7E1A79D3FC00F2FF8E /* AppDelegate.swift in Sources */,
 				57FED4A11A7C28AC00B0458A /* AccountViewController.swift in Sources */,
+				0A1875B31A7C8BE70046B9F2 /* CarViewController.swift in Sources */,
+				0A1875B51A7C8DF20046B9F2 /* CarFuelLogViewController.swift in Sources */,
 				57FED49D1A7C24D200B0458A /* GarageViewController.swift in Sources */,
 				0A829F801A79D3FC00F2FF8E /* FuelUpViewController.swift in Sources */,
 				57FED49F1A7C287B00B0458A /* CompeteViewController.swift in Sources */,
