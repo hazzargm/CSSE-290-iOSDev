@@ -13,6 +13,13 @@
 		0A3C7F9B1A809F6A000048CC /* TankRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7F9A1A809F6A000048CC /* TankRecords.m */; };
 		0A3C7F9E1A809F77000048CC /* GasBill.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7F9D1A809F77000048CC /* GasBill.m */; };
 		0A3C7FA11A809F88000048CC /* EPAData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA01A809F88000048CC /* EPAData.m */; };
+		0A3C7FA91A81292D000048CC /* modern-gas_pump.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA31A81292D000048CC /* modern-gas_pump.png */; };
+		0A3C7FAA1A81292D000048CC /* odometericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA41A81292D000048CC /* odometericon.png */; };
+		0A3C7FAB1A81292D000048CC /* oldschool-gaspump.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA51A81292D000048CC /* oldschool-gaspump.png */; };
+		0A3C7FAC1A81292D000048CC /* Red-Dodge-Charger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA61A81292D000048CC /* Red-Dodge-Charger.jpg */; };
+		0A3C7FAD1A81292D000048CC /* speedometer-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA71A81292D000048CC /* speedometer-hi.png */; };
+		0A3C7FAE1A81292D000048CC /* Trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA81A81292D000048CC /* Trophy.png */; };
+		0A3C7FB01A812939000048CC /* Color-Gas-Pump.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FAF1A812939000048CC /* Color-Gas-Pump.png */; };
 		57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */; };
 		57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57720B211A8066FC00D3FD9A /* GasStats.xcdatamodeld */; };
 		57720B251A8066FC00D3FD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B241A8066FC00D3FD9A /* ViewController.swift */; };
@@ -53,6 +60,13 @@
 		0A3C7F9D1A809F77000048CC /* GasBill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasBill.m; sourceTree = "<group>"; };
 		0A3C7F9F1A809F88000048CC /* EPAData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPAData.h; sourceTree = "<group>"; };
 		0A3C7FA01A809F88000048CC /* EPAData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAData.m; sourceTree = "<group>"; };
+		0A3C7FA31A81292D000048CC /* modern-gas_pump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modern-gas_pump.png"; sourceTree = "<group>"; };
+		0A3C7FA41A81292D000048CC /* odometericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = odometericon.png; sourceTree = "<group>"; };
+		0A3C7FA51A81292D000048CC /* oldschool-gaspump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oldschool-gaspump.png"; sourceTree = "<group>"; };
+		0A3C7FA61A81292D000048CC /* Red-Dodge-Charger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Red-Dodge-Charger.jpg"; sourceTree = "<group>"; };
+		0A3C7FA71A81292D000048CC /* speedometer-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speedometer-hi.png"; sourceTree = "<group>"; };
+		0A3C7FA81A81292D000048CC /* Trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trophy.png; sourceTree = "<group>"; };
+		0A3C7FAF1A812939000048CC /* Color-Gas-Pump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Color-Gas-Pump.png"; sourceTree = "<group>"; };
 		57720B1A1A8066FC00D3FD9A /* GasStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57720B1E1A8066FC00D3FD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +141,20 @@
 			name = GasStatsViewControllers;
 			sourceTree = "<group>";
 		};
+		0A3C7FA21A812872000048CC /* ProjectImages */ = {
+			isa = PBXGroup;
+			children = (
+				0A3C7FAF1A812939000048CC /* Color-Gas-Pump.png */,
+				0A3C7FA31A81292D000048CC /* modern-gas_pump.png */,
+				0A3C7FA41A81292D000048CC /* odometericon.png */,
+				0A3C7FA51A81292D000048CC /* oldschool-gaspump.png */,
+				0A3C7FA61A81292D000048CC /* Red-Dodge-Charger.jpg */,
+				0A3C7FA71A81292D000048CC /* speedometer-hi.png */,
+				0A3C7FA81A81292D000048CC /* Trophy.png */,
+			);
+			name = ProjectImages;
+			sourceTree = "<group>";
+		};
 		57720B111A8066FC00D3FD9A = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +191,7 @@
 		57720B1D1A8066FC00D3FD9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0A3C7FA21A812872000048CC /* ProjectImages */,
 				57720B1E1A8066FC00D3FD9A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -265,9 +294,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A3C7FAD1A81292D000048CC /* speedometer-hi.png in Resources */,
+				0A3C7FA91A81292D000048CC /* modern-gas_pump.png in Resources */,
 				57720B521A80675300D3FD9A /* LaunchScreen.xib in Resources */,
 				57720B531A80675300D3FD9A /* Main.storyboard in Resources */,
+				0A3C7FAE1A81292D000048CC /* Trophy.png in Resources */,
+				0A3C7FAA1A81292D000048CC /* odometericon.png in Resources */,
 				57720B2A1A8066FC00D3FD9A /* Images.xcassets in Resources */,
+				0A3C7FB01A812939000048CC /* Color-Gas-Pump.png in Resources */,
+				0A3C7FAC1A81292D000048CC /* Red-Dodge-Charger.jpg in Resources */,
+				0A3C7FAB1A81292D000048CC /* oldschool-gaspump.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
