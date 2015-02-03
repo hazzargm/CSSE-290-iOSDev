@@ -2,7 +2,7 @@
 //  GasStatsTests.swift
 //  GasStatsTests
 //
-//  Created by CSSE Department on 1/28/15.
+//  Created by Grant Smith on 02/02/15.
 //  Copyright (c) 2015 Gordon Hazzard & Grant Smith. All rights reserved.
 //
 

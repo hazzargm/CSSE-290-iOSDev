@@ -7,58 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A1875B31A7C8BE70046B9F2 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1875B21A7C8BE70046B9F2 /* CarViewController.swift */; };
-		0A1875B51A7C8DF20046B9F2 /* CarFuelLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1875B41A7C8DF20046B9F2 /* CarFuelLogViewController.swift */; };
-		0A829F7E1A79D3FC00F2FF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F7D1A79D3FC00F2FF8E /* AppDelegate.swift */; };
-		0A829F801A79D3FC00F2FF8E /* FuelUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F7F1A79D3FC00F2FF8E /* FuelUpViewController.swift */; };
-		0A829F821A79D3FC00F2FF8E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F811A79D3FC00F2FF8E /* HistoryViewController.swift */; };
-		0A829F851A79D3FC00F2FF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A829F831A79D3FC00F2FF8E /* Main.storyboard */; };
-		0A829F871A79D3FC00F2FF8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A829F861A79D3FC00F2FF8E /* Images.xcassets */; };
-		0A829F8A1A79D3FC00F2FF8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A829F881A79D3FC00F2FF8E /* LaunchScreen.xib */; };
-		0A829F961A79D3FC00F2FF8E /* GasStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A829F951A79D3FC00F2FF8E /* GasStatsTests.swift */; };
-		57FED49D1A7C24D200B0458A /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FED49C1A7C24D200B0458A /* GarageViewController.swift */; };
-		57FED49F1A7C287B00B0458A /* CompeteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FED49E1A7C287B00B0458A /* CompeteViewController.swift */; };
-		57FED4A11A7C28AC00B0458A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FED4A01A7C28AC00B0458A /* AccountViewController.swift */; };
+		57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */; };
+		57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57720B211A8066FC00D3FD9A /* GasStats.xcdatamodeld */; };
+		57720B251A8066FC00D3FD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B241A8066FC00D3FD9A /* ViewController.swift */; };
+		57720B2A1A8066FC00D3FD9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57720B291A8066FC00D3FD9A /* Images.xcassets */; };
+		57720B391A8066FC00D3FD9A /* GasStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B381A8066FC00D3FD9A /* GasStatsTests.swift */; };
+		57720B491A80671C00D3FD9A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B421A80671C00D3FD9A /* AccountViewController.swift */; };
+		57720B4A1A80671C00D3FD9A /* CarFuelLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B431A80671C00D3FD9A /* CarFuelLogViewController.swift */; };
+		57720B4B1A80671C00D3FD9A /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B441A80671C00D3FD9A /* CarViewController.swift */; };
+		57720B4C1A80671C00D3FD9A /* CompeteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B451A80671C00D3FD9A /* CompeteViewController.swift */; };
+		57720B4D1A80671C00D3FD9A /* FuelUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B461A80671C00D3FD9A /* FuelUpViewController.swift */; };
+		57720B4E1A80671C00D3FD9A /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B471A80671C00D3FD9A /* GarageViewController.swift */; };
+		57720B4F1A80671C00D3FD9A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B481A80671C00D3FD9A /* HistoryViewController.swift */; };
+		57720B521A80675300D3FD9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57720B501A80675300D3FD9A /* LaunchScreen.xib */; };
+		57720B531A80675300D3FD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57720B511A80675300D3FD9A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0A829F901A79D3FC00F2FF8E /* PBXContainerItemProxy */ = {
+		57720B331A8066FC00D3FD9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0A829F701A79D3FC00F2FF8E /* Project object */;
+			containerPortal = 57720B121A8066FC00D3FD9A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0A829F771A79D3FC00F2FF8E;
+			remoteGlobalIDString = 57720B191A8066FC00D3FD9A;
 			remoteInfo = GasStats;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A1875B21A7C8BE70046B9F2 /* CarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
-		0A1875B41A7C8DF20046B9F2 /* CarFuelLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarFuelLogViewController.swift; sourceTree = "<group>"; };
-		0A829F781A79D3FC00F2FF8E /* GasStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A829F7C1A79D3FC00F2FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A829F7D1A79D3FC00F2FF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A829F7F1A79D3FC00F2FF8E /* FuelUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelUpViewController.swift; sourceTree = "<group>"; };
-		0A829F811A79D3FC00F2FF8E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		0A829F841A79D3FC00F2FF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0A829F861A79D3FC00F2FF8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0A829F891A79D3FC00F2FF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0A829F8F1A79D3FC00F2FF8E /* GasStatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasStatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A829F941A79D3FC00F2FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A829F951A79D3FC00F2FF8E /* GasStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStatsTests.swift; sourceTree = "<group>"; };
-		57FED49C1A7C24D200B0458A /* GarageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageViewController.swift; sourceTree = "<group>"; };
-		57FED49E1A7C287B00B0458A /* CompeteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompeteViewController.swift; sourceTree = "<group>"; };
-		57FED4A01A7C28AC00B0458A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		57720B1A1A8066FC00D3FD9A /* GasStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57720B1E1A8066FC00D3FD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		57720B221A8066FC00D3FD9A /* GasStats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GasStats.xcdatamodel; sourceTree = "<group>"; };
+		57720B241A8066FC00D3FD9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57720B291A8066FC00D3FD9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		57720B321A8066FC00D3FD9A /* GasStatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasStatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57720B371A8066FC00D3FD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57720B381A8066FC00D3FD9A /* GasStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStatsTests.swift; sourceTree = "<group>"; };
+		57720B421A80671C00D3FD9A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		57720B431A80671C00D3FD9A /* CarFuelLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarFuelLogViewController.swift; sourceTree = "<group>"; };
+		57720B441A80671C00D3FD9A /* CarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
+		57720B451A80671C00D3FD9A /* CompeteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompeteViewController.swift; sourceTree = "<group>"; };
+		57720B461A80671C00D3FD9A /* FuelUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelUpViewController.swift; sourceTree = "<group>"; };
+		57720B471A80671C00D3FD9A /* GarageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageViewController.swift; sourceTree = "<group>"; };
+		57720B481A80671C00D3FD9A /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		57720B501A80675300D3FD9A /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		57720B511A80675300D3FD9A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0A829F751A79D3FC00F2FF8E /* Frameworks */ = {
+		57720B171A8066FC00D3FD9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A829F8C1A79D3FC00F2FF8E /* Frameworks */ = {
+		57720B2F1A8066FC00D3FD9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -68,64 +72,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A829F6F1A79D3FC00F2FF8E = {
+		57720B111A8066FC00D3FD9A = {
 			isa = PBXGroup;
 			children = (
-				0A829F7A1A79D3FC00F2FF8E /* GasStats */,
-				0A829F921A79D3FC00F2FF8E /* GasStatsTests */,
-				0A829F791A79D3FC00F2FF8E /* Products */,
+				57720B1C1A8066FC00D3FD9A /* GasStats */,
+				57720B351A8066FC00D3FD9A /* GasStatsTests */,
+				57720B1B1A8066FC00D3FD9A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0A829F791A79D3FC00F2FF8E /* Products */ = {
+		57720B1B1A8066FC00D3FD9A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A829F781A79D3FC00F2FF8E /* GasStats.app */,
-				0A829F8F1A79D3FC00F2FF8E /* GasStatsTests.xctest */,
+				57720B1A1A8066FC00D3FD9A /* GasStats.app */,
+				57720B321A8066FC00D3FD9A /* GasStatsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A829F7A1A79D3FC00F2FF8E /* GasStats */ = {
+		57720B1C1A8066FC00D3FD9A /* GasStats */ = {
 			isa = PBXGroup;
 			children = (
-				0A829F7D1A79D3FC00F2FF8E /* AppDelegate.swift */,
-				0A829F7F1A79D3FC00F2FF8E /* FuelUpViewController.swift */,
-				0A829F811A79D3FC00F2FF8E /* HistoryViewController.swift */,
-				0A1875B41A7C8DF20046B9F2 /* CarFuelLogViewController.swift */,
-				57FED49C1A7C24D200B0458A /* GarageViewController.swift */,
-				0A1875B21A7C8BE70046B9F2 /* CarViewController.swift */,
-				57FED49E1A7C287B00B0458A /* CompeteViewController.swift */,
-				57FED4A01A7C28AC00B0458A /* AccountViewController.swift */,
-				0A829F831A79D3FC00F2FF8E /* Main.storyboard */,
-				0A829F861A79D3FC00F2FF8E /* Images.xcassets */,
-				0A829F881A79D3FC00F2FF8E /* LaunchScreen.xib */,
-				0A829F7B1A79D3FC00F2FF8E /* Supporting Files */,
+				57720B501A80675300D3FD9A /* LaunchScreen.xib */,
+				57720B511A80675300D3FD9A /* Main.storyboard */,
+				57720B421A80671C00D3FD9A /* AccountViewController.swift */,
+				57720B431A80671C00D3FD9A /* CarFuelLogViewController.swift */,
+				57720B441A80671C00D3FD9A /* CarViewController.swift */,
+				57720B451A80671C00D3FD9A /* CompeteViewController.swift */,
+				57720B461A80671C00D3FD9A /* FuelUpViewController.swift */,
+				57720B471A80671C00D3FD9A /* GarageViewController.swift */,
+				57720B481A80671C00D3FD9A /* HistoryViewController.swift */,
+				57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */,
+				57720B241A8066FC00D3FD9A /* ViewController.swift */,
+				57720B291A8066FC00D3FD9A /* Images.xcassets */,
+				57720B211A8066FC00D3FD9A /* GasStats.xcdatamodeld */,
+				57720B1D1A8066FC00D3FD9A /* Supporting Files */,
 			);
 			path = GasStats;
 			sourceTree = "<group>";
 		};
-		0A829F7B1A79D3FC00F2FF8E /* Supporting Files */ = {
+		57720B1D1A8066FC00D3FD9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A829F7C1A79D3FC00F2FF8E /* Info.plist */,
+				57720B1E1A8066FC00D3FD9A /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0A829F921A79D3FC00F2FF8E /* GasStatsTests */ = {
+		57720B351A8066FC00D3FD9A /* GasStatsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0A829F951A79D3FC00F2FF8E /* GasStatsTests.swift */,
-				0A829F931A79D3FC00F2FF8E /* Supporting Files */,
+				57720B381A8066FC00D3FD9A /* GasStatsTests.swift */,
+				57720B361A8066FC00D3FD9A /* Supporting Files */,
 			);
 			path = GasStatsTests;
 			sourceTree = "<group>";
 		};
-		0A829F931A79D3FC00F2FF8E /* Supporting Files */ = {
+		57720B361A8066FC00D3FD9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A829F941A79D3FC00F2FF8E /* Info.plist */,
+				57720B371A8066FC00D3FD9A /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -133,13 +139,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0A829F771A79D3FC00F2FF8E /* GasStats */ = {
+		57720B191A8066FC00D3FD9A /* GasStats */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A829F991A79D3FC00F2FF8E /* Build configuration list for PBXNativeTarget "GasStats" */;
+			buildConfigurationList = 57720B3C1A8066FC00D3FD9A /* Build configuration list for PBXNativeTarget "GasStats" */;
 			buildPhases = (
-				0A829F741A79D3FC00F2FF8E /* Sources */,
-				0A829F751A79D3FC00F2FF8E /* Frameworks */,
-				0A829F761A79D3FC00F2FF8E /* Resources */,
+				57720B161A8066FC00D3FD9A /* Sources */,
+				57720B171A8066FC00D3FD9A /* Frameworks */,
+				57720B181A8066FC00D3FD9A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -147,46 +153,46 @@
 			);
 			name = GasStats;
 			productName = GasStats;
-			productReference = 0A829F781A79D3FC00F2FF8E /* GasStats.app */;
+			productReference = 57720B1A1A8066FC00D3FD9A /* GasStats.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0A829F8E1A79D3FC00F2FF8E /* GasStatsTests */ = {
+		57720B311A8066FC00D3FD9A /* GasStatsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A829F9C1A79D3FC00F2FF8E /* Build configuration list for PBXNativeTarget "GasStatsTests" */;
+			buildConfigurationList = 57720B3F1A8066FC00D3FD9A /* Build configuration list for PBXNativeTarget "GasStatsTests" */;
 			buildPhases = (
-				0A829F8B1A79D3FC00F2FF8E /* Sources */,
-				0A829F8C1A79D3FC00F2FF8E /* Frameworks */,
-				0A829F8D1A79D3FC00F2FF8E /* Resources */,
+				57720B2E1A8066FC00D3FD9A /* Sources */,
+				57720B2F1A8066FC00D3FD9A /* Frameworks */,
+				57720B301A8066FC00D3FD9A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0A829F911A79D3FC00F2FF8E /* PBXTargetDependency */,
+				57720B341A8066FC00D3FD9A /* PBXTargetDependency */,
 			);
 			name = GasStatsTests;
 			productName = GasStatsTests;
-			productReference = 0A829F8F1A79D3FC00F2FF8E /* GasStatsTests.xctest */;
+			productReference = 57720B321A8066FC00D3FD9A /* GasStatsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0A829F701A79D3FC00F2FF8E /* Project object */ = {
+		57720B121A8066FC00D3FD9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Gordon Hazzard & Grant Smith";
 				TargetAttributes = {
-					0A829F771A79D3FC00F2FF8E = {
+					57720B191A8066FC00D3FD9A = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
-					0A829F8E1A79D3FC00F2FF8E = {
+					57720B311A8066FC00D3FD9A = {
 						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 0A829F771A79D3FC00F2FF8E;
+						TestTargetID = 57720B191A8066FC00D3FD9A;
 					};
 				};
 			};
-			buildConfigurationList = 0A829F731A79D3FC00F2FF8E /* Build configuration list for PBXProject "GasStats" */;
+			buildConfigurationList = 57720B151A8066FC00D3FD9A /* Build configuration list for PBXProject "GasStats" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -194,29 +200,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 0A829F6F1A79D3FC00F2FF8E;
-			productRefGroup = 0A829F791A79D3FC00F2FF8E /* Products */;
+			mainGroup = 57720B111A8066FC00D3FD9A;
+			productRefGroup = 57720B1B1A8066FC00D3FD9A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A829F771A79D3FC00F2FF8E /* GasStats */,
-				0A829F8E1A79D3FC00F2FF8E /* GasStatsTests */,
+				57720B191A8066FC00D3FD9A /* GasStats */,
+				57720B311A8066FC00D3FD9A /* GasStatsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0A829F761A79D3FC00F2FF8E /* Resources */ = {
+		57720B181A8066FC00D3FD9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A829F851A79D3FC00F2FF8E /* Main.storyboard in Resources */,
-				0A829F8A1A79D3FC00F2FF8E /* LaunchScreen.xib in Resources */,
-				0A829F871A79D3FC00F2FF8E /* Images.xcassets in Resources */,
+				57720B521A80675300D3FD9A /* LaunchScreen.xib in Resources */,
+				57720B531A80675300D3FD9A /* Main.storyboard in Resources */,
+				57720B2A1A8066FC00D3FD9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A829F8D1A79D3FC00F2FF8E /* Resources */ = {
+		57720B301A8066FC00D3FD9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,60 +232,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0A829F741A79D3FC00F2FF8E /* Sources */ = {
+		57720B161A8066FC00D3FD9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A829F821A79D3FC00F2FF8E /* HistoryViewController.swift in Sources */,
-				0A829F7E1A79D3FC00F2FF8E /* AppDelegate.swift in Sources */,
-				57FED4A11A7C28AC00B0458A /* AccountViewController.swift in Sources */,
-				0A1875B31A7C8BE70046B9F2 /* CarViewController.swift in Sources */,
-				0A1875B51A7C8DF20046B9F2 /* CarFuelLogViewController.swift in Sources */,
-				57FED49D1A7C24D200B0458A /* GarageViewController.swift in Sources */,
-				0A829F801A79D3FC00F2FF8E /* FuelUpViewController.swift in Sources */,
-				57FED49F1A7C287B00B0458A /* CompeteViewController.swift in Sources */,
+				57720B251A8066FC00D3FD9A /* ViewController.swift in Sources */,
+				57720B4B1A80671C00D3FD9A /* CarViewController.swift in Sources */,
+				57720B4E1A80671C00D3FD9A /* GarageViewController.swift in Sources */,
+				57720B4F1A80671C00D3FD9A /* HistoryViewController.swift in Sources */,
+				57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */,
+				57720B491A80671C00D3FD9A /* AccountViewController.swift in Sources */,
+				57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */,
+				57720B4D1A80671C00D3FD9A /* FuelUpViewController.swift in Sources */,
+				57720B4C1A80671C00D3FD9A /* CompeteViewController.swift in Sources */,
+				57720B4A1A80671C00D3FD9A /* CarFuelLogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A829F8B1A79D3FC00F2FF8E /* Sources */ = {
+		57720B2E1A8066FC00D3FD9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A829F961A79D3FC00F2FF8E /* GasStatsTests.swift in Sources */,
+				57720B391A8066FC00D3FD9A /* GasStatsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0A829F911A79D3FC00F2FF8E /* PBXTargetDependency */ = {
+		57720B341A8066FC00D3FD9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0A829F771A79D3FC00F2FF8E /* GasStats */;
-			targetProxy = 0A829F901A79D3FC00F2FF8E /* PBXContainerItemProxy */;
+			target = 57720B191A8066FC00D3FD9A /* GasStats */;
+			targetProxy = 57720B331A8066FC00D3FD9A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		0A829F831A79D3FC00F2FF8E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A829F841A79D3FC00F2FF8E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0A829F881A79D3FC00F2FF8E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A829F891A79D3FC00F2FF8E /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		0A829F971A79D3FC00F2FF8E /* Debug */ = {
+		57720B3A1A8066FC00D3FD9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -318,10 +307,11 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		0A829F981A79D3FC00F2FF8E /* Release */ = {
+		57720B3B1A8066FC00D3FD9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,33 +342,32 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		0A829F9A1A79D3FC00F2FF8E /* Debug */ = {
+		57720B3D1A8066FC00D3FD9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GasStats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		0A829F9B1A79D3FC00F2FF8E /* Release */ = {
+		57720B3E1A8066FC00D3FD9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GasStats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		0A829F9D1A79D3FC00F2FF8E /* Debug */ = {
+		57720B401A8066FC00D3FD9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -397,7 +386,7 @@
 			};
 			name = Debug;
 		};
-		0A829F9E1A79D3FC00F2FF8E /* Release */ = {
+		57720B411A8066FC00D3FD9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -415,34 +404,45 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A829F731A79D3FC00F2FF8E /* Build configuration list for PBXProject "GasStats" */ = {
+		57720B151A8066FC00D3FD9A /* Build configuration list for PBXProject "GasStats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A829F971A79D3FC00F2FF8E /* Debug */,
-				0A829F981A79D3FC00F2FF8E /* Release */,
+				57720B3A1A8066FC00D3FD9A /* Debug */,
+				57720B3B1A8066FC00D3FD9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A829F991A79D3FC00F2FF8E /* Build configuration list for PBXNativeTarget "GasStats" */ = {
+		57720B3C1A8066FC00D3FD9A /* Build configuration list for PBXNativeTarget "GasStats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A829F9A1A79D3FC00F2FF8E /* Debug */,
-				0A829F9B1A79D3FC00F2FF8E /* Release */,
+				57720B3D1A8066FC00D3FD9A /* Debug */,
+				57720B3E1A8066FC00D3FD9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		0A829F9C1A79D3FC00F2FF8E /* Build configuration list for PBXNativeTarget "GasStatsTests" */ = {
+		57720B3F1A8066FC00D3FD9A /* Build configuration list for PBXNativeTarget "GasStatsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A829F9D1A79D3FC00F2FF8E /* Debug */,
-				0A829F9E1A79D3FC00F2FF8E /* Release */,
+				57720B401A8066FC00D3FD9A /* Debug */,
+				57720B411A8066FC00D3FD9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		57720B211A8066FC00D3FD9A /* GasStats.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				57720B221A8066FC00D3FD9A /* GasStats.xcdatamodel */,
+			);
+			currentVersion = 57720B221A8066FC00D3FD9A /* GasStats.xcdatamodel */;
+			path = GasStats.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 0A829F701A79D3FC00F2FF8E /* Project object */;
+	rootObject = 57720B121A8066FC00D3FD9A /* Project object */;
 }
