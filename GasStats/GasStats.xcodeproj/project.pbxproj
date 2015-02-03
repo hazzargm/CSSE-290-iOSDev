@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3C7F921A809F3B000048CC /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7F911A809F3B000048CC /* Driver.m */; };
+		0A3C7F951A809F4E000048CC /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7F941A809F4E000048CC /* Car.m */; };
+		0A3C7F981A809F5D000048CC /* GasStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7F971A809F5D000048CC /* GasStat.m */; };
+		0A3C7F9B1A809F6A000048CC /* TankRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7F9A1A809F6A000048CC /* TankRecords.m */; };
+		0A3C7F9E1A809F77000048CC /* GasBill.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7F9D1A809F77000048CC /* GasBill.m */; };
+		0A3C7FA11A809F88000048CC /* EPAData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA01A809F88000048CC /* EPAData.m */; };
 		57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */; };
 		57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57720B211A8066FC00D3FD9A /* GasStats.xcdatamodeld */; };
 		57720B251A8066FC00D3FD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B241A8066FC00D3FD9A /* ViewController.swift */; };
@@ -34,6 +40,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A3C7F8F1A809F3B000048CC /* GasStats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GasStats-Bridging-Header.h"; sourceTree = "<group>"; };
+		0A3C7F901A809F3B000048CC /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Driver.h; path = GasStats/Driver.h; sourceTree = "<group>"; };
+		0A3C7F911A809F3B000048CC /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Driver.m; path = GasStats/Driver.m; sourceTree = "<group>"; };
+		0A3C7F931A809F4E000048CC /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		0A3C7F941A809F4E000048CC /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		0A3C7F961A809F5D000048CC /* GasStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GasStat.h; sourceTree = "<group>"; };
+		0A3C7F971A809F5D000048CC /* GasStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasStat.m; sourceTree = "<group>"; };
+		0A3C7F991A809F6A000048CC /* TankRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankRecords.h; sourceTree = "<group>"; };
+		0A3C7F9A1A809F6A000048CC /* TankRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankRecords.m; sourceTree = "<group>"; };
+		0A3C7F9C1A809F77000048CC /* GasBill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GasBill.h; sourceTree = "<group>"; };
+		0A3C7F9D1A809F77000048CC /* GasBill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasBill.m; sourceTree = "<group>"; };
+		0A3C7F9F1A809F88000048CC /* EPAData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPAData.h; sourceTree = "<group>"; };
+		0A3C7FA01A809F88000048CC /* EPAData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAData.m; sourceTree = "<group>"; };
 		57720B1A1A8066FC00D3FD9A /* GasStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57720B1E1A8066FC00D3FD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +91,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3C7F8D1A809ECF000048CC /* GasStatsModelObjects */ = {
+			isa = PBXGroup;
+			children = (
+				0A3C7F931A809F4E000048CC /* Car.h */,
+				0A3C7F941A809F4E000048CC /* Car.m */,
+				0A3C7F901A809F3B000048CC /* Driver.h */,
+				0A3C7F911A809F3B000048CC /* Driver.m */,
+				0A3C7F9F1A809F88000048CC /* EPAData.h */,
+				0A3C7FA01A809F88000048CC /* EPAData.m */,
+				0A3C7F9C1A809F77000048CC /* GasBill.h */,
+				0A3C7F9D1A809F77000048CC /* GasBill.m */,
+				0A3C7F961A809F5D000048CC /* GasStat.h */,
+				0A3C7F971A809F5D000048CC /* GasStat.m */,
+				0A3C7F991A809F6A000048CC /* TankRecords.h */,
+				0A3C7F9A1A809F6A000048CC /* TankRecords.m */,
+				0A3C7F8F1A809F3B000048CC /* GasStats-Bridging-Header.h */,
+			);
+			name = GasStatsModelObjects;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0A3C7F8E1A809EE9000048CC /* GasStatsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				57720B421A80671C00D3FD9A /* AccountViewController.swift */,
+				57720B431A80671C00D3FD9A /* CarFuelLogViewController.swift */,
+				57720B441A80671C00D3FD9A /* CarViewController.swift */,
+				57720B451A80671C00D3FD9A /* CompeteViewController.swift */,
+				57720B461A80671C00D3FD9A /* FuelUpViewController.swift */,
+				57720B471A80671C00D3FD9A /* GarageViewController.swift */,
+				57720B481A80671C00D3FD9A /* HistoryViewController.swift */,
+				57720B241A8066FC00D3FD9A /* ViewController.swift */,
+			);
+			name = GasStatsViewControllers;
+			sourceTree = "<group>";
+		};
 		57720B111A8066FC00D3FD9A = {
 			isa = PBXGroup;
 			children = (
@@ -93,17 +148,11 @@
 		57720B1C1A8066FC00D3FD9A /* GasStats */ = {
 			isa = PBXGroup;
 			children = (
+				0A3C7F8E1A809EE9000048CC /* GasStatsViewControllers */,
+				0A3C7F8D1A809ECF000048CC /* GasStatsModelObjects */,
 				57720B501A80675300D3FD9A /* LaunchScreen.xib */,
 				57720B511A80675300D3FD9A /* Main.storyboard */,
-				57720B421A80671C00D3FD9A /* AccountViewController.swift */,
-				57720B431A80671C00D3FD9A /* CarFuelLogViewController.swift */,
-				57720B441A80671C00D3FD9A /* CarViewController.swift */,
-				57720B451A80671C00D3FD9A /* CompeteViewController.swift */,
-				57720B461A80671C00D3FD9A /* FuelUpViewController.swift */,
-				57720B471A80671C00D3FD9A /* GarageViewController.swift */,
-				57720B481A80671C00D3FD9A /* HistoryViewController.swift */,
 				57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */,
-				57720B241A8066FC00D3FD9A /* ViewController.swift */,
 				57720B291A8066FC00D3FD9A /* Images.xcassets */,
 				57720B211A8066FC00D3FD9A /* GasStats.xcdatamodeld */,
 				57720B1D1A8066FC00D3FD9A /* Supporting Files */,
@@ -238,14 +287,20 @@
 			files = (
 				57720B251A8066FC00D3FD9A /* ViewController.swift in Sources */,
 				57720B4B1A80671C00D3FD9A /* CarViewController.swift in Sources */,
+				0A3C7F9B1A809F6A000048CC /* TankRecords.m in Sources */,
 				57720B4E1A80671C00D3FD9A /* GarageViewController.swift in Sources */,
+				0A3C7FA11A809F88000048CC /* EPAData.m in Sources */,
 				57720B4F1A80671C00D3FD9A /* HistoryViewController.swift in Sources */,
+				0A3C7F921A809F3B000048CC /* Driver.m in Sources */,
 				57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */,
+				0A3C7F981A809F5D000048CC /* GasStat.m in Sources */,
+				0A3C7F951A809F4E000048CC /* Car.m in Sources */,
 				57720B491A80671C00D3FD9A /* AccountViewController.swift in Sources */,
 				57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */,
 				57720B4D1A80671C00D3FD9A /* FuelUpViewController.swift in Sources */,
 				57720B4C1A80671C00D3FD9A /* CompeteViewController.swift in Sources */,
 				57720B4A1A80671C00D3FD9A /* CarFuelLogViewController.swift in Sources */,
+				0A3C7F9E1A809F77000048CC /* GasBill.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,9 +406,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GasStats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GasStats-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -361,9 +419,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GasStats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GasStats-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -420,6 +480,7 @@
 				57720B3E1A8066FC00D3FD9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57720B3F1A8066FC00D3FD9A /* Build configuration list for PBXNativeTarget "GasStatsTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +489,7 @@
 				57720B411A8066FC00D3FD9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
