@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Car" representedClassName="Car" syncable="YES">
+        <attribute name="car_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="make" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shared" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="accumulates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GasBill" inverseName="causedBy" inverseEntity="GasBill" syncable="YES"/>
         <relationship name="breaks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TankRecords" inverseName="showcase" inverseEntity="TankRecords" syncable="YES"/>
         <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Driver" inverseName="owns" inverseEntity="Driver" syncable="YES"/>
@@ -17,6 +18,7 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="joinDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="logs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GasStat" inverseName="recordedBy" inverseEntity="GasStat" syncable="YES"/>
         <relationship name="owns" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="has" inverseEntity="Car" syncable="YES"/>
@@ -30,7 +32,7 @@
     </entity>
     <entity name="GasBill" representedClassName="GasBill" syncable="YES">
         <attribute name="expense" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="causedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="accumulates" inverseEntity="Car" syncable="YES"/>
         <relationship name="informs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Driver" inverseName="views" inverseEntity="Driver" syncable="YES"/>
         <relationship name="isA" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GasStat" inverseName="creates" inverseEntity="GasStat" syncable="YES"/>
@@ -54,11 +56,11 @@
         <relationship name="showcase" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="breaks" inverseEntity="Car" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Driver" positionX="178" positionY="72" width="128" height="148"/>
-        <element name="Car" positionX="-47" positionY="153" width="128" height="208"/>
+        <element name="Car" positionX="-47" positionY="153" width="128" height="225"/>
+        <element name="Driver" positionX="178" positionY="72" width="128" height="165"/>
+        <element name="EPAData" positionX="-252" positionY="207" width="128" height="103"/>
+        <element name="GasBill" positionX="241" positionY="263" width="128" height="120"/>
         <element name="GasStat" positionX="79" positionY="401" width="128" height="178"/>
         <element name="TankRecords" positionX="-110" positionY="437" width="128" height="118"/>
-        <element name="GasBill" positionX="241" positionY="263" width="128" height="118"/>
-        <element name="EPAData" positionX="-252" positionY="207" width="128" height="103"/>
     </elements>
 </model>
