@@ -25,24 +25,29 @@
         <relationship name="views" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GasBill" inverseName="informs" inverseEntity="GasBill" syncable="YES"/>
     </entity>
     <entity name="EPAData" representedClassName="EPAData" syncable="YES">
+        <attribute name="car_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="mpgCity" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="mpgCombined" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="mpgHighway" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="depicts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="knows" inverseEntity="Car" syncable="YES"/>
     </entity>
     <entity name="GasBill" representedClassName="GasBill" syncable="YES">
+        <attribute name="car_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="expense" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="month" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="causedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="accumulates" inverseEntity="Car" syncable="YES"/>
         <relationship name="informs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Driver" inverseName="views" inverseEntity="Driver" syncable="YES"/>
         <relationship name="isA" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GasStat" inverseName="creates" inverseEntity="GasStat" syncable="YES"/>
     </entity>
     <entity name="GasStat" representedClassName="GasStat" syncable="YES">
+        <attribute name="car_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="cost" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="gallons" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="miles" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="mpg" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="become" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TankRecords" inverseName="highlight" inverseEntity="TankRecords" syncable="YES"/>
         <relationship name="creates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GasBill" inverseName="isA" inverseEntity="GasBill" syncable="YES"/>
         <relationship name="describe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="records" inverseEntity="Car" syncable="YES"/>
@@ -51,16 +56,18 @@
     <entity name="TankRecords" representedClassName="TankRecords" syncable="YES">
         <attribute name="average" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="best" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="car_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="last" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="highlight" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GasStat" inverseName="become" inverseEntity="GasStat" syncable="YES"/>
         <relationship name="showcase" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="breaks" inverseEntity="Car" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Car" positionX="-47" positionY="153" width="128" height="225"/>
+        <element name="Car" positionX="-47" positionY="153" width="128" height="223"/>
         <element name="Driver" positionX="178" positionY="72" width="128" height="165"/>
-        <element name="EPAData" positionX="-252" positionY="207" width="128" height="103"/>
-        <element name="GasBill" positionX="241" positionY="263" width="128" height="120"/>
-        <element name="GasStat" positionX="79" positionY="401" width="128" height="178"/>
-        <element name="TankRecords" positionX="-110" positionY="437" width="128" height="118"/>
+        <element name="EPAData" positionX="-252" positionY="207" width="128" height="118"/>
+        <element name="GasBill" positionX="241" positionY="263" width="128" height="148"/>
+        <element name="GasStat" positionX="79" positionY="401" width="128" height="208"/>
+        <element name="TankRecords" positionX="-110" positionY="437" width="128" height="148"/>
     </elements>
 </model>
