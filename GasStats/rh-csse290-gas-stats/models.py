@@ -10,3 +10,12 @@ class Car(EndpointsModel):
     model = ndb.StringProperty()
     shared = ndb.BooleanProperty()
     year = ndb.IntegerProperty()
+    
+class EPACar(EndpointsModel):
+    _message_fields_scheme = ("entityKey", "year", "make", "model", "city_mpg", "high_mpg", "comb_mpg")
+    year = ndb.IntegerProperty()
+    make = ndb.StringProperty()
+    model = ndb.StringProperty()
+    city_mpg = ndb.FloatProperty()
+    high_mpg = ndb.FloatProperty()
+    comb_mpg = ndb.FloatProperty()
