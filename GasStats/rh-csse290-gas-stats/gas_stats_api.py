@@ -65,6 +65,16 @@ class GasStatsApi(protorpc.remote.Service):
     def epacar_list(self, query):
         return query
     
+    @EpaCar.query_method(path="epacar/list/by/year", http_method="GET",
+                         name="epacar.list.by.year", query_fields=("year",))
+    def epacar_list_by_year(self, query):
+        return query
+    
+    @EpaCar.query_method(path="epacar/list/by/year/make", http_method="GET",
+                         name="epacar.list.by.year.make", query_fields=("year","make"))
+    def epacar_list_by_year_make(self, query):
+        return query
+    
     @EpaCar.method(request_fields=("entityKey",), path="epacar/delete/{entityKey}",
                        http_method="DELETE", name="epacar.delete")
     def epacar_delete(self, request):
