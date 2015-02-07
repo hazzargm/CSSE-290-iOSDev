@@ -2,7 +2,7 @@
 //  GasBill.h
 //  GasStats
 //
-//  Created by CSSE Department on 2/3/15.
+//  Created by CSSE Department on 2/7/15.
 //  Copyright (c) 2015 Gordon Hazzard & Grant Smith. All rights reserved.
 //
 
@@ -15,8 +15,10 @@
 
 @property (nonatomic, retain) NSNumber * expense;
 @property (nonatomic, retain) NSNumber * month;
-@property (nonatomic, retain) GasStat *isA;
-@property (nonatomic, retain) Driver *informs;
+@property (nonatomic, retain) NSNumber * car_id;
+@property (nonatomic, retain) NSNumber * user_id;
 @property (nonatomic, retain) Car *causedBy;
+@property (nonatomic, retain) Driver *informs;
+@property (nonatomic, retain) GasStat *isA;
 
 @end

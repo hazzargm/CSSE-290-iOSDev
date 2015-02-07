@@ -2,7 +2,7 @@
 //  TankRecords.h
 //  GasStats
 //
-//  Created by CSSE Department on 2/3/15.
+//  Created by CSSE Department on 2/7/15.
 //  Copyright (c) 2015 Gordon Hazzard & Grant Smith. All rights reserved.
 //
 
@@ -13,10 +13,12 @@
 
 @interface TankRecords : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * average;
 @property (nonatomic, retain) NSNumber * best;
 @property (nonatomic, retain) NSNumber * last;
-@property (nonatomic, retain) NSNumber * average;
-@property (nonatomic, retain) Car *showcase;
+@property (nonatomic, retain) NSNumber * car_id;
+@property (nonatomic, retain) NSNumber * user_id;
 @property (nonatomic, retain) GasStat *highlight;
+@property (nonatomic, retain) Car *showcase;
 
 @end

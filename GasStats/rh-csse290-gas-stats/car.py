@@ -21,22 +21,22 @@ import webapp2
 
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)), autoescape=True)
 
-EPACAR_PARENT_KEY = ndb.Key("Entity", 'epacar_root')
+CAR_PARENT_KEY = ndb.Key("Entity", 'car_root')
 
 
-class EpaCarHandler(webapp2.RequestHandler):
+class CarHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Welcome to Gas Stats!')
         
     def post(self):
-        new_epacar = EpaCar(parent=EPACAR_PARENT_KEY,
+        new_car = Car(parent=CAR_PARENT_KEY,
+                      car_id=self.request.get('car_id'),
+                      icon=self.request.get('icon'),
                       make=self.request.get('make'),
                       model=self.request.get('model'),
-                      year=self.request.get('year'),
-                      city_mpg=self.request.get('city_mpg'),
-                      high_mpg=self.request.get('high_mpg'),
-                      comb_mpg=self.request.get('comb_mpg'))
-        new_epacar.put()
+                      shared=self.request.get('shared'),
+                      year=self.request.get('year'))
+        new_car.put()
         self.redirect(self.request.referer)    
 
-app = webapp2.WSGIApplication([('/', EpaCarHandler)], debug=True)
+app = webapp2.WSGIApplication([('/', CarHandler)], debug=True)

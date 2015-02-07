@@ -2,7 +2,7 @@
 //  EPAData.h
 //  GasStats
 //
-//  Created by CSSE Department on 2/3/15.
+//  Created by CSSE Department on 2/7/15.
 //  Copyright (c) 2015 Gordon Hazzard & Grant Smith. All rights reserved.
 //
 
@@ -14,8 +14,9 @@
 @interface EPAData : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * mpgCity;
-@property (nonatomic, retain) NSNumber * mpgHighway;
 @property (nonatomic, retain) NSNumber * mpgCombined;
+@property (nonatomic, retain) NSNumber * mpgHighway;
+@property (nonatomic, retain) NSNumber * car_id;
 @property (nonatomic, retain) Car *depicts;
 
 @end

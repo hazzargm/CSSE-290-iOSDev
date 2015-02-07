@@ -12,17 +12,20 @@ handlers:
 - url: /_ah/spi/.*
   script: gas_stats_api.app
   
- - url: /car/.*
-   script: main.app
+- url: /car/.*
+  script: car.app
    
- - url: /epacar/.*
-   script: epa.app
+- url: /epacar/.*
+  script: epa.app
+ 
+- url: /gasstat/.*
+  script: gasstat.app
+
+- url: /driver/.*
+  script: driver.app
   
 - url: .*
   script: main.app
-  
-builtins:
-- datastore_admin: on
 
 libraries:
 - name: webapp2

@@ -2,7 +2,7 @@
 //  GasBill.m
 //  GasStats
 //
-//  Created by CSSE Department on 2/3/15.
+//  Created by CSSE Department on 2/7/15.
 //  Copyright (c) 2015 Gordon Hazzard & Grant Smith. All rights reserved.
 //
 
@@ -16,8 +16,10 @@
 
 @dynamic expense;
 @dynamic month;
-@dynamic isA;
-@dynamic informs;
+@dynamic car_id;
+@dynamic user_id;
 @dynamic causedBy;
+@dynamic informs;
+@dynamic isA;
 
 @end

@@ -14,29 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import os
-import jinja2
-from google.appengine.ext import ndb
 import webapp2
-
-jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)), autoescape=True)
-
-CAR_PARENT_KEY = ndb.Key("Entity", 'car_root')
-
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Welcome to Gas Stats!')
-        
-    def post(self):
-        new_car = Car(parent=CAR_PARENT_KEY,
-                      car_id=self.request.get('car_id'),
-                      icon=self.request.get('icon'),
-                      make=self.request.get('make'),
-                      model=self.request.get('model'),
-                      shared=self.request.get('shared'),
-                      year=self.request.get('year'))
-        new_car.put()
-        self.redirect(self.request.referer)    
 
 app = webapp2.WSGIApplication([('/', MainHandler)], debug=True)
