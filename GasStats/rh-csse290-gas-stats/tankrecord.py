@@ -21,21 +21,20 @@ import webapp2
 
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)), autoescape=True)
 
-GAS_STAT_PARENT_KEY = ndb.Key("Entity", 'gasstat_root')
+TANK_RECORD_PARENT_KEY = ndb.Key("Entity", 'tankrecord_root')
 
-class GasStatHandler(webapp2.RequestHandler):
+class TankRecordHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Welcome to Gas Stats!')
         
     def post(self):
-        new_gasstat = GasStat(parent=GAS_STAT_PARENT_KEY,
+        new_tankrecord = TankRecord(parent=TANK_RECORD_PARENT_KEY,
                       car_id=self.request.get('car_id'),
-                      cost=self.request.get('cost'),
-                      gallons=self.request.get('gallons'),
-                      miles=self.request.get('miles'),
-                      mpg=self.request.get('mpg'),
+                      best_tank=self.request.get('best_tank'),
+                      avg_tank=self.request.get('avg_tank'),
+                      last_tank=self.request.get('last_tank'),
                       user_id=self.request.get('user_id'))
-        new_gasstat.put()
+        new_tankrecord.put()
         self.redirect(self.request.referer)    
 
-app = webapp2.WSGIApplication([('/', GasStatHandler)], debug=True)
+app = webapp2.WSGIApplication([('/', TankRecordHandler)], debug=True)

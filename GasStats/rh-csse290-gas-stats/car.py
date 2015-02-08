@@ -23,7 +23,6 @@ jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__
 
 CAR_PARENT_KEY = ndb.Key("Entity", 'car_root')
 
-
 class CarHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Welcome to Gas Stats!')
@@ -35,7 +34,8 @@ class CarHandler(webapp2.RequestHandler):
                       make=self.request.get('make'),
                       model=self.request.get('model'),
                       shared=self.request.get('shared'),
-                      year=self.request.get('year'))
+                      year=self.request.get('year'),
+                      user_id=self.request.get('user_id'))
         new_car.put()
         self.redirect(self.request.referer)    
 

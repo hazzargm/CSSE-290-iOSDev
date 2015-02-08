@@ -1,8 +1,8 @@
 from endpoints_proto_datastore.ndb.model import EndpointsModel
 from google.appengine.ext import ndb
-"""ADD A USER_ID FIELD"""
+
 class Car(EndpointsModel):
-    _message_fields_schema = ("entityKey", "create_date_time", "car_id", "icon", "make", "model", "shared", "year")
+    _message_fields_schema = ("entityKey", "create_date_time", "car_id", "icon", "make", "model", "shared", "year", "user_id")
     create_date_time = ndb.DateTimeProperty(auto_now=True)
     car_id = ndb.IntegerProperty()
     icon = ndb.BlobProperty()
@@ -10,6 +10,7 @@ class Car(EndpointsModel):
     model = ndb.StringProperty()
     shared = ndb.BooleanProperty()
     year = ndb.IntegerProperty()
+    user_id = ndb.IntegerProperty()
     
 class EpaCar(EndpointsModel):
     _message_fields_schema = ("entityKey", "year", "make", "model", "city_mpg", "high_mpg", "comb_mpg")
@@ -37,3 +38,11 @@ class Driver(EndpointsModel):
     password= ndb.StringProperty()
     user_id = ndb.IntegerProperty()
     username = ndb.StringProperty()
+    
+class TankRecord(EndpointsModel):
+    _message_fields_schema = ("entityKey", "avg_tank", "best_tank", "last_tank", "car_id", "user_id")
+    avg_tank = ndb.FloatProperty()
+    best_tank = ndb.FloatProperty()
+    last_tank = ndb.FloatProperty()
+    car_id = ndb.IntegerProperty()
+    user_id = ndb.IntegerProperty()

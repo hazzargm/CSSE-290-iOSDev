@@ -4,12 +4,14 @@ import car
 import epa
 import gasstat
 import driver
+import tankrecord
 import protorpc
 
 from models import Car
 from models import EpaCar
 from models import GasStat
 from models import Driver
+from models import TankRecord
 
 @endpoints.api(name="gasstats", version="v1", description="GasStats API")
 class GasStatsApi(protorpc.remote.Service):
@@ -27,13 +29,19 @@ class GasStatsApi(protorpc.remote.Service):
                          make=request.make,
                          model=request.model,
                          shared=request.shared,
-                         year=request.year)
+                         year=request.year,
+                         user_id=request.user_id)
         my_car.put()
         return my_car
     
     @Car.query_method(path="car/list", http_method="GET",
-                             name="car.list", query_fields=("limit", "order", "pageToken"))
+                      name="car.list", query_fields=("limit", "order", "pageToken"))
     def car_list(self, query):
+        return query
+    
+    @Car.query_method(path="car/list/by/user", http_method="GET",
+                      name="car.list.by.user", query_fields=("user_id",))
+    def car_list_by_user(self, query):
         return query
     
     @Car.method(request_fields=("entityKey",), path="car/delete/{entityKey}",
@@ -104,6 +112,21 @@ class GasStatsApi(protorpc.remote.Service):
     def gasstat_list(self, query):
         return query
     
+    @GasStat.query_method(path="gasstat/list/by/user", http_method="GET",
+                      name="gasstat.list.by.user", query_fields=("user_id",))
+    def gasstat_list_by_user(self, query):
+        return query
+    
+    @GasStat.query_method(path="gasstat/list/by/car", http_method="GET",
+                      name="gasstat.list.by.car", query_fields=("car_id",))
+    def gasstat_list_by_car(self, query):
+        return query
+    
+    @GasStat.query_method(path="gasstat/list/by/car/user", http_method="GET",
+                      name="gasstat.list.by.car.user", query_fields=("car_id","user_id"))
+    def gasstat_list_by_car_user(self, query):
+        return query
+    
     @GasStat.method(request_fields=("entityKey",), path="gasstat/delete/{entityKey}",
                        http_method="DELETE", name="gasstat.delete")
     def gasstat_delete(self, request):
@@ -138,5 +161,48 @@ class GasStatsApi(protorpc.remote.Service):
             raise endpoints.NotFoundException("driver not found")
         request.key.delete()
         return Driver(username="deleted")
+
+    """TankRecord methods and queries"""
+    @TankRecord.method(path="tankrecord/insert", name="tankrecord.insert", http_method="POST")
+    def tankrecord_insert(self, request):
+        if request.from_datastore:
+            my_tankrecord = request
+        else:
+            my_tankrecord = TankRecord(parent=tankrecord.TANK_RECORD_PARENT_KEY,
+                         car_id=request.car_id,
+                         best_tank=request.best_tank,
+                         avg_tank=request.avg_tank,
+                         last_tank=request.last_tank,
+                         user_id=request.user_id)
+        my_tankrecord.put()
+        return my_tankrecord
+    
+    @TankRecord.query_method(path="tankrecord/list", http_method="GET",
+                      name="tankrecord.list", query_fields=("limit", "order", "pageToken"))
+    def tankrecord_list(self, query):
+        return query
+    
+    @TankRecord.query_method(path="tankrecord/list/by/user", http_method="GET",
+                      name="tankrecord.list.by.user", query_fields=("user_id",))
+    def tankrecord_list_by_user(self, query):
+        return query
+    
+    @TankRecord.query_method(path="tankrecord/list/by/car", http_method="GET",
+                      name="tankrecord.list.by.car", query_fields=("car_id",))
+    def tankrecord_list_by_car(self, query):
+        return query
+    
+    @TankRecord.query_method(path="tankrecord/list/by/car/user", http_method="GET",
+                      name="tankrecord.list.by.car.user", query_fields=("car_id","user_id"))
+    def tankrecord_list_by_car_user(self, query):
+        return query
+    
+    @TankRecord.method(request_fields=("entityKey",), path="tankrecord/delete/{entityKey}",
+                       http_method="DELETE", name="tankrecord.delete")
+    def tankrecord_delete(self, request):
+        if not request.from_datastore:
+            raise endpoints.NotFoundException("tankrecord not found")
+        request.key.delete()
+        return TankRecord(best_tank=0)
     
 app = endpoints.api_server([GasStatsApi], restricted=False)

@@ -23,7 +23,6 @@ jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__
 
 EPACAR_PARENT_KEY = ndb.Key("Entity", 'epacar_root')
 
-
 class EpaCarHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Welcome to Gas Stats!')

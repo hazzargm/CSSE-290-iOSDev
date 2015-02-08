@@ -24,6 +24,9 @@ handlers:
 - url: /driver/.*
   script: driver.app
   
+- url: /tankrecord/.*
+  script: tankrecord.app
+  
 - url: .*
   script: main.app
 
