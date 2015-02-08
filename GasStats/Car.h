@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSString * model;
 @property (nonatomic, retain) NSNumber * shared;
 @property (nonatomic, retain) NSNumber * year;
+@property (nonatomic, retain) NSNumber * user_id;
 @property (nonatomic, retain) GasBill *accumulates;
 @property (nonatomic, retain) TankRecords *breaks;
 @property (nonatomic, retain) Driver *has;

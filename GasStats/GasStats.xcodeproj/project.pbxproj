@@ -12,7 +12,7 @@
 		0A16C1801A86C80100A2BEA6 /* GasBill.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A16C17F1A86C80100A2BEA6 /* GasBill.m */; };
 		0A16C1861A86C83A00A2BEA6 /* EPAData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A16C1851A86C83A00A2BEA6 /* EPAData.m */; };
 		0A16C1891A86C84B00A2BEA6 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A16C1881A86C84B00A2BEA6 /* Driver.m */; };
-		0A16C18C1A86C85C00A2BEA6 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A16C18B1A86C85C00A2BEA6 /* Car.m */; };
+		0A16C1901A870AB000A2BEA6 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A16C18F1A870AB000A2BEA6 /* Car.m */; };
 		0A3C7FA91A81292D000048CC /* modern-gas_pump.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA31A81292D000048CC /* modern-gas_pump.png */; };
 		0A3C7FAA1A81292D000048CC /* odometericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA41A81292D000048CC /* odometericon.png */; };
 		0A3C7FAB1A81292D000048CC /* oldschool-gaspump.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA51A81292D000048CC /* oldschool-gaspump.png */; };
@@ -57,9 +57,9 @@
 		0A16C1851A86C83A00A2BEA6 /* EPAData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAData.m; sourceTree = "<group>"; };
 		0A16C1871A86C84B00A2BEA6 /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
 		0A16C1881A86C84B00A2BEA6 /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Driver.m; sourceTree = "<group>"; };
-		0A16C18A1A86C85C00A2BEA6 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		0A16C18B1A86C85C00A2BEA6 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		0A16C18D1A86C87400A2BEA6 /* GasStats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GasStats-Bridging-Header.h"; sourceTree = "<group>"; };
+		0A16C18E1A870AB000A2BEA6 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		0A16C18F1A870AB000A2BEA6 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		0A3C7FA31A81292D000048CC /* modern-gas_pump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modern-gas_pump.png"; sourceTree = "<group>"; };
 		0A3C7FA41A81292D000048CC /* odometericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = odometericon.png; sourceTree = "<group>"; };
 		0A3C7FA51A81292D000048CC /* oldschool-gaspump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oldschool-gaspump.png"; sourceTree = "<group>"; };
@@ -118,8 +118,8 @@
 				0A16C1851A86C83A00A2BEA6 /* EPAData.m */,
 				0A16C1871A86C84B00A2BEA6 /* Driver.h */,
 				0A16C1881A86C84B00A2BEA6 /* Driver.m */,
-				0A16C18A1A86C85C00A2BEA6 /* Car.h */,
-				0A16C18B1A86C85C00A2BEA6 /* Car.m */,
+				0A16C18E1A870AB000A2BEA6 /* Car.h */,
+				0A16C18F1A870AB000A2BEA6 /* Car.m */,
 				0A16C18D1A86C87400A2BEA6 /* GasStats-Bridging-Header.h */,
 			);
 			name = GasStatsModelObjects;
@@ -327,7 +327,7 @@
 				57720B4F1A80671C00D3FD9A /* HistoryViewController.swift in Sources */,
 				0A16C1891A86C84B00A2BEA6 /* Driver.m in Sources */,
 				57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */,
-				0A16C18C1A86C85C00A2BEA6 /* Car.m in Sources */,
+				0A16C1901A870AB000A2BEA6 /* Car.m in Sources */,
 				57720B491A80671C00D3FD9A /* AccountViewController.swift in Sources */,
 				0A16C17A1A86C7D800A2BEA6 /* TankRecords.m in Sources */,
 				57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */,

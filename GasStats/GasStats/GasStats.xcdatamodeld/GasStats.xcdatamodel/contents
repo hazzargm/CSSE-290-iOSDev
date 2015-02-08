@@ -7,6 +7,7 @@
         <attribute name="make" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shared" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="accumulates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GasBill" inverseName="causedBy" inverseEntity="GasBill" syncable="YES"/>
         <relationship name="breaks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TankRecords" inverseName="showcase" inverseEntity="TankRecords" syncable="YES"/>
@@ -63,7 +64,7 @@
         <relationship name="showcase" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="breaks" inverseEntity="Car" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Car" positionX="-47" positionY="153" width="128" height="223"/>
+        <element name="Car" positionX="-47" positionY="153" width="128" height="238"/>
         <element name="Driver" positionX="178" positionY="72" width="128" height="165"/>
         <element name="EPAData" positionX="-252" positionY="207" width="128" height="118"/>
         <element name="GasBill" positionX="241" positionY="263" width="128" height="148"/>

@@ -1,6 +1,6 @@
 from endpoints_proto_datastore.ndb.model import EndpointsModel
 from google.appengine.ext import ndb
-
+"""ADD A USER_ID FIELD"""
 class Car(EndpointsModel):
     _message_fields_schema = ("entityKey", "create_date_time", "car_id", "icon", "make", "model", "shared", "year")
     create_date_time = ndb.DateTimeProperty(auto_now=True)

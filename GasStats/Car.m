@@ -23,6 +23,7 @@
 @dynamic model;
 @dynamic shared;
 @dynamic year;
+@dynamic user_id;
 @dynamic accumulates;
 @dynamic breaks;
 @dynamic has;
