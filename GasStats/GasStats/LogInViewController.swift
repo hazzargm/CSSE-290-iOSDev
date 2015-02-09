@@ -33,17 +33,17 @@ class LogInViewController: UIViewController {
 //        newCurrent.car_id = 0
 //        newCurrent.loggedIn = true
 //        self.saveManagedObjectContext()
-        let fetchRequest = NSFetchRequest(entityName: "Current")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "user_id", ascending: false)]
-        var error: NSError? = nil
-        var currents = managedObjectContext?.executeFetchRequest(fetchRequest, error: &error) as [Current]
-        user_id = currents[0].user_id.integerValue
-        car_id = currents[0].car_id.integerValue
-        if error != nil
-        {
-            println("Unresolved Core Data error \(error?.userInfo)")
-            abort()
-        }
+//        let fetchRequest = NSFetchRequest(entityName: "Current")
+//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "user_id", ascending: false)]
+//        var error: NSError? = nil
+//        var currents = managedObjectContext?.executeFetchRequest(fetchRequest, error: &error) as [Current]
+//        user_id = currents[0].user_id.integerValue
+//        car_id = currents[0].car_id.integerValue
+//        if error != nil
+//        {
+//            println("Unresolved Core Data error \(error?.userInfo)")
+//            abort()
+//        }
         
     }
 
