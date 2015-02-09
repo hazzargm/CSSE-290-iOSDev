@@ -16,8 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		// Override point for customization after application launch.
-		return true
+        let controller = self.window!.rootViewController as LogInViewController
+        controller.managedObjectContext = self.managedObjectContext
+        return true
 	}
 
 	func applicationWillResignActive(application: UIApplication) {

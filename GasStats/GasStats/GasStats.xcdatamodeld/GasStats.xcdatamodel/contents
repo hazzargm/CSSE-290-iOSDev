@@ -15,6 +15,11 @@
         <relationship name="knows" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EPAData" inverseName="depicts" inverseEntity="EPAData" syncable="YES"/>
         <relationship name="records" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GasStat" inverseName="describe" inverseEntity="GasStat" syncable="YES"/>
     </entity>
+    <entity name="Current" representedClassName="Current" syncable="YES">
+        <attribute name="car_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="loggedIn" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="Driver" representedClassName="Driver" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="joinDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -65,10 +70,11 @@
     </entity>
     <elements>
         <element name="Car" positionX="-47" positionY="153" width="128" height="238"/>
-        <element name="Driver" positionX="178" positionY="72" width="128" height="165"/>
-        <element name="EPAData" positionX="-252" positionY="207" width="128" height="118"/>
+        <element name="Driver" positionX="178" positionY="72" width="128" height="163"/>
+        <element name="EPAData" positionX="-252" positionY="207" width="128" height="120"/>
         <element name="GasBill" positionX="241" positionY="263" width="128" height="148"/>
         <element name="GasStat" positionX="79" positionY="401" width="128" height="208"/>
         <element name="TankRecords" positionX="-110" positionY="437" width="128" height="148"/>
+        <element name="Current" positionX="-45" positionY="225" width="128" height="88"/>
     </elements>
 </model>

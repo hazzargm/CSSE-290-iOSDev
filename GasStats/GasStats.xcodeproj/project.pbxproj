@@ -13,6 +13,9 @@
 		0A16C1861A86C83A00A2BEA6 /* EPAData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A16C1851A86C83A00A2BEA6 /* EPAData.m */; };
 		0A16C1891A86C84B00A2BEA6 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A16C1881A86C84B00A2BEA6 /* Driver.m */; };
 		0A16C1901A870AB000A2BEA6 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A16C18F1A870AB000A2BEA6 /* Car.m */; };
+		0A3877221A88562600094C7C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3877211A88562600094C7C /* LogInViewController.swift */; };
+		0A38772D1A8861B400094C7C /* GasStatsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38772C1A8861B400094C7C /* GasStatsTabBarViewController.swift */; };
+		0A3877301A8863B300094C7C /* Current.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A38772F1A8863B300094C7C /* Current.m */; };
 		0A3C7FA91A81292D000048CC /* modern-gas_pump.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA31A81292D000048CC /* modern-gas_pump.png */; };
 		0A3C7FAA1A81292D000048CC /* odometericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA41A81292D000048CC /* odometericon.png */; };
 		0A3C7FAB1A81292D000048CC /* oldschool-gaspump.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA51A81292D000048CC /* oldschool-gaspump.png */; };
@@ -100,6 +103,10 @@
 		0A16C18D1A86C87400A2BEA6 /* GasStats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GasStats-Bridging-Header.h"; sourceTree = "<group>"; };
 		0A16C18E1A870AB000A2BEA6 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		0A16C18F1A870AB000A2BEA6 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		0A3877211A88562600094C7C /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		0A38772C1A8861B400094C7C /* GasStatsTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStatsTabBarViewController.swift; sourceTree = "<group>"; };
+		0A38772E1A8863B300094C7C /* Current.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Current.h; sourceTree = "<group>"; };
+		0A38772F1A8863B300094C7C /* Current.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Current.m; sourceTree = "<group>"; };
 		0A3C7FA31A81292D000048CC /* modern-gas_pump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modern-gas_pump.png"; sourceTree = "<group>"; };
 		0A3C7FA41A81292D000048CC /* odometericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = odometericon.png; sourceTree = "<group>"; };
 		0A3C7FA51A81292D000048CC /* oldschool-gaspump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oldschool-gaspump.png"; sourceTree = "<group>"; };
@@ -242,6 +249,8 @@
 				0A16C1881A86C84B00A2BEA6 /* Driver.m */,
 				0A16C18E1A870AB000A2BEA6 /* Car.h */,
 				0A16C18F1A870AB000A2BEA6 /* Car.m */,
+				0A38772E1A8863B300094C7C /* Current.h */,
+				0A38772F1A8863B300094C7C /* Current.m */,
 				0A16C18D1A86C87400A2BEA6 /* GasStats-Bridging-Header.h */,
 			);
 			name = GasStatsModelObjects;
@@ -259,6 +268,8 @@
 				57720B471A80671C00D3FD9A /* GarageViewController.swift */,
 				57720B481A80671C00D3FD9A /* HistoryViewController.swift */,
 				57720B241A8066FC00D3FD9A /* ViewController.swift */,
+				0A3877211A88562600094C7C /* LogInViewController.swift */,
+				0A38772C1A8861B400094C7C /* GasStatsTabBarViewController.swift */,
 			);
 			name = GasStatsViewControllers;
 			sourceTree = "<group>";
@@ -542,6 +553,7 @@
 			files = (
 				0AE02DEB1A8848F800E0C902 /* GTLRuntimeCommon.m in Sources */,
 				0AE02DE31A8848F800E0C902 /* GTLObject.m in Sources */,
+				0A38772D1A8861B400094C7C /* GasStatsTabBarViewController.swift in Sources */,
 				0AE02DF21A8848F800E0C902 /* GTMHTTPFetcherLogging.m in Sources */,
 				0AE02DE71A8848F800E0C902 /* GTLBatchResult.m in Sources */,
 				0AE02E191A884AC200E0C902 /* GTLGasstatsConstants.m in Sources */,
@@ -560,6 +572,7 @@
 				57720B4E1A80671C00D3FD9A /* GarageViewController.swift in Sources */,
 				0AE02DFA1A8848F800E0C902 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				57720B4F1A80671C00D3FD9A /* HistoryViewController.swift in Sources */,
+				0A3877221A88562600094C7C /* LogInViewController.swift in Sources */,
 				0A16C1891A86C84B00A2BEA6 /* Driver.m in Sources */,
 				0AE02E201A884AC200E0C902 /* GTLGasstatsTankRecord.m in Sources */,
 				0AE02DE41A8848F800E0C902 /* GTLQuery.m in Sources */,
@@ -585,6 +598,7 @@
 				0AE02DEC1A8848F800E0C902 /* GTLFramework.m in Sources */,
 				0A16C1801A86C80100A2BEA6 /* GasBill.m in Sources */,
 				57720B4C1A80671C00D3FD9A /* CompeteViewController.swift in Sources */,
+				0A3877301A8863B300094C7C /* Current.m in Sources */,
 				57720B4A1A80671C00D3FD9A /* CarFuelLogViewController.swift in Sources */,
 				0A16C1861A86C83A00A2BEA6 /* EPAData.m in Sources */,
 				0AE02DF51A8848F800E0C902 /* GTMGatherInputStream.m in Sources */,
