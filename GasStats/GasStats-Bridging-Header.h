@@ -8,3 +8,4 @@
 #import "GasBill.h"
 #import "GasStat.h"
 #import "TankRecords.h"
+#import "GTLGasstats.h"

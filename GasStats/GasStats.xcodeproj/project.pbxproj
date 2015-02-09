@@ -20,6 +20,46 @@
 		0A3C7FAD1A81292D000048CC /* speedometer-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA71A81292D000048CC /* speedometer-hi.png */; };
 		0A3C7FAE1A81292D000048CC /* Trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FA81A81292D000048CC /* Trophy.png */; };
 		0A3C7FB01A812939000048CC /* Color-Gas-Pump.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C7FAF1A812939000048CC /* Color-Gas-Pump.png */; };
+		0AE02DAB1A88482200E0C902 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE02DAA1A88482200E0C902 /* Security.framework */; };
+		0AE02DAD1A88482D00E0C902 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE02DAC1A88482D00E0C902 /* SystemConfiguration.framework */; };
+		0AE02DE31A8848F800E0C902 /* GTLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DB21A8848F800E0C902 /* GTLObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DE41A8848F800E0C902 /* GTLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DB41A8848F800E0C902 /* GTLQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DE51A8848F800E0C902 /* GTLBatchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DB61A8848F800E0C902 /* GTLBatchQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DE61A8848F800E0C902 /* GTLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DB81A8848F800E0C902 /* GTLService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DE71A8848F800E0C902 /* GTLBatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DBA1A8848F800E0C902 /* GTLBatchResult.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DE81A8848F800E0C902 /* GTLUploadParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DBC1A8848F800E0C902 /* GTLUploadParameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DE91A8848F800E0C902 /* GTLDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DBE1A8848F800E0C902 /* GTLDateTime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DEA1A8848F800E0C902 /* GTLErrorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DC01A8848F800E0C902 /* GTLErrorObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DEB1A8848F800E0C902 /* GTLRuntimeCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DC21A8848F800E0C902 /* GTLRuntimeCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DEC1A8848F800E0C902 /* GTLFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DC41A8848F800E0C902 /* GTLFramework.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DED1A8848F800E0C902 /* GTLJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DC61A8848F800E0C902 /* GTLJSONParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DEE1A8848F800E0C902 /* GTLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DC91A8848F800E0C902 /* GTLUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DEF1A8848F800E0C902 /* GTLBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DCB1A8848F800E0C902 /* GTLBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF01A8848F800E0C902 /* GTMHTTPFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DCD1A8848F800E0C902 /* GTMHTTPFetcherService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF11A8848F800E0C902 /* GTMHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DCF1A8848F800E0C902 /* GTMHTTPFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF21A8848F800E0C902 /* GTMHTTPFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DD11A8848F800E0C902 /* GTMHTTPFetcherLogging.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF31A8848F800E0C902 /* GTMHTTPFetchHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DD31A8848F800E0C902 /* GTMHTTPFetchHistory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF41A8848F800E0C902 /* GTMHTTPUploadFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DD51A8848F800E0C902 /* GTMHTTPUploadFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF51A8848F800E0C902 /* GTMGatherInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DD71A8848F800E0C902 /* GTMGatherInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF61A8848F800E0C902 /* GTMMIMEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DD91A8848F800E0C902 /* GTMMIMEDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF71A8848F800E0C902 /* GTMReadMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DDB1A8848F800E0C902 /* GTMReadMonitorInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF81A8848F800E0C902 /* GTMOAuth2Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DDD1A8848F800E0C902 /* GTMOAuth2Authentication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DF91A8848F800E0C902 /* GTMOAuth2SignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DDF1A8848F800E0C902 /* GTMOAuth2SignIn.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DFA1A8848F800E0C902 /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DE11A8848F800E0C902 /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0AE02DFB1A8848F800E0C902 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE02DE21A8848F800E0C902 /* GTMOAuth2ViewTouch.xib */; };
+		0AE02E171A884AC200E0C902 /* GTLGasstatsCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02DFE1A884AC200E0C902 /* GTLGasstatsCar.m */; };
+		0AE02E181A884AC200E0C902 /* GTLGasstatsCarCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E001A884AC200E0C902 /* GTLGasstatsCarCollection.m */; };
+		0AE02E191A884AC200E0C902 /* GTLGasstatsConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E021A884AC200E0C902 /* GTLGasstatsConstants.m */; };
+		0AE02E1A1A884AC200E0C902 /* GTLGasstatsDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E041A884AC200E0C902 /* GTLGasstatsDriver.m */; };
+		0AE02E1B1A884AC200E0C902 /* GTLGasstatsDriverCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E061A884AC200E0C902 /* GTLGasstatsDriverCollection.m */; };
+		0AE02E1C1A884AC200E0C902 /* GTLGasstatsEpaCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E081A884AC200E0C902 /* GTLGasstatsEpaCar.m */; };
+		0AE02E1D1A884AC200E0C902 /* GTLGasstatsEpaCarCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E0A1A884AC200E0C902 /* GTLGasstatsEpaCarCollection.m */; };
+		0AE02E1E1A884AC200E0C902 /* GTLGasstatsGasStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E0C1A884AC200E0C902 /* GTLGasstatsGasStat.m */; };
+		0AE02E1F1A884AC200E0C902 /* GTLGasstatsGasStatCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E0E1A884AC200E0C902 /* GTLGasstatsGasStatCollection.m */; };
+		0AE02E201A884AC200E0C902 /* GTLGasstatsTankRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E101A884AC200E0C902 /* GTLGasstatsTankRecord.m */; };
+		0AE02E211A884AC200E0C902 /* GTLGasstatsTankRecordCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E121A884AC200E0C902 /* GTLGasstatsTankRecordCollection.m */; };
+		0AE02E221A884AC200E0C902 /* GTLQueryGasstats.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E141A884AC200E0C902 /* GTLQueryGasstats.m */; };
+		0AE02E231A884AC200E0C902 /* GTLServiceGasstats.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E161A884AC200E0C902 /* GTLServiceGasstats.m */; };
 		57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */; };
 		57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57720B211A8066FC00D3FD9A /* GasStats.xcdatamodeld */; };
 		57720B251A8066FC00D3FD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B241A8066FC00D3FD9A /* ViewController.swift */; };
@@ -67,6 +107,86 @@
 		0A3C7FA71A81292D000048CC /* speedometer-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speedometer-hi.png"; sourceTree = "<group>"; };
 		0A3C7FA81A81292D000048CC /* Trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trophy.png; sourceTree = "<group>"; };
 		0A3C7FAF1A812939000048CC /* Color-Gas-Pump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Color-Gas-Pump.png"; sourceTree = "<group>"; };
+		0AE02DAA1A88482200E0C902 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0AE02DAC1A88482D00E0C902 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0AE02DB01A8848F800E0C902 /* GTLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLDefines.h; sourceTree = "<group>"; };
+		0AE02DB11A8848F800E0C902 /* GTLObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLObject.h; sourceTree = "<group>"; };
+		0AE02DB21A8848F800E0C902 /* GTLObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLObject.m; sourceTree = "<group>"; };
+		0AE02DB31A8848F800E0C902 /* GTLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLQuery.h; sourceTree = "<group>"; };
+		0AE02DB41A8848F800E0C902 /* GTLQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLQuery.m; sourceTree = "<group>"; };
+		0AE02DB51A8848F800E0C902 /* GTLBatchQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLBatchQuery.h; sourceTree = "<group>"; };
+		0AE02DB61A8848F800E0C902 /* GTLBatchQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLBatchQuery.m; sourceTree = "<group>"; };
+		0AE02DB71A8848F800E0C902 /* GTLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLService.h; sourceTree = "<group>"; };
+		0AE02DB81A8848F800E0C902 /* GTLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLService.m; sourceTree = "<group>"; };
+		0AE02DB91A8848F800E0C902 /* GTLBatchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLBatchResult.h; sourceTree = "<group>"; };
+		0AE02DBA1A8848F800E0C902 /* GTLBatchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLBatchResult.m; sourceTree = "<group>"; };
+		0AE02DBB1A8848F800E0C902 /* GTLUploadParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLUploadParameters.h; sourceTree = "<group>"; };
+		0AE02DBC1A8848F800E0C902 /* GTLUploadParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUploadParameters.m; sourceTree = "<group>"; };
+		0AE02DBD1A8848F800E0C902 /* GTLDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLDateTime.h; sourceTree = "<group>"; };
+		0AE02DBE1A8848F800E0C902 /* GTLDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLDateTime.m; sourceTree = "<group>"; };
+		0AE02DBF1A8848F800E0C902 /* GTLErrorObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLErrorObject.h; sourceTree = "<group>"; };
+		0AE02DC01A8848F800E0C902 /* GTLErrorObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLErrorObject.m; sourceTree = "<group>"; };
+		0AE02DC11A8848F800E0C902 /* GTLRuntimeCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLRuntimeCommon.h; sourceTree = "<group>"; };
+		0AE02DC21A8848F800E0C902 /* GTLRuntimeCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLRuntimeCommon.m; sourceTree = "<group>"; };
+		0AE02DC31A8848F800E0C902 /* GTLFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLFramework.h; sourceTree = "<group>"; };
+		0AE02DC41A8848F800E0C902 /* GTLFramework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLFramework.m; sourceTree = "<group>"; };
+		0AE02DC51A8848F800E0C902 /* GTLJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLJSONParser.h; sourceTree = "<group>"; };
+		0AE02DC61A8848F800E0C902 /* GTLJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLJSONParser.m; sourceTree = "<group>"; };
+		0AE02DC71A8848F800E0C902 /* GTLTargetNamespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLTargetNamespace.h; sourceTree = "<group>"; };
+		0AE02DC81A8848F800E0C902 /* GTLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLUtilities.h; sourceTree = "<group>"; };
+		0AE02DC91A8848F800E0C902 /* GTLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUtilities.m; sourceTree = "<group>"; };
+		0AE02DCA1A8848F800E0C902 /* GTLBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLBase64.h; sourceTree = "<group>"; };
+		0AE02DCB1A8848F800E0C902 /* GTLBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLBase64.m; sourceTree = "<group>"; };
+		0AE02DCC1A8848F800E0C902 /* GTMHTTPFetcherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcherService.h; sourceTree = "<group>"; };
+		0AE02DCD1A8848F800E0C902 /* GTMHTTPFetcherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetcherService.m; sourceTree = "<group>"; };
+		0AE02DCE1A8848F800E0C902 /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcher.h; sourceTree = "<group>"; };
+		0AE02DCF1A8848F800E0C902 /* GTMHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetcher.m; sourceTree = "<group>"; };
+		0AE02DD01A8848F800E0C902 /* GTMHTTPFetcherLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcherLogging.h; sourceTree = "<group>"; };
+		0AE02DD11A8848F800E0C902 /* GTMHTTPFetcherLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetcherLogging.m; sourceTree = "<group>"; };
+		0AE02DD21A8848F800E0C902 /* GTMHTTPFetchHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetchHistory.h; sourceTree = "<group>"; };
+		0AE02DD31A8848F800E0C902 /* GTMHTTPFetchHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetchHistory.m; sourceTree = "<group>"; };
+		0AE02DD41A8848F800E0C902 /* GTMHTTPUploadFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPUploadFetcher.h; sourceTree = "<group>"; };
+		0AE02DD51A8848F800E0C902 /* GTMHTTPUploadFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPUploadFetcher.m; sourceTree = "<group>"; };
+		0AE02DD61A8848F800E0C902 /* GTMGatherInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGatherInputStream.h; sourceTree = "<group>"; };
+		0AE02DD71A8848F800E0C902 /* GTMGatherInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMGatherInputStream.m; sourceTree = "<group>"; };
+		0AE02DD81A8848F800E0C902 /* GTMMIMEDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMMIMEDocument.h; sourceTree = "<group>"; };
+		0AE02DD91A8848F800E0C902 /* GTMMIMEDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMMIMEDocument.m; sourceTree = "<group>"; };
+		0AE02DDA1A8848F800E0C902 /* GTMReadMonitorInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMReadMonitorInputStream.h; sourceTree = "<group>"; };
+		0AE02DDB1A8848F800E0C902 /* GTMReadMonitorInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMReadMonitorInputStream.m; sourceTree = "<group>"; };
+		0AE02DDC1A8848F800E0C902 /* GTMOAuth2Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2Authentication.h; sourceTree = "<group>"; };
+		0AE02DDD1A8848F800E0C902 /* GTMOAuth2Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2Authentication.m; sourceTree = "<group>"; };
+		0AE02DDE1A8848F800E0C902 /* GTMOAuth2SignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2SignIn.h; sourceTree = "<group>"; };
+		0AE02DDF1A8848F800E0C902 /* GTMOAuth2SignIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2SignIn.m; sourceTree = "<group>"; };
+		0AE02DE01A8848F800E0C902 /* GTMOAuth2ViewControllerTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2ViewControllerTouch.h; sourceTree = "<group>"; };
+		0AE02DE11A8848F800E0C902 /* GTMOAuth2ViewControllerTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2ViewControllerTouch.m; sourceTree = "<group>"; };
+		0AE02DE21A8848F800E0C902 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
+		0AE02DFC1A884AC200E0C902 /* GTLGasstats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstats.h; path = "rh-csse290-gas-stats/API/GTLGasstats.h"; sourceTree = "<group>"; };
+		0AE02DFD1A884AC200E0C902 /* GTLGasstatsCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsCar.h; path = "rh-csse290-gas-stats/API/GTLGasstatsCar.h"; sourceTree = "<group>"; };
+		0AE02DFE1A884AC200E0C902 /* GTLGasstatsCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsCar.m; path = "rh-csse290-gas-stats/API/GTLGasstatsCar.m"; sourceTree = "<group>"; };
+		0AE02DFF1A884AC200E0C902 /* GTLGasstatsCarCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsCarCollection.h; path = "rh-csse290-gas-stats/API/GTLGasstatsCarCollection.h"; sourceTree = "<group>"; };
+		0AE02E001A884AC200E0C902 /* GTLGasstatsCarCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsCarCollection.m; path = "rh-csse290-gas-stats/API/GTLGasstatsCarCollection.m"; sourceTree = "<group>"; };
+		0AE02E011A884AC200E0C902 /* GTLGasstatsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsConstants.h; path = "rh-csse290-gas-stats/API/GTLGasstatsConstants.h"; sourceTree = "<group>"; };
+		0AE02E021A884AC200E0C902 /* GTLGasstatsConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsConstants.m; path = "rh-csse290-gas-stats/API/GTLGasstatsConstants.m"; sourceTree = "<group>"; };
+		0AE02E031A884AC200E0C902 /* GTLGasstatsDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsDriver.h; path = "rh-csse290-gas-stats/API/GTLGasstatsDriver.h"; sourceTree = "<group>"; };
+		0AE02E041A884AC200E0C902 /* GTLGasstatsDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsDriver.m; path = "rh-csse290-gas-stats/API/GTLGasstatsDriver.m"; sourceTree = "<group>"; };
+		0AE02E051A884AC200E0C902 /* GTLGasstatsDriverCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsDriverCollection.h; path = "rh-csse290-gas-stats/API/GTLGasstatsDriverCollection.h"; sourceTree = "<group>"; };
+		0AE02E061A884AC200E0C902 /* GTLGasstatsDriverCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsDriverCollection.m; path = "rh-csse290-gas-stats/API/GTLGasstatsDriverCollection.m"; sourceTree = "<group>"; };
+		0AE02E071A884AC200E0C902 /* GTLGasstatsEpaCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsEpaCar.h; path = "rh-csse290-gas-stats/API/GTLGasstatsEpaCar.h"; sourceTree = "<group>"; };
+		0AE02E081A884AC200E0C902 /* GTLGasstatsEpaCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsEpaCar.m; path = "rh-csse290-gas-stats/API/GTLGasstatsEpaCar.m"; sourceTree = "<group>"; };
+		0AE02E091A884AC200E0C902 /* GTLGasstatsEpaCarCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsEpaCarCollection.h; path = "rh-csse290-gas-stats/API/GTLGasstatsEpaCarCollection.h"; sourceTree = "<group>"; };
+		0AE02E0A1A884AC200E0C902 /* GTLGasstatsEpaCarCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsEpaCarCollection.m; path = "rh-csse290-gas-stats/API/GTLGasstatsEpaCarCollection.m"; sourceTree = "<group>"; };
+		0AE02E0B1A884AC200E0C902 /* GTLGasstatsGasStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsGasStat.h; path = "rh-csse290-gas-stats/API/GTLGasstatsGasStat.h"; sourceTree = "<group>"; };
+		0AE02E0C1A884AC200E0C902 /* GTLGasstatsGasStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsGasStat.m; path = "rh-csse290-gas-stats/API/GTLGasstatsGasStat.m"; sourceTree = "<group>"; };
+		0AE02E0D1A884AC200E0C902 /* GTLGasstatsGasStatCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsGasStatCollection.h; path = "rh-csse290-gas-stats/API/GTLGasstatsGasStatCollection.h"; sourceTree = "<group>"; };
+		0AE02E0E1A884AC200E0C902 /* GTLGasstatsGasStatCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsGasStatCollection.m; path = "rh-csse290-gas-stats/API/GTLGasstatsGasStatCollection.m"; sourceTree = "<group>"; };
+		0AE02E0F1A884AC200E0C902 /* GTLGasstatsTankRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsTankRecord.h; path = "rh-csse290-gas-stats/API/GTLGasstatsTankRecord.h"; sourceTree = "<group>"; };
+		0AE02E101A884AC200E0C902 /* GTLGasstatsTankRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsTankRecord.m; path = "rh-csse290-gas-stats/API/GTLGasstatsTankRecord.m"; sourceTree = "<group>"; };
+		0AE02E111A884AC200E0C902 /* GTLGasstatsTankRecordCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLGasstatsTankRecordCollection.h; path = "rh-csse290-gas-stats/API/GTLGasstatsTankRecordCollection.h"; sourceTree = "<group>"; };
+		0AE02E121A884AC200E0C902 /* GTLGasstatsTankRecordCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLGasstatsTankRecordCollection.m; path = "rh-csse290-gas-stats/API/GTLGasstatsTankRecordCollection.m"; sourceTree = "<group>"; };
+		0AE02E131A884AC200E0C902 /* GTLQueryGasstats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLQueryGasstats.h; path = "rh-csse290-gas-stats/API/GTLQueryGasstats.h"; sourceTree = "<group>"; };
+		0AE02E141A884AC200E0C902 /* GTLQueryGasstats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLQueryGasstats.m; path = "rh-csse290-gas-stats/API/GTLQueryGasstats.m"; sourceTree = "<group>"; };
+		0AE02E151A884AC200E0C902 /* GTLServiceGasstats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLServiceGasstats.h; path = "rh-csse290-gas-stats/API/GTLServiceGasstats.h"; sourceTree = "<group>"; };
+		0AE02E161A884AC200E0C902 /* GTLServiceGasstats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLServiceGasstats.m; path = "rh-csse290-gas-stats/API/GTLServiceGasstats.m"; sourceTree = "<group>"; };
 		57720B1A1A8066FC00D3FD9A /* GasStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57720B1E1A8066FC00D3FD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +212,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE02DAD1A88482D00E0C902 /* SystemConfiguration.framework in Frameworks */,
+				0AE02DAB1A88482200E0C902 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +277,105 @@
 			name = ProjectImages;
 			sourceTree = "<group>";
 		};
+		0AE02DAE1A8848B800E0C902 /* GTL Client Library */ = {
+			isa = PBXGroup;
+			children = (
+				0AE02DB01A8848F800E0C902 /* GTLDefines.h */,
+				0AE02DB11A8848F800E0C902 /* GTLObject.h */,
+				0AE02DB21A8848F800E0C902 /* GTLObject.m */,
+				0AE02DB31A8848F800E0C902 /* GTLQuery.h */,
+				0AE02DB41A8848F800E0C902 /* GTLQuery.m */,
+				0AE02DB51A8848F800E0C902 /* GTLBatchQuery.h */,
+				0AE02DB61A8848F800E0C902 /* GTLBatchQuery.m */,
+				0AE02DB71A8848F800E0C902 /* GTLService.h */,
+				0AE02DB81A8848F800E0C902 /* GTLService.m */,
+				0AE02DB91A8848F800E0C902 /* GTLBatchResult.h */,
+				0AE02DBA1A8848F800E0C902 /* GTLBatchResult.m */,
+				0AE02DBB1A8848F800E0C902 /* GTLUploadParameters.h */,
+				0AE02DBC1A8848F800E0C902 /* GTLUploadParameters.m */,
+				0AE02DBD1A8848F800E0C902 /* GTLDateTime.h */,
+				0AE02DBE1A8848F800E0C902 /* GTLDateTime.m */,
+				0AE02DBF1A8848F800E0C902 /* GTLErrorObject.h */,
+				0AE02DC01A8848F800E0C902 /* GTLErrorObject.m */,
+				0AE02DC11A8848F800E0C902 /* GTLRuntimeCommon.h */,
+				0AE02DC21A8848F800E0C902 /* GTLRuntimeCommon.m */,
+				0AE02DC31A8848F800E0C902 /* GTLFramework.h */,
+				0AE02DC41A8848F800E0C902 /* GTLFramework.m */,
+				0AE02DC51A8848F800E0C902 /* GTLJSONParser.h */,
+				0AE02DC61A8848F800E0C902 /* GTLJSONParser.m */,
+				0AE02DC71A8848F800E0C902 /* GTLTargetNamespace.h */,
+				0AE02DC81A8848F800E0C902 /* GTLUtilities.h */,
+				0AE02DC91A8848F800E0C902 /* GTLUtilities.m */,
+				0AE02DCA1A8848F800E0C902 /* GTLBase64.h */,
+				0AE02DCB1A8848F800E0C902 /* GTLBase64.m */,
+				0AE02DCC1A8848F800E0C902 /* GTMHTTPFetcherService.h */,
+				0AE02DCD1A8848F800E0C902 /* GTMHTTPFetcherService.m */,
+				0AE02DCE1A8848F800E0C902 /* GTMHTTPFetcher.h */,
+				0AE02DCF1A8848F800E0C902 /* GTMHTTPFetcher.m */,
+				0AE02DD01A8848F800E0C902 /* GTMHTTPFetcherLogging.h */,
+				0AE02DD11A8848F800E0C902 /* GTMHTTPFetcherLogging.m */,
+				0AE02DD21A8848F800E0C902 /* GTMHTTPFetchHistory.h */,
+				0AE02DD31A8848F800E0C902 /* GTMHTTPFetchHistory.m */,
+				0AE02DD41A8848F800E0C902 /* GTMHTTPUploadFetcher.h */,
+				0AE02DD51A8848F800E0C902 /* GTMHTTPUploadFetcher.m */,
+				0AE02DD61A8848F800E0C902 /* GTMGatherInputStream.h */,
+				0AE02DD71A8848F800E0C902 /* GTMGatherInputStream.m */,
+				0AE02DD81A8848F800E0C902 /* GTMMIMEDocument.h */,
+				0AE02DD91A8848F800E0C902 /* GTMMIMEDocument.m */,
+				0AE02DDA1A8848F800E0C902 /* GTMReadMonitorInputStream.h */,
+				0AE02DDB1A8848F800E0C902 /* GTMReadMonitorInputStream.m */,
+				0AE02DDC1A8848F800E0C902 /* GTMOAuth2Authentication.h */,
+				0AE02DDD1A8848F800E0C902 /* GTMOAuth2Authentication.m */,
+				0AE02DDE1A8848F800E0C902 /* GTMOAuth2SignIn.h */,
+				0AE02DDF1A8848F800E0C902 /* GTMOAuth2SignIn.m */,
+				0AE02DE01A8848F800E0C902 /* GTMOAuth2ViewControllerTouch.h */,
+				0AE02DE11A8848F800E0C902 /* GTMOAuth2ViewControllerTouch.m */,
+				0AE02DE21A8848F800E0C902 /* GTMOAuth2ViewTouch.xib */,
+			);
+			name = "GTL Client Library";
+			sourceTree = "<group>";
+		};
+		0AE02DAF1A8848C600E0C902 /* GasStatsAPI */ = {
+			isa = PBXGroup;
+			children = (
+				0AE02DFC1A884AC200E0C902 /* GTLGasstats.h */,
+				0AE02DFD1A884AC200E0C902 /* GTLGasstatsCar.h */,
+				0AE02DFE1A884AC200E0C902 /* GTLGasstatsCar.m */,
+				0AE02DFF1A884AC200E0C902 /* GTLGasstatsCarCollection.h */,
+				0AE02E001A884AC200E0C902 /* GTLGasstatsCarCollection.m */,
+				0AE02E011A884AC200E0C902 /* GTLGasstatsConstants.h */,
+				0AE02E021A884AC200E0C902 /* GTLGasstatsConstants.m */,
+				0AE02E031A884AC200E0C902 /* GTLGasstatsDriver.h */,
+				0AE02E041A884AC200E0C902 /* GTLGasstatsDriver.m */,
+				0AE02E051A884AC200E0C902 /* GTLGasstatsDriverCollection.h */,
+				0AE02E061A884AC200E0C902 /* GTLGasstatsDriverCollection.m */,
+				0AE02E071A884AC200E0C902 /* GTLGasstatsEpaCar.h */,
+				0AE02E081A884AC200E0C902 /* GTLGasstatsEpaCar.m */,
+				0AE02E091A884AC200E0C902 /* GTLGasstatsEpaCarCollection.h */,
+				0AE02E0A1A884AC200E0C902 /* GTLGasstatsEpaCarCollection.m */,
+				0AE02E0B1A884AC200E0C902 /* GTLGasstatsGasStat.h */,
+				0AE02E0C1A884AC200E0C902 /* GTLGasstatsGasStat.m */,
+				0AE02E0D1A884AC200E0C902 /* GTLGasstatsGasStatCollection.h */,
+				0AE02E0E1A884AC200E0C902 /* GTLGasstatsGasStatCollection.m */,
+				0AE02E0F1A884AC200E0C902 /* GTLGasstatsTankRecord.h */,
+				0AE02E101A884AC200E0C902 /* GTLGasstatsTankRecord.m */,
+				0AE02E111A884AC200E0C902 /* GTLGasstatsTankRecordCollection.h */,
+				0AE02E121A884AC200E0C902 /* GTLGasstatsTankRecordCollection.m */,
+				0AE02E131A884AC200E0C902 /* GTLQueryGasstats.h */,
+				0AE02E141A884AC200E0C902 /* GTLQueryGasstats.m */,
+				0AE02E151A884AC200E0C902 /* GTLServiceGasstats.h */,
+				0AE02E161A884AC200E0C902 /* GTLServiceGasstats.m */,
+			);
+			name = GasStatsAPI;
+			sourceTree = "<group>";
+		};
 		57720B111A8066FC00D3FD9A = {
 			isa = PBXGroup;
 			children = (
+				0AE02DAF1A8848C600E0C902 /* GasStatsAPI */,
+				0AE02DAE1A8848B800E0C902 /* GTL Client Library */,
+				0AE02DAC1A88482D00E0C902 /* SystemConfiguration.framework */,
+				0AE02DAA1A88482200E0C902 /* Security.framework */,
 				57720B1C1A8066FC00D3FD9A /* GasStats */,
 				57720B351A8066FC00D3FD9A /* GasStatsTests */,
 				57720B1B1A8066FC00D3FD9A /* Products */,
@@ -302,6 +520,7 @@
 				0A3C7FAA1A81292D000048CC /* odometericon.png in Resources */,
 				57720B2A1A8066FC00D3FD9A /* Images.xcassets in Resources */,
 				0A3C7FB01A812939000048CC /* Color-Gas-Pump.png in Resources */,
+				0AE02DFB1A8848F800E0C902 /* GTMOAuth2ViewTouch.xib in Resources */,
 				0A3C7FAC1A81292D000048CC /* Red-Dodge-Charger.jpg in Resources */,
 				0A3C7FAB1A81292D000048CC /* oldschool-gaspump.png in Resources */,
 			);
@@ -321,22 +540,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE02DEB1A8848F800E0C902 /* GTLRuntimeCommon.m in Sources */,
+				0AE02DE31A8848F800E0C902 /* GTLObject.m in Sources */,
+				0AE02DF21A8848F800E0C902 /* GTMHTTPFetcherLogging.m in Sources */,
+				0AE02DE71A8848F800E0C902 /* GTLBatchResult.m in Sources */,
+				0AE02E191A884AC200E0C902 /* GTLGasstatsConstants.m in Sources */,
 				57720B251A8066FC00D3FD9A /* ViewController.swift in Sources */,
+				0AE02DF41A8848F800E0C902 /* GTMHTTPUploadFetcher.m in Sources */,
+				0AE02DEA1A8848F800E0C902 /* GTLErrorObject.m in Sources */,
+				0AE02DEF1A8848F800E0C902 /* GTLBase64.m in Sources */,
+				0AE02E231A884AC200E0C902 /* GTLServiceGasstats.m in Sources */,
+				0AE02DE91A8848F800E0C902 /* GTLDateTime.m in Sources */,
 				57720B4B1A80671C00D3FD9A /* CarViewController.swift in Sources */,
+				0AE02E1A1A884AC200E0C902 /* GTLGasstatsDriver.m in Sources */,
+				0AE02DF11A8848F800E0C902 /* GTMHTTPFetcher.m in Sources */,
+				0AE02DF31A8848F800E0C902 /* GTMHTTPFetchHistory.m in Sources */,
+				0AE02DE61A8848F800E0C902 /* GTLService.m in Sources */,
+				0AE02E1D1A884AC200E0C902 /* GTLGasstatsEpaCarCollection.m in Sources */,
 				57720B4E1A80671C00D3FD9A /* GarageViewController.swift in Sources */,
+				0AE02DFA1A8848F800E0C902 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				57720B4F1A80671C00D3FD9A /* HistoryViewController.swift in Sources */,
 				0A16C1891A86C84B00A2BEA6 /* Driver.m in Sources */,
+				0AE02E201A884AC200E0C902 /* GTLGasstatsTankRecord.m in Sources */,
+				0AE02DE41A8848F800E0C902 /* GTLQuery.m in Sources */,
+				0AE02DF81A8848F800E0C902 /* GTMOAuth2Authentication.m in Sources */,
+				0AE02DEE1A8848F800E0C902 /* GTLUtilities.m in Sources */,
+				0AE02E211A884AC200E0C902 /* GTLGasstatsTankRecordCollection.m in Sources */,
+				0AE02E1E1A884AC200E0C902 /* GTLGasstatsGasStat.m in Sources */,
 				57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */,
+				0AE02E1F1A884AC200E0C902 /* GTLGasstatsGasStatCollection.m in Sources */,
+				0AE02E221A884AC200E0C902 /* GTLQueryGasstats.m in Sources */,
 				0A16C1901A870AB000A2BEA6 /* Car.m in Sources */,
 				57720B491A80671C00D3FD9A /* AccountViewController.swift in Sources */,
+				0AE02E171A884AC200E0C902 /* GTLGasstatsCar.m in Sources */,
+				0AE02DE51A8848F800E0C902 /* GTLBatchQuery.m in Sources */,
 				0A16C17A1A86C7D800A2BEA6 /* TankRecords.m in Sources */,
+				0AE02E181A884AC200E0C902 /* GTLGasstatsCarCollection.m in Sources */,
 				57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */,
 				57720B4D1A80671C00D3FD9A /* FuelUpViewController.swift in Sources */,
+				0AE02DED1A8848F800E0C902 /* GTLJSONParser.m in Sources */,
+				0AE02DE81A8848F800E0C902 /* GTLUploadParameters.m in Sources */,
+				0AE02DF91A8848F800E0C902 /* GTMOAuth2SignIn.m in Sources */,
+				0AE02E1B1A884AC200E0C902 /* GTLGasstatsDriverCollection.m in Sources */,
+				0AE02DEC1A8848F800E0C902 /* GTLFramework.m in Sources */,
 				0A16C1801A86C80100A2BEA6 /* GasBill.m in Sources */,
 				57720B4C1A80671C00D3FD9A /* CompeteViewController.swift in Sources */,
 				57720B4A1A80671C00D3FD9A /* CarFuelLogViewController.swift in Sources */,
 				0A16C1861A86C83A00A2BEA6 /* EPAData.m in Sources */,
+				0AE02DF51A8848F800E0C902 /* GTMGatherInputStream.m in Sources */,
+				0AE02DF01A8848F800E0C902 /* GTMHTTPFetcherService.m in Sources */,
 				0A16C17D1A86C7F100A2BEA6 /* GasStat.m in Sources */,
+				0AE02E1C1A884AC200E0C902 /* GTLGasstatsEpaCar.m in Sources */,
+				0AE02DF71A8848F800E0C902 /* GTMReadMonitorInputStream.m in Sources */,
+				0AE02DF61A8848F800E0C902 /* GTMMIMEDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
