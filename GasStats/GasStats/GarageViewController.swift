@@ -13,10 +13,14 @@ class GarageViewController: UIViewController {
     var showCarSequeIdentifier = "ShowCarSequeIdentifier"
     var carCellIdentifer = "CarCellIdentifier"
     
+	@IBOutlet weak var newCarPicker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+	@IBAction func pressedAddCar(sender: AnyObject) {
+	}
+	
     /*
     // MARK: - Navigation
     
