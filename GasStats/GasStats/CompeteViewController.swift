@@ -12,6 +12,7 @@ class CompeteViewController: UIViewController {
 
     var leaderboardCellIdentifier = "LeaderBoardIdentifier"
     
+	@IBOutlet weak var pickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
