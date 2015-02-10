@@ -51,7 +51,11 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var cars = [GTLGasstatsCar]()
     var carStrings = NSMutableArray()
     let _pickerData = ["one", "teo"]
-    
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         _refreshControl = UIRefreshControl()
@@ -132,37 +136,39 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 	
 	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 		// TODO: set current car to car at position 'row' in array of user's cars
+		milesTextField.placeholder = "\(cars[row].make)"
 	}
 	
 	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
 		// TODO: replace with the name of the car in the array of user's cars at position 'row'
-        if carStrings.count != 0
-        {
-            return carStrings.objectAtIndex(row) as NSString
-        }
+//        if carStrings.count != 0{
+//            return carStrings.objectAtIndex(row) as NSString
+//        }
+		if cars.count != 0{
+			return "\(cars[row].year) \(cars[row].make) \(cars[row].model)"
+		}
         return nil
 	}
 	
 	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 		// TODO: replace with length of array storing current user's cars
+		println("\(max(1,cars.count))")
         return max(1, cars.count)
 	}
     
-    func refreshCarPicker()
-    {
-        if !self.cars.isEmpty {
-            var i = 0
-            for i = 0; i < cars.count; i++ {
-                let car = cars.removeAtIndex(0) as GTLGasstatsCar
-                self.carStrings.insertObject("\(car.year) \(car.make) \(car.model)", atIndex: 0)
-                cars.append(car)
-            }
-        }
-        println("\(carStrings)")
+    func refreshCarPicker(){
+//        if !self.cars.isEmpty {
+//            var i = 0
+//            for (i = 0; i < cars.count; i++) {
+//                let car = cars.removeAtIndex(0) as GTLGasstatsCar
+//                self.carStrings.insertObject("\(car.year) \(car.make) \(car.model)", atIndex: 0)
+//                cars.append(car)
+//            }
+//        }
+//        println("\(carStrings)")
     }
     
-    func updateLabel()
-    {
+    func updateLabel(){
         
     }
 }
