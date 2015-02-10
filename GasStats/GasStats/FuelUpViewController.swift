@@ -12,7 +12,7 @@ import CoreData
 let isLocalHostTesting = false
 let localHostRpcUrl = "http://localhost:8080/_ah/api/rpc?prettyPrint=false"
 
-class FuelUpViewController: UIViewController {
+class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var gallonsTextField: UITextField!
     @IBOutlet weak var costTextField: UITextField!
@@ -28,7 +28,7 @@ class FuelUpViewController: UIViewController {
     @IBOutlet weak var logItButton: UIButton!
     
     @IBOutlet weak var carPicker: UIPickerView!
-    
+	
     var service : GTLServiceGasstats {
         if (_service != nil) {
             return _service!
@@ -75,13 +75,11 @@ class FuelUpViewController: UIViewController {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func _queryForCars()
-    {
+    func _queryForCars(){
         
     }
     
-    func _insertGasStat(newGasStat : GTLGasstatsGasStat)
-    {
+    func _insertGasStat(newGasStat : GTLGasstatsGasStat){
         let query = GTLQueryGasstats.queryForGasstatInsertWithObject(newGasStat) as GTLQueryGasstats
         if isLocalHostTesting {
             query.JSON = newGasStat.JSON
@@ -98,6 +96,24 @@ class FuelUpViewController: UIViewController {
             newGasStat.entityKey = returnedGasStat.entityKey
         })
     }
-    
+	
+	// MARK: - Picker View Methods
+	func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+		return 1
+	}
+	
+	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		// TODO: set current car to car at position 'row' in array of user's cars
+	}
+	
+	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+		// TODO: replace with the name of the car in the array of user's cars at position 'row'
+		return ""
+	}
+	
+	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		// TODO: replace with length of array storing current user's cars
+		return 0
+	}
 }
 

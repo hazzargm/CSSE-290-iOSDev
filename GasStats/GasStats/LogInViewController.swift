@@ -23,7 +23,6 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func pressedLogInButton(sender: AnyObject) {
@@ -46,41 +45,28 @@ class LogInViewController: UIViewController {
 //        }
         
     }
-
-    @IBAction func pressedSignUpButton(sender: AnyObject) {
-        
-    }
     
     // MARK: -CoreData
     
-    func saveManagedObjectContext()
-    {
+    func saveManagedObjectContext(){
         var error: NSError? = nil
         managedObjectContext!.save(&error)
-        if error != nil
-        {
+        if error != nil{
             println("Unresolved Core Data error \(error?.userInfo)")
             abort()
         }
     }
     
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == logInSegueIdentifier
-        {
-//            if let selectedIndexPath = tableView.indexPathForSelectedRow()
-//            {
-//                let movieQuote = getMovieQuoteAtIndexPath(selectedIndexPath)
-//                (segue.destinationViewController as MovieQuoteDetailViewController).movieQuote = movieQuote
-//                (segue.destinationViewController as MovieQuoteDetailViewController).managedObjectContext = managedObjectContext
-//            }
+        if segue.identifier == logInSegueIdentifier{
+			let nextVc = segue.destinationViewController as GasStatsTabBarViewController
+			nextVc.user_id = user_id
+			nextVc.managedObjectContext = managedObjectContext
         }
-        
     }
-
 }
