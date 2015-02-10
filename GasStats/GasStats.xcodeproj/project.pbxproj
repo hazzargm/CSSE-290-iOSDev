@@ -65,7 +65,6 @@
 		0AE02E231A884AC200E0C902 /* GTLServiceGasstats.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E161A884AC200E0C902 /* GTLServiceGasstats.m */; };
 		57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */; };
 		57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57720B211A8066FC00D3FD9A /* GasStats.xcdatamodeld */; };
-		57720B251A8066FC00D3FD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B241A8066FC00D3FD9A /* ViewController.swift */; };
 		57720B2A1A8066FC00D3FD9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57720B291A8066FC00D3FD9A /* Images.xcassets */; };
 		57720B391A8066FC00D3FD9A /* GasStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B381A8066FC00D3FD9A /* GasStatsTests.swift */; };
 		57720B491A80671C00D3FD9A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B421A80671C00D3FD9A /* AccountViewController.swift */; };
@@ -198,7 +197,6 @@
 		57720B1E1A8066FC00D3FD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57720B221A8066FC00D3FD9A /* GasStats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GasStats.xcdatamodel; sourceTree = "<group>"; };
-		57720B241A8066FC00D3FD9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57720B291A8066FC00D3FD9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		57720B321A8066FC00D3FD9A /* GasStatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasStatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57720B371A8066FC00D3FD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 				57720B461A80671C00D3FD9A /* FuelUpViewController.swift */,
 				57720B471A80671C00D3FD9A /* GarageViewController.swift */,
 				57720B481A80671C00D3FD9A /* HistoryViewController.swift */,
-				57720B241A8066FC00D3FD9A /* ViewController.swift */,
 				0A3877211A88562600094C7C /* LogInViewController.swift */,
 				0A38772C1A8861B400094C7C /* GasStatsTabBarViewController.swift */,
 			);
@@ -557,7 +554,6 @@
 				0AE02DF21A8848F800E0C902 /* GTMHTTPFetcherLogging.m in Sources */,
 				0AE02DE71A8848F800E0C902 /* GTLBatchResult.m in Sources */,
 				0AE02E191A884AC200E0C902 /* GTLGasstatsConstants.m in Sources */,
-				57720B251A8066FC00D3FD9A /* ViewController.swift in Sources */,
 				0AE02DF41A8848F800E0C902 /* GTMHTTPUploadFetcher.m in Sources */,
 				0AE02DEA1A8848F800E0C902 /* GTLErrorObject.m in Sources */,
 				0AE02DEF1A8848F800E0C902 /* GTLBase64.m in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 
 class AccountViewController: UIViewController {
 
+    var user_id: Int = 0
+    
 	@IBOutlet weak var usernameLabel: UILabel!
 	@IBOutlet weak var emailLabel: UILabel!
 	

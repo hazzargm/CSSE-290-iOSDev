@@ -10,6 +10,8 @@ import UIKit
 
 class CarViewController: UIViewController {
 
+    var user_id: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ypd-Gz-NqT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ypd-Gz-NqT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -99,7 +99,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                            <rect key="frame" x="8" y="31" width="164" height="30"/>
+                                                            <rect key="frame" x="8" y="30" width="164" height="30"/>
                                                         </variation>
                                                     </textField>
                                                 </subviews>
@@ -1012,7 +1012,7 @@
                                     <rect key="frame" x="322" y="319" width="51" height="31"/>
                                 </variation>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;&lt;textfield/label/both??&gt;&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riC-pH-LKD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;&lt;textfield/label/both??>>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riC-pH-LKD">
                                 <rect key="frame" x="299" y="361" width="204" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1136,7 +1136,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ua1-e8-TKI">
                                 <rect key="frame" x="16" y="186" width="568" height="357"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;this month&gt; Records:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmu-pe-N4u">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;this month> Records:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmu-pe-N4u">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1895,8 +1895,7 @@
                                                 <include reference="xdG-xY-ngd"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="125" y="10" width="150" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="ib8-6z-eQF"/>
                                             </mask>
@@ -1923,8 +1922,7 @@
                                                 <include reference="uE6-eu-IQR"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="125" y="50" width="150" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="2bU-fL-qTl"/>
                                                 <include reference="HaS-p5-y4k"/>
@@ -1951,8 +1949,7 @@
                                                 <include reference="6Gm-pr-J4L"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="110" y="90" width="180" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="LXl-bK-EEm"/>
                                             </mask>
@@ -1972,15 +1969,14 @@
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="qio-EN-oaw"/>
                                                 <exclude reference="Nbe-lA-m5S"/>
+                                                <exclude reference="qio-EN-oaw"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="110" y="130" width="180" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="qio-EN-oaw"/>
                                                 <include reference="Nbe-lA-m5S"/>
+                                                <include reference="qio-EN-oaw"/>
                                             </mask>
                                         </variation>
                                     </button>
@@ -2023,6 +2019,12 @@
                                         <exclude reference="s5r-Kc-fqK"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="9RL-Uf-l6P"/>
+                                        <exclude reference="O69-vZ-8mI"/>
+                                        <exclude reference="dI8-ti-K2N"/>
+                                        <exclude reference="ksf-F6-5hE"/>
+                                        <exclude reference="nyA-aB-EaZ"/>
+                                        <exclude reference="p85-LZ-0sC"/>
                                         <exclude reference="DEW-nc-fr8"/>
                                         <exclude reference="X9e-rb-Bs7"/>
                                         <exclude reference="YAO-Nm-dhq"/>
@@ -2037,12 +2039,6 @@
                                         <exclude reference="gpb-p7-hZe"/>
                                         <exclude reference="o0J-vh-4qh"/>
                                         <exclude reference="qVG-wT-IAF"/>
-                                        <exclude reference="9RL-Uf-l6P"/>
-                                        <exclude reference="O69-vZ-8mI"/>
-                                        <exclude reference="dI8-ti-K2N"/>
-                                        <exclude reference="ksf-F6-5hE"/>
-                                        <exclude reference="nyA-aB-EaZ"/>
-                                        <exclude reference="p85-LZ-0sC"/>
                                         <exclude reference="10f-Ps-Syi"/>
                                         <exclude reference="7PU-kk-gaj"/>
                                         <exclude reference="CB0-g4-IeA"/>
@@ -2061,6 +2057,12 @@
                                         <include reference="s5r-Kc-fqK"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="9RL-Uf-l6P"/>
+                                        <exclude reference="O69-vZ-8mI"/>
+                                        <exclude reference="dI8-ti-K2N"/>
+                                        <exclude reference="ksf-F6-5hE"/>
+                                        <include reference="nyA-aB-EaZ"/>
+                                        <include reference="p85-LZ-0sC"/>
                                         <exclude reference="DEW-nc-fr8"/>
                                         <exclude reference="X9e-rb-Bs7"/>
                                         <include reference="YAO-Nm-dhq"/>
@@ -2075,12 +2077,6 @@
                                         <include reference="gpb-p7-hZe"/>
                                         <include reference="o0J-vh-4qh"/>
                                         <exclude reference="qVG-wT-IAF"/>
-                                        <exclude reference="9RL-Uf-l6P"/>
-                                        <exclude reference="O69-vZ-8mI"/>
-                                        <exclude reference="dI8-ti-K2N"/>
-                                        <exclude reference="ksf-F6-5hE"/>
-                                        <include reference="nyA-aB-EaZ"/>
-                                        <include reference="p85-LZ-0sC"/>
                                         <include reference="10f-Ps-Syi"/>
                                         <include reference="7PU-kk-gaj"/>
                                         <exclude reference="CB0-g4-IeA"/>

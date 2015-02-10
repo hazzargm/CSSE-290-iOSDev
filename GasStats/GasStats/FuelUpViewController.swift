@@ -29,6 +29,10 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var carPicker: UIPickerView!
 	
+    var user_id: Int64 = 0
+    
+    var initialQueryComplete = false
+    
     var service : GTLServiceGasstats {
         if (_service != nil) {
             return _service!
@@ -44,11 +48,17 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     var _service : GTLServiceGasstats?
     var _refreshControl : UIRefreshControl?
+    var cars = [GTLGasstatsCar]()
+    var carStrings = NSMutableArray()
+    let _pickerData = ["one", "teo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         _refreshControl = UIRefreshControl()
         _refreshControl?.addTarget(self, action: "_queryForCars", forControlEvents: .ValueChanged)
+        carPicker.delegate = self
+        carPicker.dataSource = self
+        _queryForCars()
     }
     
     @IBAction func pressedLogIt(sender: AnyObject)
@@ -76,7 +86,25 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func _queryForCars(){
-        
+        let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
+        query.limit = 99
+        query.userId = self.user_id
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            self.initialQueryComplete = true
+            self._refreshControl?.endRefreshing()
+            if error != nil {
+                self._showErrorDialog(error!)
+            } else {
+                let carCollection = response as GTLGasstatsCarCollection
+                if carCollection.items() != nil
+                {
+                    self.cars = carCollection.items() as [GTLGasstatsCar]
+                }
+            }
+            self.refreshCarPicker()
+        })
     }
     
     func _insertGasStat(newGasStat : GTLGasstatsGasStat){
@@ -108,12 +136,34 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 	
 	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
 		// TODO: replace with the name of the car in the array of user's cars at position 'row'
-		return ""
+        if carStrings.count != 0
+        {
+            return carStrings.objectAtIndex(row) as NSString
+        }
+        return nil
 	}
 	
 	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 		// TODO: replace with length of array storing current user's cars
-		return 0
+        return max(1, cars.count)
 	}
+    
+    func refreshCarPicker()
+    {
+        if !self.cars.isEmpty {
+            var i = 0
+            for i = 0; i < cars.count; i++ {
+                let car = cars.removeAtIndex(0) as GTLGasstatsCar
+                self.carStrings.insertObject("\(car.year) \(car.make) \(car.model)", atIndex: 0)
+                cars.append(car)
+            }
+        }
+        println("\(carStrings)")
+    }
+    
+    func updateLabel()
+    {
+        
+    }
 }
 

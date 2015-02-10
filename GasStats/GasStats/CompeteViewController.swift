@@ -10,6 +10,8 @@ import UIKit
 
 class CompeteViewController: UIViewController {
 
+    var user_id: Int = 0
+    
     var leaderboardCellIdentifier = "LeaderBoardIdentifier"
     
 	@IBOutlet weak var pickerView: UIPickerView!

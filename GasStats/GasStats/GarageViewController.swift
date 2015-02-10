@@ -9,7 +9,7 @@
 import UIKit
 
 class GarageViewController: UIViewController {
-
+    var user_id: Int = 0
     var showCarSequeIdentifier = "ShowCarSequeIdentifier"
     var carCellIdentifer = "CarCellIdentifier"
     

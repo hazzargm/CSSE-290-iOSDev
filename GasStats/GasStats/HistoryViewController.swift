@@ -9,7 +9,7 @@
 import UIKit
 
 class HistoryViewController: UIViewController {
-    
+    var user_id: Int = 0
     var showCarFuelLogSequeIdentifier = "ShowCarFuelLogSequeIdentifier"
     var carHistoryCellIdentifier = "CarHistoryCellIdentifier"
     var carRecordsCellIdentifier = "CarRecordsCellIdentifier"
