@@ -10,12 +10,14 @@ import UIKit
 
 class CompeteViewController: UIViewController {
 
-    var user_id: Int = 0
+    var user_id: NSNumber = 0
     
     var leaderboardCellIdentifier = "LeaderBoardIdentifier"
     
 	@IBOutlet weak var pickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("compare vc \(user_id)")
+
     }
 }

@@ -10,12 +10,13 @@ import UIKit
 
 class AccountViewController: UIViewController {
 
-    var user_id: Int = 0
+    var user_id: NSNumber = 0
     
 	@IBOutlet weak var usernameLabel: UILabel!
 	@IBOutlet weak var emailLabel: UILabel!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("account vc\(user_id)")
     }
 }

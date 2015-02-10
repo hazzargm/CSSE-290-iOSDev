@@ -10,7 +10,7 @@ import UIKit
 
 class CarViewController: UIViewController {
 
-    var user_id: Int = 0
+    var user_id: NSNumber = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

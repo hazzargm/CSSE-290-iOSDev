@@ -29,7 +29,7 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var carPicker: UIPickerView!
 	
-    var user_id: Int64 = 0
+    var user_id : NSNumber = 0
     
     var initialQueryComplete = false
     
@@ -63,7 +63,8 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         carPicker.delegate = self
         carPicker.dataSource = self
         _queryForCars()
-		
+        println("fuel up vc\(user_id)")
+
     }
     
     @IBAction func pressedLogIt(sender: AnyObject)
@@ -77,8 +78,10 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         gasStat.gallons = gallons
         gasStat.cost = cost
         gasStat.mpg = mpg
-        gasStat.userId = 0
-        gasStat.carId = 0
+        gasStat.userId = user_id
+        println("\(gasStat.userId)\n")
+        gasStat.carId = carPicker.selectedRowInComponent(0)
+        println("\(gasStat.carId)")
         _insertGasStat(gasStat)
     }
     
@@ -93,7 +96,8 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func _queryForCars(){
         let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
         query.limit = 99
-        query.userId = self.user_id
+        query.userId = self.user_id.longLongValue
+        query.order = "car_id"
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -107,7 +111,8 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     self.cars = carCollection.items() as [GTLGasstatsCar]
                 }
             }
-			self.carPicker.reloadAllComponents()	// refresh data in all components of picker
+           
+            self.carPicker.reloadAllComponents()	// refresh data in all components of picker
         })
     }
     

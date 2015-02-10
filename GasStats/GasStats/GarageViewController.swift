@@ -9,13 +9,15 @@
 import UIKit
 
 class GarageViewController: UIViewController {
-    var user_id: Int = 0
+    var user_id: NSNumber = 0
     var showCarSequeIdentifier = "ShowCarSequeIdentifier"
     var carCellIdentifer = "CarCellIdentifier"
     
 	@IBOutlet weak var newCarPicker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("garage vc\(user_id)")
+
     }
     
 	@IBAction func pressedAddCar(sender: AnyObject) {

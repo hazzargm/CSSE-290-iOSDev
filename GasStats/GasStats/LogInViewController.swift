@@ -16,7 +16,7 @@ class LogInViewController: UIViewController {
     
     var logInSegueIdentifier = "LogInSegue"
     
-    var user_id = 0
+    var user_id : NSNumber = 1
     var car_id = 0
     
     var managedObjectContext: NSManagedObjectContext? = nil
@@ -67,6 +67,17 @@ class LogInViewController: UIViewController {
 			let nextVc = segue.destinationViewController as GasStatsTabBarViewController
 			nextVc.user_id = user_id
 			nextVc.managedObjectContext = managedObjectContext
+            //Tried to set it before it began, but it doesn't seem to work
+//            var firstVC = nextVc.viewControllers![0] as FuelUpViewController
+//            firstVC.user_id = self.user_id
+//            var secondVC = nextVc.viewControllers![1] as HistoryViewController
+//            secondVC.user_id = self.user_id
+//            var thirdVC = nextVc.viewControllers![2] as GarageViewController
+//            thirdVC.user_id = self.user_id
+//            var fourthVC = nextVc.viewControllers![3] as CompeteViewController
+//            fourthVC.user_id = self.user_id
+//            var fifthVC = nextVc.viewControllers![4] as AccountViewController
+//            fifthVC.user_id = self.user_id
         }
     }
 }
