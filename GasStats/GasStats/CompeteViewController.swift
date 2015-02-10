@@ -8,9 +8,7 @@
 
 import UIKit
 
-class CompeteViewController: UIViewController {
-
-    var user_id: NSNumber = 0
+class CompeteViewController: SuperViewController {
     
     var leaderboardCellIdentifier = "LeaderBoardIdentifier"
     

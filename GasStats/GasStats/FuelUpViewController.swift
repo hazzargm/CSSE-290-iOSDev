@@ -12,7 +12,7 @@ import CoreData
 let isLocalHostTesting = false
 let localHostRpcUrl = "http://localhost:8080/_ah/api/rpc?prettyPrint=false"
 
-class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var gallonsTextField: UITextField!
     @IBOutlet weak var costTextField: UITextField!
@@ -28,8 +28,6 @@ class FuelUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var logItButton: UIButton!
     
     @IBOutlet weak var carPicker: UIPickerView!
-	
-    var user_id : NSNumber = 0
     
     var initialQueryComplete = false
     

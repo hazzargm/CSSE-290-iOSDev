@@ -9,7 +9,7 @@
 import UIKit
 
 class GasStatsTabBarViewController: UITabBarController, UITabBarControllerDelegate {
-	var user_id: NSNumber = 23
+	var user_id = 23
 	var managedObjectContext: NSManagedObjectContext?
 	
     override func viewDidLoad() {
@@ -33,16 +33,17 @@ class GasStatsTabBarViewController: UITabBarController, UITabBarControllerDelega
     }
     
     func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
-        var firstVC = self.viewControllers![0] as FuelUpViewController
-        firstVC.user_id = self.user_id
-        var secondVC = self.viewControllers![1] as HistoryViewController
-        secondVC.user_id = self.user_id
-        var thirdVC = self.viewControllers![2] as GarageViewController
-        thirdVC.user_id = self.user_id
-        var fourthVC = self.viewControllers![3] as CompeteViewController
-        fourthVC.user_id = self.user_id
-        var fifthVC = self.viewControllers![4] as AccountViewController
-        fifthVC.user_id = self.user_id
+//        var firstVC = self.viewControllers![0] as FuelUpViewController
+//        firstVC.user_id = self.user_id
+//        var secondVC = self.viewControllers![4] as AccountViewController
+//        secondVC.user_id = self.user_id
+//        var thirdVC = self.viewControllers![2] as GarageViewController
+//        thirdVC.user_id = self.user_id
+//        var fourthVC = self.viewControllers![3] as CompeteViewController
+//        fourthVC.user_id = self.user_id
+//        var fifthVC = self.viewControllers![1] as HistoryViewController
+//        fifthVC.user_id = self.user_id
+		println("vcid = \((viewController as SuperViewController).user_id)")
     }
     
     // MARK: - Navigation
@@ -50,8 +51,7 @@ class GasStatsTabBarViewController: UITabBarController, UITabBarControllerDelega
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
+		(segue.destinationViewController as SuperViewController).user_id = user_id
     }
     
     

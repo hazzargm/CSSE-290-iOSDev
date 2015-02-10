@@ -8,9 +8,7 @@
 
 import UIKit
 
-class CarViewController: UIViewController {
-
-    var user_id: NSNumber = 0
+class CarViewController: SuperViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

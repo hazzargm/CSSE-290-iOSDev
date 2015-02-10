@@ -8,8 +8,7 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
-    var user_id: NSNumber = 0
+class HistoryViewController: SuperViewController {
     var showCarFuelLogSequeIdentifier = "ShowCarFuelLogSequeIdentifier"
     var carHistoryCellIdentifier = "CarHistoryCellIdentifier"
     var carRecordsCellIdentifier = "CarRecordsCellIdentifier"

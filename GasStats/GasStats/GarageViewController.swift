@@ -8,8 +8,7 @@
 
 import UIKit
 
-class GarageViewController: UIViewController {
-    var user_id: NSNumber = 0
+class GarageViewController: SuperViewController {
     var showCarSequeIdentifier = "ShowCarSequeIdentifier"
     var carCellIdentifer = "CarCellIdentifier"
     

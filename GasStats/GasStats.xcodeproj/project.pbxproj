@@ -63,6 +63,7 @@
 		0AE02E211A884AC200E0C902 /* GTLGasstatsTankRecordCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E121A884AC200E0C902 /* GTLGasstatsTankRecordCollection.m */; };
 		0AE02E221A884AC200E0C902 /* GTLQueryGasstats.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E141A884AC200E0C902 /* GTLQueryGasstats.m */; };
 		0AE02E231A884AC200E0C902 /* GTLServiceGasstats.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02E161A884AC200E0C902 /* GTLServiceGasstats.m */; };
+		575121C81A8AB7670079A285 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575121C71A8AB7670079A285 /* SuperViewController.swift */; };
 		57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */; };
 		57720B231A8066FC00D3FD9A /* GasStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57720B211A8066FC00D3FD9A /* GasStats.xcdatamodeld */; };
 		57720B2A1A8066FC00D3FD9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57720B291A8066FC00D3FD9A /* Images.xcassets */; };
@@ -193,6 +194,7 @@
 		0AE02E141A884AC200E0C902 /* GTLQueryGasstats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLQueryGasstats.m; path = "rh-csse290-gas-stats/API/GTLQueryGasstats.m"; sourceTree = "<group>"; };
 		0AE02E151A884AC200E0C902 /* GTLServiceGasstats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLServiceGasstats.h; path = "rh-csse290-gas-stats/API/GTLServiceGasstats.h"; sourceTree = "<group>"; };
 		0AE02E161A884AC200E0C902 /* GTLServiceGasstats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLServiceGasstats.m; path = "rh-csse290-gas-stats/API/GTLServiceGasstats.m"; sourceTree = "<group>"; };
+		575121C71A8AB7670079A285 /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
 		57720B1A1A8066FC00D3FD9A /* GasStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57720B1E1A8066FC00D3FD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57720B1F1A8066FC00D3FD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				57720B481A80671C00D3FD9A /* HistoryViewController.swift */,
 				0A3877211A88562600094C7C /* LogInViewController.swift */,
 				0A38772C1A8861B400094C7C /* GasStatsTabBarViewController.swift */,
+				575121C71A8AB7670079A285 /* SuperViewController.swift */,
 			);
 			name = GasStatsViewControllers;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				0AE02DE41A8848F800E0C902 /* GTLQuery.m in Sources */,
 				0AE02DF81A8848F800E0C902 /* GTMOAuth2Authentication.m in Sources */,
 				0AE02DEE1A8848F800E0C902 /* GTLUtilities.m in Sources */,
+				575121C81A8AB7670079A285 /* SuperViewController.swift in Sources */,
 				0AE02E211A884AC200E0C902 /* GTLGasstatsTankRecordCollection.m in Sources */,
 				0AE02E1E1A884AC200E0C902 /* GTLGasstatsGasStat.m in Sources */,
 				57720B201A8066FC00D3FD9A /* AppDelegate.swift in Sources */,
