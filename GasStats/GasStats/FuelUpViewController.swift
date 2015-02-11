@@ -28,6 +28,7 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
 	
     var _refreshControl : UIRefreshControl?
     var cars = [GTLGasstatsCar]()
+	var mpg: Double = 0.0
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,14 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
         _insertGasStat(gasStat)
     }
     
+	@IBAction func milesChanged(sender: AnyObject) {
+		updateLabel()
+	}
+	
+	@IBAction func gallonsChanged(sender: AnyObject) {
+		updateLabel()
+	}
+	
     // MARK: - Private Query Methods
     func _queryForCars(){
         let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
@@ -118,7 +127,30 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
 	}
     
     func updateLabel(){
-		//
+		var miles: Double = 0.0
+		var gallons: Double = 0.0
+		
+		if(milesTextField.text.isEmpty){
+			miles = 0.0
+		}else{
+			miles = Double(milesTextField.text.toInt()!)
+		}
+		
+		if(gallonsTextField.text.isEmpty){
+			gallons = 0.0
+		}else{
+			gallons = Double(gallonsTextField.text.toInt()!)
+		}
+		
+		if (miles == 0){
+			mpg = 0.0
+		}else if(gallons == 0){
+			mpg = 99.9
+		}else{
+			mpg = miles / gallons
+		}
+		
+		mpgLabel.text = String(format: "%.2f MPG", mpg)
     }
 }
 

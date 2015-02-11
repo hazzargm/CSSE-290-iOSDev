@@ -53,18 +53,13 @@ class LogInViewController: UIViewController {
         managedObjectContext!.save(&error)
         if error != nil{
             println("Unresolved Core Data error \(error?.userInfo)")
-            abort()
-        }
-    }
+            abort()}}
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == logInSegueIdentifier{
 			let nextVc = segue.destinationViewController as GasStatsTabBarViewController
 			nextVc.user_id = user_id
-			nextVc.managedObjectContext = managedObjectContext
-        }
-    }
+			nextVc.managedObjectContext = managedObjectContext}}
 }
