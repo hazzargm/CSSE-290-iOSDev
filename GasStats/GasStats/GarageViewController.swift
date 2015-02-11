@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GarageViewController: SuperViewController, UITableViewDelegate, UITableViewDataSource {
+class GarageViewController: SuperViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
     let showCarSequeIdentifier = "ShowCarSequeIdentifier"
     let carCellId = "CarCell"
 	let noCarsCellId = "NoCarCell"
@@ -32,6 +32,46 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 		
 	}
 	
+	// MARK: - PickerView Methods
+	func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+		// TODO
+		return 0
+	}
+	
+	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		// TODO
+		return 0
+	}
+	
+	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+		// TODO
+		return ""
+	}
+	
+	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		// TODO
+	}
+	
+	// MARK: - TableView Methods
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return max(1, self.cars.count)
+	}
+	
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		var cell: UITableViewCell!
+		
+		if(self.cars.count == 0){
+			cell = garageTable.dequeueReusableCellWithIdentifier(noCarsCellId, forIndexPath: indexPath) as UITableViewCell
+		}else{
+			let car = cars[indexPath.row]
+			cell = garageTable.dequeueReusableCellWithIdentifier(carCellId, forIndexPath: indexPath) as UITableViewCell
+			cell.textLabel?.text = "\(car.year) \(car.make) \(car.model)"
+		}
+		
+		return cell
+	}
+	
+	// MARK: - Private Helper Methods
 	func _queryForCars(){
 		let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
 		query.limit = 99
@@ -53,25 +93,6 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 			
 			self.garageTable.reloadData()
 		})
-	}
-	
-	// MARK: - TableView Methods
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return max(1, self.cars.count)
-	}
-	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		var cell: UITableViewCell!
-		
-		if(self.cars.count == 0){
-			cell = garageTable.dequeueReusableCellWithIdentifier(noCarsCellId, forIndexPath: indexPath) as UITableViewCell
-		}else{
-			let car = cars[indexPath.row]
-			cell = garageTable.dequeueReusableCellWithIdentifier(carCellId, forIndexPath: indexPath) as UITableViewCell
-			cell.textLabel?.text = "\(car.year) \(car.make) \(car.model)"
-		}
-		
-		return cell
 	}
 	
     /*

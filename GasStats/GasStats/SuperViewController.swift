@@ -35,6 +35,7 @@ class SuperViewController: UIViewController {
         super.viewDidLoad()
     }
 	
+	// MARK: - Private Helper Methods
 	func _showErrorDialog(error : NSError) {
 		let alertController = UIAlertController(title: "Endpoints Error", message: error.localizedDescription, preferredStyle: .Alert)
 		let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
