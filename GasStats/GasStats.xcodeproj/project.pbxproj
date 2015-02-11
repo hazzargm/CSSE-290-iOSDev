@@ -260,16 +260,16 @@
 		0A3C7F8E1A809EE9000048CC /* GasStatsViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				575121C71A8AB7670079A285 /* SuperViewController.swift */,
+				0A3877211A88562600094C7C /* LogInViewController.swift */,
+				0A38772C1A8861B400094C7C /* GasStatsTabBarViewController.swift */,
+				57720B461A80671C00D3FD9A /* FuelUpViewController.swift */,
+				57720B481A80671C00D3FD9A /* HistoryViewController.swift */,
+				57720B471A80671C00D3FD9A /* GarageViewController.swift */,
+				57720B451A80671C00D3FD9A /* CompeteViewController.swift */,
 				57720B421A80671C00D3FD9A /* AccountViewController.swift */,
 				57720B431A80671C00D3FD9A /* CarFuelLogViewController.swift */,
 				57720B441A80671C00D3FD9A /* CarViewController.swift */,
-				57720B451A80671C00D3FD9A /* CompeteViewController.swift */,
-				57720B461A80671C00D3FD9A /* FuelUpViewController.swift */,
-				57720B471A80671C00D3FD9A /* GarageViewController.swift */,
-				57720B481A80671C00D3FD9A /* HistoryViewController.swift */,
-				0A3877211A88562600094C7C /* LogInViewController.swift */,
-				0A38772C1A8861B400094C7C /* GasStatsTabBarViewController.swift */,
-				575121C71A8AB7670079A285 /* SuperViewController.swift */,
 			);
 			name = GasStatsViewControllers;
 			sourceTree = "<group>";

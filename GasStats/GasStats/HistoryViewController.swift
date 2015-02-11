@@ -15,9 +15,6 @@ class HistoryViewController: SuperViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("history vc\(user_id)")
-
-        // Do any additional setup after loading the view, typically from a nib.
     }
 }
 

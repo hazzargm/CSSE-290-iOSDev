@@ -9,28 +9,36 @@
 import UIKit
 
 class SuperViewController: UIViewController {
-	var user_id: NSNumber = 0
+	let isLocalHostTesting = false
+	let localHostRpcUrl = "http://localhost:8080/_ah/api/rpc?prettyPrint=false"
+	
+	var user_id: NSNumber = 1
+	
+	var initialQueryComplete = false
 
+	var service : GTLServiceGasstats {
+		if (_service != nil) {
+			return _service!
+		}
+		_service = GTLServiceGasstats()
+		if (isLocalHostTesting) {
+			_service!.rpcURL = NSURL(string: localHostRpcUrl)
+			_service!.fetcherService.allowLocalhostRequest = true
+		}
+		_service!.retryEnabled = true
+		_service!.apiVersion = "v1"
+		return _service!
+	}
+	var _service : GTLServiceGasstats?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	
+	func _showErrorDialog(error : NSError) {
+		let alertController = UIAlertController(title: "Endpoints Error", message: error.localizedDescription, preferredStyle: .Alert)
+		let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+		alertController.addAction(defaultAction)
+		presentViewController(alertController, animated: true, completion: nil)
+	}
 }

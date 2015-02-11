@@ -9,9 +9,6 @@
 import UIKit
 import CoreData
 
-let isLocalHostTesting = false
-let localHostRpcUrl = "http://localhost:8080/_ah/api/rpc?prettyPrint=false"
-
 class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var gallonsTextField: UITextField!
@@ -28,31 +25,9 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var logItButton: UIButton!
     
     @IBOutlet weak var carPicker: UIPickerView!
-    
-    var initialQueryComplete = false
-    
-    var service : GTLServiceGasstats {
-        if (_service != nil) {
-            return _service!
-        }
-        _service = GTLServiceGasstats()
-        if (isLocalHostTesting) {
-            _service!.rpcURL = NSURL(string: localHostRpcUrl)
-            _service!.fetcherService.allowLocalhostRequest = true
-        }
-        _service!.retryEnabled = true
-        _service!.apiVersion = "v1"
-        return _service!
-    }
-    var _service : GTLServiceGasstats?
+	
     var _refreshControl : UIRefreshControl?
     var cars = [GTLGasstatsCar]()
-    var carStrings = NSMutableArray()
-    let _pickerData = ["one", "teo"]
-	
-	override func viewWillAppear(animated: Bool) {
-		super.viewWillAppear(animated)
-	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +36,9 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
         carPicker.delegate = self
         carPicker.dataSource = self
         _queryForCars()
-        println("fuel up vc\(user_id)")
-
     }
     
-    @IBAction func pressedLogIt(sender: AnyObject)
-    {
+    @IBAction func pressedLogIt(sender: AnyObject){
         var miles = (milesTextField.text as NSString).floatValue
         var gallons = (gallonsTextField.text as NSString).floatValue
         var cost = (costTextField.text as NSString).floatValue
@@ -84,13 +56,6 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
     }
     
     // MARK: - Private Query Methods
-    func _showErrorDialog(error : NSError) {
-        let alertController = UIAlertController(title: "Endpoints Error", message: error.localizedDescription, preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        alertController.addAction(defaultAction)
-        presentViewController(alertController, animated: true, completion: nil)
-    }
-    
     func _queryForCars(){
         let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
         query.limit = 99

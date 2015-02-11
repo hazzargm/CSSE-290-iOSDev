@@ -15,7 +15,5 @@ class CompeteViewController: SuperViewController {
 	@IBOutlet weak var pickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("compare vc \(user_id)")
-
     }
 }
