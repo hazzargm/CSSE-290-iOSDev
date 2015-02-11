@@ -12,7 +12,7 @@ class SuperViewController: UIViewController {
 	let isLocalHostTesting = false
 	let localHostRpcUrl = "http://localhost:8080/_ah/api/rpc?prettyPrint=false"
 	
-	var user_id: NSNumber = 0
+	var user_id: NSNumber = 1
 	
 	var initialQueryComplete = false
 

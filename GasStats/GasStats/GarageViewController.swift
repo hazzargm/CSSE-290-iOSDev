@@ -8,18 +8,70 @@
 
 import UIKit
 
-class GarageViewController: SuperViewController {
-    var showCarSequeIdentifier = "ShowCarSequeIdentifier"
-    var carCellIdentifer = "CarCellIdentifier"
+class GarageViewController: SuperViewController, UITableViewDelegate, UITableViewDataSource {
+    let showCarSequeIdentifier = "ShowCarSequeIdentifier"
+    let carCellId = "CarCell"
+	let noCarsCellId = "NoCarCell"
     
 	@IBOutlet weak var newCarPicker: UIPickerView!
+	@IBOutlet weak var garageTable: UITableView!
+	
+	var cars = [GTLGasstatsCar]()
+	var _refreshControl : UIRefreshControl?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("garage vc\(user_id)")
-
+		_refreshControl = UIRefreshControl()
+		_refreshControl?.addTarget(self, action: "_queryForCars", forControlEvents: .ValueChanged)
+		garageTable.dataSource = self
+		garageTable.delegate = self
+		_queryForCars()
     }
     
 	@IBAction func pressedAddCar(sender: AnyObject) {
+		
+	}
+	
+	func _queryForCars(){
+		let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
+		query.limit = 99
+		query.userId = self.user_id.longLongValue
+		query.order = "car_id"
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+		service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+			self.initialQueryComplete = true
+			self._refreshControl?.endRefreshing()
+			if error != nil {
+				self._showErrorDialog(error!)
+			} else {
+				let carCollection = response as GTLGasstatsCarCollection
+				if carCollection.items() != nil{
+					self.cars = carCollection.items() as [GTLGasstatsCar]
+				}
+			}
+			
+			self.garageTable.reloadData()
+		})
+	}
+	
+	// MARK: - TableView Methods
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return max(1, self.cars.count)
+	}
+	
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		var cell: UITableViewCell!
+		
+		if(self.cars.count == 0){
+			cell = garageTable.dequeueReusableCellWithIdentifier(noCarsCellId, forIndexPath: indexPath) as UITableViewCell
+		}else{
+			let car = cars[indexPath.row]
+			cell = garageTable.dequeueReusableCellWithIdentifier(carCellId, forIndexPath: indexPath) as UITableViewCell
+			cell.textLabel?.text = "\(car.year) \(car.make) \(car.model)"
+		}
+		
+		return cell
 	}
 	
     /*

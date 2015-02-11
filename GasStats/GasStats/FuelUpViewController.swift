@@ -26,14 +26,14 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
     
     @IBOutlet weak var carPicker: UIPickerView!
 	
-    var _refreshControl : UIRefreshControl?
     var cars = [GTLGasstatsCar]()
+	var _refreshControl : UIRefreshControl?
 	var mpg: Double = 0.0
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-        _refreshControl = UIRefreshControl()
-        _refreshControl?.addTarget(self, action: "_queryForCars", forControlEvents: .ValueChanged)
+		_refreshControl = UIRefreshControl()
+		_refreshControl?.addTarget(self, action: "_queryForCars", forControlEvents: .ValueChanged)
         carPicker.delegate = self
         carPicker.dataSource = self
         _queryForCars()
@@ -65,29 +65,29 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
 	}
 	
     // MARK: - Private Query Methods
-    func _queryForCars(){
-        let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
-        query.limit = 99
-        query.userId = self.user_id.longLongValue
-        query.order = "car_id"
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            self.initialQueryComplete = true
-            self._refreshControl?.endRefreshing()
-            if error != nil {
-                self._showErrorDialog(error!)
-            } else {
-                let carCollection = response as GTLGasstatsCarCollection
-                if carCollection.items() != nil{
-                    self.cars = carCollection.items() as [GTLGasstatsCar]
-                }
-            }
-           
-            self.carPicker.reloadAllComponents()	// refresh data in all components of picker
-        })
-    }
-    
+	func _queryForCars(){
+		let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
+		query.limit = 99
+		query.userId = self.user_id.longLongValue
+		query.order = "car_id"
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+		service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+			self.initialQueryComplete = true
+			self._refreshControl?.endRefreshing()
+			if error != nil {
+				self._showErrorDialog(error!)
+			} else {
+				let carCollection = response as GTLGasstatsCarCollection
+				if carCollection.items() != nil{
+					self.cars = carCollection.items() as [GTLGasstatsCar]
+				}
+			}
+			
+			self.carPicker.reloadAllComponents()	// refresh data in all components of picker
+		})
+	}
+	
     func _insertGasStat(newGasStat : GTLGasstatsGasStat){
         let query = GTLQueryGasstats.queryForGasstatInsertWithObject(newGasStat) as GTLQueryGasstats
         if isLocalHostTesting {

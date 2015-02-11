@@ -15,7 +15,6 @@ class GasStatsTabBarViewController: UITabBarController, UITabBarControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        println("tab vc\(user_id)")
     }
 
     func tabBarController(tabBarController: UITabBarController, willBeginCustomizingViewControllers viewControllers: [AnyObject]) {
@@ -23,7 +22,7 @@ class GasStatsTabBarViewController: UITabBarController, UITabBarControllerDelega
     }
     
     func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
-		println("vcid = \((viewController as SuperViewController).user_id)")
+		//
     }
     
     // MARK: - Navigation
@@ -31,7 +30,4 @@ class GasStatsTabBarViewController: UITabBarController, UITabBarControllerDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		(segue.destinationViewController as SuperViewController).user_id = user_id
     }
-    
-    
-
 }
