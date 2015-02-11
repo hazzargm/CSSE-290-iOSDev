@@ -9,7 +9,7 @@
 import UIKit
 
 class GasStatsTabBarViewController: UITabBarController, UITabBarControllerDelegate {
-	var user_id = 23
+	var user_id = 0
 	var managedObjectContext: NSManagedObjectContext?
 	
     override func viewDidLoad() {

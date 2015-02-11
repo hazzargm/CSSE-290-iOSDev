@@ -17,15 +17,24 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 	@IBOutlet weak var garageTable: UITableView!
 	
 	var cars = [GTLGasstatsCar]()
+    var epaCars = [GTLGasstatsEpaCar]()
+    var years = NSMutableArray()
+    var makes = NSMutableArray()
+    var models = NSMutableArray()
+    
 	var _refreshControl : UIRefreshControl?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		_refreshControl = UIRefreshControl()
 		_refreshControl?.addTarget(self, action: "_queryForCars", forControlEvents: .ValueChanged)
+        _refreshControl?.addTarget(self, action: "_queryForEpaCars", forControlEvents: .ValueChanged)
 		garageTable.dataSource = self
 		garageTable.delegate = self
+        newCarPicker.dataSource = self
+        newCarPicker.delegate = self
 		_queryForCars()
+        _queryForEpaCars()
     }
     
 	@IBAction func pressedAddCar(sender: AnyObject) {
@@ -34,22 +43,41 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 	
 	// MARK: - PickerView Methods
 	func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-		// TODO
-		return 0
+		return 3
 	}
 	
 	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		// TODO
-		return 0
+        if component == 0 {
+            return years.count
+        }
+        if component == 1 {
+            return makes.count
+        }
+		return models.count
 	}
 	
 	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-		// TODO
+        if epaCars.count != 0 {
+            if component == 2 && models.count > 0{
+                return "\(models[row])"
+            }
+            if component == 1 && makes.count > 0{
+                return "\(makes[row])"
+            }
+            if years.count > 0 {
+                return "\(years[row])"
+            }
+        }
 		return ""
 	}
 	
 	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		// TODO
+        //TODO Dynamically update data
+        //TODO sort data as well...
+//        reloadMakeColumn()
+//        reloadModelColumn()
+//        pickerView.reloadComponent(1)
+//        pickerView.reloadComponent(2)
 	}
 	
 	// MARK: - TableView Methods
@@ -94,6 +122,51 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 			self.garageTable.reloadData()
 		})
 	}
+    
+    func _queryForEpaCars(){
+        let query = GTLQueryGasstats.queryForEpacarList() as GTLQueryGasstats
+        query.limit = 99
+        query.order = "year"
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            self.initialQueryComplete = true
+            self._refreshControl?.endRefreshing()
+            if error != nil {
+                self._showErrorDialog(error!)
+            } else {
+                let carCollection = response as GTLGasstatsEpaCarCollection
+                if carCollection.items() != nil{
+                    self.epaCars = carCollection.items() as [GTLGasstatsEpaCar]
+                }
+            }
+            self.populatePickerDataArrays()
+            self.newCarPicker.reloadAllComponents()
+        })
+    }
+    
+    func reloadMakeColumn() {
+        //TODO dynamically sort data
+    }
+    
+    func reloadModelColumn() {
+        //TODO dynamically sort data
+    }
+    
+    func populatePickerDataArrays() {
+        var i = 0
+        for i = 0; i < epaCars.count; i++ {
+            if !years.containsObject(epaCars[i].year) {
+                years.insertObject(epaCars[i].year, atIndex: 0)
+            }
+            if !makes.containsObject(epaCars[i].make) {
+                makes.insertObject(epaCars[i].make, atIndex: 0)
+            }
+            if !models.containsObject(epaCars[i].model) {
+                models.insertObject(epaCars[i].model, atIndex: 0)
+            }
+        }
+    }
 	
     /*
     // MARK: - Navigation

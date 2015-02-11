@@ -16,7 +16,7 @@ class LogInViewController: UIViewController {
     
     var logInSegueIdentifier = "LogInSegue"
     
-    var user_id = 1
+    var user_id = 0
     var car_id = 0
     
     var managedObjectContext: NSManagedObjectContext? = nil
