@@ -72,12 +72,16 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 	}
 	
 	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //TODO Dynamically update data
-        //TODO sort data as well...
-//        reloadMakeColumn()
-//        reloadModelColumn()
-//        pickerView.reloadComponent(1)
-//        pickerView.reloadComponent(2)
+        if component == 0 {
+            reloadMakeColumn()
+            pickerView.reloadComponent(1)
+            reloadModelColumn()
+            pickerView.reloadComponent(2)
+        } else if component == 1 {
+            reloadModelColumn()
+            pickerView.reloadComponent(2)
+        }
+
 	}
 	
 	// MARK: - TableView Methods
@@ -140,30 +144,49 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
                     self.epaCars = carCollection.items() as [GTLGasstatsEpaCar]
                 }
             }
-            self.populatePickerDataArrays()
+            self.loadYearColumn()
+            self.reloadMakeColumn()
+            self.reloadModelColumn()
             self.newCarPicker.reloadAllComponents()
         })
     }
     
     func reloadMakeColumn() {
-        //TODO dynamically sort data
+        makes = NSMutableArray()
+        var selectedYearIndex = newCarPicker.selectedRowInComponent(0)
+        var i = 0
+        println("\(epaCars.count)")
+        for i = 0; i < epaCars.count; i++ {
+            if epaCars[i].year == years.objectAtIndex(selectedYearIndex) as? NSNumber{
+                if !makes.containsObject(epaCars[i].make) {
+                    makes.addObject(epaCars[i].make)
+                }
+            }
+        }
     }
     
     func reloadModelColumn() {
-        //TODO dynamically sort data
+        models = NSMutableArray()
+        var selectedYearIndex = newCarPicker.selectedRowInComponent(0)
+        var selectedMakeIndex = newCarPicker.selectedRowInComponent(1)
+        var i = 0
+        for i = 0; i < epaCars.count; i++ {
+            if (epaCars[i].year == years.objectAtIndex(selectedYearIndex) as? NSNumber) &&
+               (epaCars[i].make == makes.objectAtIndex(selectedMakeIndex) as NSString) {
+                if !models.containsObject(epaCars[i].model) {
+                    models.addObject(epaCars[i].model)
+
+                }
+                println("\(epaCars[i].model)")
+            }
+        }
     }
     
-    func populatePickerDataArrays() {
+    func loadYearColumn() {
         var i = 0
         for i = 0; i < epaCars.count; i++ {
             if !years.containsObject(epaCars[i].year) {
                 years.insertObject(epaCars[i].year, atIndex: 0)
-            }
-            if !makes.containsObject(epaCars[i].make) {
-                makes.insertObject(epaCars[i].make, atIndex: 0)
-            }
-            if !models.containsObject(epaCars[i].model) {
-                models.insertObject(epaCars[i].model, atIndex: 0)
             }
         }
     }
