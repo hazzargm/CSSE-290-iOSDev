@@ -38,7 +38,7 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
     }
     
 	@IBAction func pressedAddCar(sender: AnyObject) {
-		
+		_queryInsertCar()
 	}
 	
 	// MARK: - PickerView Methods
@@ -127,6 +127,28 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 		})
 	}
     
+    func _queryInsertCar(){
+        var car = GTLGasstatsCar()
+        car.userId = user_id
+        car.carId = cars.count
+        car.year = years.objectAtIndex(newCarPicker.selectedRowInComponent(0)) as NSNumber
+        car.make = makes.objectAtIndex(newCarPicker.selectedRowInComponent(1)) as NSString
+        car.model = models.objectAtIndex(newCarPicker.selectedRowInComponent(2)) as NSString
+        let query = GTLQueryGasstats.queryForCarInsertWithObject(car) as GTLQueryGasstats
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            if error != nil {
+                self._showErrorDialog(error!)
+                return
+            }
+            let returnedCar = response as GTLGasstatsCar
+            car.entityKey = returnedCar.entityKey
+            self.cars.append(car)
+            self.garageTable.reloadData()
+        })
+    }
+    
     func _queryForEpaCars(){
         let query = GTLQueryGasstats.queryForEpacarList() as GTLQueryGasstats
         query.limit = 99
@@ -155,7 +177,6 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
         makes = NSMutableArray()
         var selectedYearIndex = newCarPicker.selectedRowInComponent(0)
         var i = 0
-        println("\(epaCars.count)")
         for i = 0; i < epaCars.count; i++ {
             if epaCars[i].year == years.objectAtIndex(selectedYearIndex) as? NSNumber{
                 if !makes.containsObject(epaCars[i].make) {
@@ -177,7 +198,6 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
                     models.addObject(epaCars[i].model)
 
                 }
-                println("\(epaCars[i].model)")
             }
         }
     }
