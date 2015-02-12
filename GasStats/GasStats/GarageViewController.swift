@@ -83,6 +83,17 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
         }
 
 	}
+    
+    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        switch (component) {
+            case 0:
+                return 61.0
+            case 1:
+                return 80.0
+            default:
+                return 120.0
+        }
+    }
 	
 	// MARK: - TableView Methods
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -171,6 +182,21 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
             self.reloadModelColumn()
             self.newCarPicker.reloadAllComponents()
         })
+    }
+    
+    func _queryDeleteCar() {
+        //TODO Implement Delete
+        /*
+            We will need to do the following:
+            -acquire the car's entity key
+            -acquire the car's carId
+            -delete the car via the query
+            -if delete successful, we will need to query for all of that car/user combo's gasstats and delete them
+            -Somehow we need to compensate for the manually generated car_ids
+                -Problems: unless they delete the last car only, it will mess up the ids for adding a new car
+                    -Possible solution 1: loop through and adjust the car_id's and their accompanying gasstats (will work but ineffecient)
+                    -Possible solution 2: your guess is as good as mine :)
+        */
     }
     
     func reloadMakeColumn() {
