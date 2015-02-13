@@ -133,13 +133,13 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
 		if(milesTextField.text.isEmpty){
 			miles = 0.0
 		}else{
-			miles = Double(milesTextField.text.toInt()!)
+			miles = (milesTextField.text as NSString).doubleValue
 		}
 		
 		if(gallonsTextField.text.isEmpty){
 			gallons = 0.0
 		}else{
-			gallons = Double(gallonsTextField.text.toInt()!)
+			gallons = (gallonsTextField.text as NSString).doubleValue
 		}
 		
 		if (miles == 0){

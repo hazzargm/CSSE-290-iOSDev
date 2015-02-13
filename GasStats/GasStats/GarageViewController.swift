@@ -113,6 +113,22 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 		
 		return cell
 	}
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            
+            _queryDeleteCar(cars[indexPath.row])
+            self.updateCars(indexPath.row)
+
+            if cars.count == 0 {
+                tableView.reloadData()
+                setEditing(false, animated: true)
+            } else {
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+        }
+    }
 	
 	// MARK: - Private Helper Methods
 	func _queryForCars(){
@@ -184,7 +200,7 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
         })
     }
     
-    func _queryDeleteCar() {
+    func _queryDeleteCar(carToDelete : GTLGasstatsCar) {
         //TODO Implement Delete
         /*
             We will need to do the following:
@@ -197,6 +213,87 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
                     -Possible solution 1: loop through and adjust the car_id's and their accompanying gasstats (will work but ineffecient)
                     -Possible solution 2: your guess is as good as mine :)
         */
+        let query = GTLQueryGasstats.queryForCarDeleteWithEntityKey(carToDelete.entityKey) as GTLQueryGasstats
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query) { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            if error != nil {
+                self._showErrorDialog(error!)
+                return
+            }
+            var deletedCarId = carToDelete.carId
+            self._queryForDeleteGastats(carToDelete.carId.longLongValue, userId: carToDelete.userId.longLongValue)
+
+        }
+    }
+    
+    func _queryForUpdateGasstats(oldCarId : Int64, newCarId : NSNumber, userId : Int64) {
+        let query = GTLQueryGasstats.queryForGasstatListByCarUser() as GTLQueryGasstats
+        query.userId = userId
+        query.carId = oldCarId
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            self.initialQueryComplete = true
+            self._refreshControl?.endRefreshing()
+            if error != nil {
+                self._showErrorDialog(error!)
+            } else {
+                let statCollection = response as GTLGasstatsGasStatCollection
+                var stats = [GTLGasstatsGasStat]()
+                if statCollection.items() != nil{
+                    stats = statCollection.items() as [GTLGasstatsGasStat]
+                    self.updateGasStats(stats, newID: newCarId)
+                }
+            }
+        })
+    }
+    
+    func _queryForDeleteGastats(carId : Int64, userId : Int64) {
+        let query = GTLQueryGasstats.queryForGasstatListByCarUser() as GTLQueryGasstats
+        query.userId = userId
+        query.carId = carId
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            self.initialQueryComplete = true
+            self._refreshControl?.endRefreshing()
+            if error != nil {
+                self._showErrorDialog(error!)
+            } else {
+                let statCollection = response as GTLGasstatsGasStatCollection
+                var stats = [GTLGasstatsGasStat]()
+                if statCollection.items() != nil{
+                    stats = statCollection.items() as [GTLGasstatsGasStat]
+                    self.deleteGasStats(stats)
+                }
+            }
+        })
+    }
+    
+    func _queryDeleteGasStat(stat : GTLGasstatsGasStat) {
+        let query = GTLQueryGasstats.queryForGasstatDeleteWithEntityKey(stat.entityKey) as GTLQueryGasstats
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query) { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            if error != nil {
+                self._showErrorDialog(error!)
+                return
+            }
+        }
+    }
+    
+    func _queryUpdateGasStat(stat : GTLGasstatsGasStat, newCarId : NSNumber) {
+        stat.carId = newCarId
+        let query = GTLQueryGasstats.queryForGasstatInsertWithObject(stat) as GTLQueryGasstats
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            if error != nil {
+                self._showErrorDialog(error!)
+                return
+            }
+        })
     }
     
     func reloadMakeColumn() {
@@ -235,6 +332,29 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
                 years.insertObject(epaCars[i].year, atIndex: 0)
             }
         }
+    }
+    
+    func deleteGasStats(stats : [GTLGasstatsGasStat]) {
+        for stat in stats {
+            _queryDeleteGasStat(stat)
+        }
+    }
+    
+    func updateGasStats(stats : [GTLGasstatsGasStat], newID : NSNumber) {
+        for stat in stats {
+            _queryUpdateGasStat(stat, newCarId: newID)
+        }
+    }
+    
+    func updateCars(index : Int) {
+        var carToDelete = cars[index]
+        var i = 0
+        for i = 0; i < cars.count; i++ {
+            if i > index {
+                _queryForUpdateGasstats(cars[i].carId.longLongValue, newCarId: cars[i-1].carId, userId: carToDelete.userId.longLongValue)
+            }
+        }
+        cars.removeAtIndex(index)
     }
 	
     /*
