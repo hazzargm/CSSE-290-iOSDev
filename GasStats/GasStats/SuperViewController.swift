@@ -42,4 +42,18 @@ class SuperViewController: UIViewController {
 		alertController.addAction(defaultAction)
 		presentViewController(alertController, animated: true, completion: nil)
 	}
+    
+    func sortCarsByCarId(unsortedCars : [GTLGasstatsCar]) -> [GTLGasstatsCar] {
+        var i = 0
+        var numCars = unsortedCars.count
+        var sortedCars = [GTLGasstatsCar]()
+        for i = 0; i < numCars; i++ {
+            for car in unsortedCars {
+                if(car.carId.integerValue == i){
+                    sortedCars.append(car)
+                }
+            }
+        }
+        return sortedCars
+    }
 }

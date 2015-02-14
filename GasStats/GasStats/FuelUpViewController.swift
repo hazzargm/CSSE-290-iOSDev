@@ -50,9 +50,7 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
         gasStat.cost = cost
         gasStat.mpg = mpg
         gasStat.userId = user_id
-        println("\(gasStat.userId)\n")
         gasStat.carId = carPicker.selectedRowInComponent(0)
-        println("\(gasStat.carId)")
         _insertGasStat(gasStat)
     }
     
@@ -83,7 +81,7 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
 					self.cars = carCollection.items() as [GTLGasstatsCar]
 				}
 			}
-			
+			self.cars = self.sortCarsByCarId(self.cars)
 			self.carPicker.reloadAllComponents()	// refresh data in all components of picker
 		})
 	}

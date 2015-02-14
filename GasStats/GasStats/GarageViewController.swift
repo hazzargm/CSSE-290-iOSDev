@@ -23,6 +23,9 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
     var models = NSMutableArray()
     
 	var _refreshControl : UIRefreshControl?
+    
+    var carToDelete : GTLGasstatsCar?
+    var originalCars : [GTLGasstatsCar]?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +36,8 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 		garageTable.delegate = self
         newCarPicker.dataSource = self
         newCarPicker.delegate = self
-		_queryForCars()
-        _queryForEpaCars()
+		self._queryForCars()
+        self._queryForEpaCars()
     }
     
 	@IBAction func pressedAddCar(sender: AnyObject) {
@@ -116,16 +119,33 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            
-            _queryDeleteCar(cars[indexPath.row])
-            self.updateCars(indexPath.row)
+            // Set some class-wide variables
 
+            self.carToDelete = cars[indexPath.row]
+            originalCars = cars
+            
+            // Delete Car from DB & its GasStats
+            _queryDeleteCar(cars[indexPath.row])
+            
+            // Update the GasStats for all other cars
+            self.updateCarStats(indexPath.row)
+
+            // Update the table view
+            cars.removeAtIndex(indexPath.row)
             if cars.count == 0 {
                 tableView.reloadData()
                 setEditing(false, animated: true)
             } else {
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+            
+            //Update car Ids
+            var iNum : NSNumber = 0
+            var i = 0
+            for car in cars {
+                _queryInsertCarWithNewId(car, newId: iNum)
+                i++
+                iNum = i
             }
         }
     }
@@ -135,7 +155,7 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 		let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
 		query.limit = 99
 		query.userId = self.user_id.longLongValue
-		query.order = "car_id"
+		query.order = "-car_id"
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
 			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -149,10 +169,23 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
 					self.cars = carCollection.items() as [GTLGasstatsCar]
 				}
 			}
-			
-			self.garageTable.reloadData()
+            self.cars = self.sortCarsByCarId(self.cars)
+            self.garageTable.reloadData()
 		})
 	}
+    
+    func _queryInsertCarWithNewId(car : GTLGasstatsCar, newId : NSNumber){
+        car.carId = newId
+        let query = GTLQueryGasstats.queryForCarInsertWithObject(car) as GTLQueryGasstats
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            if error != nil {
+                self._showErrorDialog(error!)
+                return
+            }
+        })
+    }
     
     func _queryInsertCar(){
         var car = GTLGasstatsCar()
@@ -200,19 +233,8 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
         })
     }
     
+    /*Delete the given car, and call a method to delete its gasstats */
     func _queryDeleteCar(carToDelete : GTLGasstatsCar) {
-        //TODO Implement Delete
-        /*
-            We will need to do the following:
-            -acquire the car's entity key
-            -acquire the car's carId
-            -delete the car via the query
-            -if delete successful, we will need to query for all of that car/user combo's gasstats and delete them
-            -Somehow we need to compensate for the manually generated car_ids
-                -Problems: unless they delete the last car only, it will mess up the ids for adding a new car
-                    -Possible solution 1: loop through and adjust the car_id's and their accompanying gasstats (will work but ineffecient)
-                    -Possible solution 2: your guess is as good as mine :)
-        */
         let query = GTLQueryGasstats.queryForCarDeleteWithEntityKey(carToDelete.entityKey) as GTLQueryGasstats
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         service.executeQuery(query) { (ticket, response, error) -> Void in
@@ -221,34 +243,12 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
                 self._showErrorDialog(error!)
                 return
             }
-            var deletedCarId = carToDelete.carId
             self._queryForDeleteGastats(carToDelete.carId.longLongValue, userId: carToDelete.userId.longLongValue)
 
         }
     }
     
-    func _queryForUpdateGasstats(oldCarId : Int64, newCarId : NSNumber, userId : Int64) {
-        let query = GTLQueryGasstats.queryForGasstatListByCarUser() as GTLQueryGasstats
-        query.userId = userId
-        query.carId = oldCarId
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            self.initialQueryComplete = true
-            self._refreshControl?.endRefreshing()
-            if error != nil {
-                self._showErrorDialog(error!)
-            } else {
-                let statCollection = response as GTLGasstatsGasStatCollection
-                var stats = [GTLGasstatsGasStat]()
-                if statCollection.items() != nil{
-                    stats = statCollection.items() as [GTLGasstatsGasStat]
-                    self.updateGasStats(stats, newID: newCarId)
-                }
-            }
-        })
-    }
-    
+    /*Fetch the gasstats for the given carID and userID, and call a method to delete all of them*/
     func _queryForDeleteGastats(carId : Int64, userId : Int64) {
         let query = GTLQueryGasstats.queryForGasstatListByCarUser() as GTLQueryGasstats
         query.userId = userId
@@ -265,12 +265,15 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
                 var stats = [GTLGasstatsGasStat]()
                 if statCollection.items() != nil{
                     stats = statCollection.items() as [GTLGasstatsGasStat]
-                    self.deleteGasStats(stats)
+                    for stat in stats {
+                        self._queryDeleteGasStat(stat)
+                    }
                 }
             }
         })
     }
     
+    /*Delete the given GasStat */
     func _queryDeleteGasStat(stat : GTLGasstatsGasStat) {
         let query = GTLQueryGasstats.queryForGasstatDeleteWithEntityKey(stat.entityKey) as GTLQueryGasstats
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -282,7 +285,45 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
             }
         }
     }
+
+    /*Loop through the original array of cars, and update the stats for all of the cars with id's
+      greater than the id(index) of the car being deleted*/
+    func updateCarStats(index : Int) {
+        var i = 0
+        for i = 0; i < originalCars!.count; i++ {
+            if i > index {
+                _queryForUpdateGasstats(originalCars![i].carId.longLongValue, newCarId: originalCars![i-1].carId, userId: carToDelete!.userId.longLongValue)
+            }
+        }
+    }
     
+    /*Fetch all of the gasstats from for the user/old car id, and loop through replacing them with the
+      new carID*/
+    func _queryForUpdateGasstats(oldCarId : Int64, newCarId : NSNumber, userId : Int64) {
+        let query = GTLQueryGasstats.queryForGasstatListByCarUser() as GTLQueryGasstats
+        query.userId = userId
+        query.carId = oldCarId
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        service.executeQuery(query, completionHandler: { (ticket, response, error) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            self.initialQueryComplete = true
+            self._refreshControl?.endRefreshing()
+            if error != nil {
+                self._showErrorDialog(error!)
+            } else {
+                let statCollection = response as GTLGasstatsGasStatCollection
+                var stats = [GTLGasstatsGasStat]()
+                if statCollection.items() != nil{
+                    stats = statCollection.items() as [GTLGasstatsGasStat]
+                    for stat in stats {
+                        self._queryUpdateGasStat(stat, newCarId: newCarId)
+                    }
+                }
+            }
+        })
+    }
+    
+    /*Replaces the car_id of a gasstat with the newCarId given*/
     func _queryUpdateGasStat(stat : GTLGasstatsGasStat, newCarId : NSNumber) {
         stat.carId = newCarId
         let query = GTLQueryGasstats.queryForGasstatInsertWithObject(stat) as GTLQueryGasstats
@@ -333,37 +374,10 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
             }
         }
     }
-    
-    func deleteGasStats(stats : [GTLGasstatsGasStat]) {
-        for stat in stats {
-            _queryDeleteGasStat(stat)
-        }
-    }
-    
-    func updateGasStats(stats : [GTLGasstatsGasStat], newID : NSNumber) {
-        for stat in stats {
-            _queryUpdateGasStat(stat, newCarId: newID)
-        }
-    }
-    
-    func updateCars(index : Int) {
-        var carToDelete = cars[index]
-        var i = 0
-        for i = 0; i < cars.count; i++ {
-            if i > index {
-                _queryForUpdateGasstats(cars[i].carId.longLongValue, newCarId: cars[i-1].carId, userId: carToDelete.userId.longLongValue)
-            }
-        }
-        cars.removeAtIndex(index)
-    }
 	
-    /*
-    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+    // MARK: - Navigation
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        (segue.destinationViewController).viewDidLoad()
+//    }
 }
