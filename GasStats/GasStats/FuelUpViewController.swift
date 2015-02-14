@@ -30,13 +30,14 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
 	var _refreshControl : UIRefreshControl?
 	var mpg: Double = 0.0
 	
+	override func viewWillAppear(animated: Bool) {
+		_queryForCars()
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-		_refreshControl = UIRefreshControl()
-		_refreshControl?.addTarget(self, action: "_queryForCars", forControlEvents: .ValueChanged)
         carPicker.delegate = self
         carPicker.dataSource = self
-        _queryForCars()
     }
     
     @IBAction func pressedLogIt(sender: AnyObject){
