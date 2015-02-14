@@ -17,13 +17,18 @@ class HistoryViewController: SuperViewController, UITableViewDelegate, UITableVi
     
 	@IBOutlet weak var logTable: UITableView!
 	
-//	var logsRefreshControl = UIRefreshControl()
+	var queryComplete = false
 	var cars = [GTLGasstatsCar]()
 	var carIdsWithLogs = [NSNumber]()
 	var carsWithLogs = [GTLGasstatsCar]()
 	
+	override func viewWillAppear(animated: Bool) {
+		println("viewwillappear")
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+		println("viewdidload")
 		logTable.delegate = self
 		logTable.dataSource = self
 		_populateLogTable()
@@ -54,10 +59,11 @@ class HistoryViewController: SuperViewController, UITableViewDelegate, UITableVi
 	
 	// MARK: - Private Helper Methods
 	func _populateLogTable(){
-		_queryForCars()
+		queryComplete = false
+		_queryForLogs()
 	}
 	
-	func _queryForCars(){
+	func _queryForLogs(){
 		let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
 		query.limit = 99
 		query.userId = self.user_id.longLongValue
@@ -93,6 +99,7 @@ class HistoryViewController: SuperViewController, UITableViewDelegate, UITableVi
 							self.carsWithLogs.append(car)
 						}
 						if (i == self.cars.count){
+							self.queryComplete = true
 							self.logTable.reloadData()
 						}else{
 							i++
