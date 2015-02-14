@@ -10,10 +10,9 @@ import UIKit
 
 class HistoryViewController: SuperViewController, UITableViewDelegate, UITableViewDataSource {
     var showCarFuelLogSequeIdentifier = "ShowCarFuelLogSequeIdentifier"
-	var fuelLogCell = "FuelLogCell"
-	var noLogsCell = "NoLogsCell"
-    var carHistoryCellIdentifier = "CarHistoryCellIdentifier"
-    var carRecordsCellIdentifier = "CarRecordsCellIdentifier"
+	var fuelLogCellId = "FuelLogCell"
+	var noLogsCellId = "NoLogsCell"
+	var loadingLogsCellId = "LoadingLogsCell"
     
 	@IBOutlet weak var logTable: UITableView!
 	
@@ -22,31 +21,42 @@ class HistoryViewController: SuperViewController, UITableViewDelegate, UITableVi
 	var carIdsWithLogs = [NSNumber]()
 	var carsWithLogs = [GTLGasstatsCar]()
 	
+	// everytime the user sees this page
 	override func viewWillAppear(animated: Bool) {
-		println("viewwillappear")
+		cars = [GTLGasstatsCar]()
+		carIdsWithLogs = [NSNumber]()
+		carsWithLogs = [GTLGasstatsCar]()
+		_populateLogTable()
 	}
 	
+	// the first time the user sees this page
     override func viewDidLoad() {
         super.viewDidLoad()
-		println("viewdidload")
 		logTable.delegate = self
 		logTable.dataSource = self
-		_populateLogTable()
     }
 	
 	// MARK: - Table View Methods
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return carsWithLogs.count
+		return max(1, carsWithLogs.count)
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		var cell: UITableViewCell!
 		
 		if(self.carsWithLogs.count == 0){
-			cell = logTable.dequeueReusableCellWithIdentifier(noLogsCell, forIndexPath: indexPath) as UITableViewCell
+			if(self.queryComplete == false){
+				cell = logTable.dequeueReusableCellWithIdentifier(loadingLogsCellId, forIndexPath: indexPath) as UITableViewCell
+				
+				let spinner = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+				cell.accessoryView = spinner
+				spinner.startAnimating()
+			}else{
+				cell = logTable.dequeueReusableCellWithIdentifier(noLogsCellId, forIndexPath: indexPath) as UITableViewCell
+			}
 		}else{
 			let car = carsWithLogs[indexPath.row]
-			cell = logTable.dequeueReusableCellWithIdentifier(fuelLogCell, forIndexPath: indexPath) as UITableViewCell
+			cell = logTable.dequeueReusableCellWithIdentifier(fuelLogCellId, forIndexPath: indexPath) as UITableViewCell
 			cell.textLabel?.text = "\(car.year) \(car.make) \(car.model)"
 		}
 		
@@ -60,6 +70,7 @@ class HistoryViewController: SuperViewController, UITableViewDelegate, UITableVi
 	// MARK: - Private Helper Methods
 	func _populateLogTable(){
 		queryComplete = false
+		logTable.reloadData()	// show loading cell
 		_queryForLogs()
 	}
 	
