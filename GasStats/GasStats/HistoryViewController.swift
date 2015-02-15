@@ -9,13 +9,13 @@
 import UIKit
 
 class HistoryViewController: SuperViewController, UITableViewDelegate, UITableViewDataSource {
-    let showCarFuelLogSequeIdentifier = "ShowCarFuelLogSequeIdentifier"
 	let fuelLogCellId = "FuelLogCell"
 	let noLogsCellId = "NoLogsCell"
 	let loadingLogsCellId = "LoadingLogsCell"
 	let carRecordCellId = "CarRecordCell"
 	let noRecordsCellId = "NoRecordsCell"
 	let loadingRecordsCellId = "LoadingRecordsCell"
+	let fuelLogSegueId = "FuelLogSegue"
     
 	@IBOutlet weak var logTable: UITableView!
 	@IBOutlet weak var recordTable: UITableView!
@@ -85,7 +85,10 @@ class HistoryViewController: SuperViewController, UITableViewDelegate, UITableVi
 			}else{
 				let record = records[indexPath.row]
 				let carid = record.carId
-				let car = cars[carid.integerValue]
+				var car = GTLGasstatsCar()
+				if(cars.count != 0){
+					car = cars[carid.integerValue]
+				}
 
 				cell = recordTable.dequeueReusableCellWithIdentifier(carRecordCellId, forIndexPath: indexPath) as UITableViewCell
 				cell.textLabel?.text = "\(car.year) \(car.make) \(car.model)"
@@ -94,10 +97,6 @@ class HistoryViewController: SuperViewController, UITableViewDelegate, UITableVi
 		}
 		
 		return cell
-	}
-	
-	func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-		//
 	}
 	
 	// MARK: - Private Helper Methods
@@ -175,6 +174,18 @@ class HistoryViewController: SuperViewController, UITableViewDelegate, UITableVi
 				self.recordTable.reloadData()
 			}
 		})
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if(segue.identifier == fuelLogSegueId){
+			if let indexpath = self.logTable.indexPathForSelectedRow(){
+				let nextVc = segue.destinationViewController as CarFuelLogViewController
+				let car = self.carsWithLogs[indexpath.row]
+				nextVc.carId = car.carId
+				nextVc.carName = "\(car.year) \(car.make) \(car.model)"
+				nextVc.user_id = self.user_id
+			}
+		}
 	}
 }
 
