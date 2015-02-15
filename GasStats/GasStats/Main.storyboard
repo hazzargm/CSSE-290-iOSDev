@@ -648,17 +648,17 @@
                                             <constraint firstAttribute="width" constant="552" id="uyU-FZ-AXJ"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FuelLogCell" id="0Dd-WV-Apm">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FuelLogCell" id="0Dd-WV-Apm">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Dd-WV-Apm" id="chD-1s-0Rd">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <segue destination="fQ2-zv-8aj" kind="show" id="roV-bI-agK"/>
+                                                    <segue destination="fQ2-zv-8aj" kind="show" identifier="FuelLogSegue" id="roV-bI-agK"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoLogsCell" textLabel="EOz-ye-lTP" style="IBUITableViewCellStyleDefault" id="ikk-bz-SC3">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoLogsCell" textLabel="EOz-ye-lTP" style="IBUITableViewCellStyleDefault" id="ikk-bz-SC3">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ikk-bz-SC3" id="r5G-0m-jeA">
@@ -676,7 +676,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadingLogsCell" textLabel="J44-m3-Wx7" style="IBUITableViewCellStyleDefault" id="Eqa-Jz-RgC">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingLogsCell" textLabel="J44-m3-Wx7" style="IBUITableViewCellStyleDefault" id="Eqa-Jz-RgC">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eqa-Jz-RgC" id="hjp-gK-fTU">
@@ -809,7 +809,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarRecordCell" textLabel="lYG-YJ-NJg" detailTextLabel="07B-p8-ayp" style="IBUITableViewCellStyleSubtitle" id="Eil-V2-qJj">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CarRecordCell" textLabel="lYG-YJ-NJg" detailTextLabel="07B-p8-ayp" style="IBUITableViewCellStyleSubtitle" id="Eil-V2-qJj">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eil-V2-qJj" id="scO-JQ-rKB">
@@ -836,7 +836,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoRecordsCell" textLabel="UHA-v7-uyg" style="IBUITableViewCellStyleDefault" id="C7B-TR-aDM">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoRecordsCell" textLabel="UHA-v7-uyg" style="IBUITableViewCellStyleDefault" id="C7B-TR-aDM">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C7B-TR-aDM" id="VmV-Ga-hfT">
@@ -854,7 +854,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadingRecordsCell" textLabel="yyV-VT-VWx" style="IBUITableViewCellStyleDefault" id="MJr-AY-dyF">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingRecordsCell" textLabel="yyV-VT-VWx" style="IBUITableViewCellStyleDefault" id="MJr-AY-dyF">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MJr-AY-dyF" id="7Sd-f0-aUi">
@@ -967,13 +967,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeadingCell" textLabel="hJX-vz-cyx" style="IBUITableViewCellStyleDefault" id="gQb-TE-hrf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HeadingCell" textLabel="hJX-vz-cyx" style="IBUITableViewCellStyleDefault" id="gQb-TE-hrf">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQb-TE-hrf" id="b5S-ZD-xnh">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hJX-vz-cyx">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Month Heading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hJX-vz-cyx">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -984,14 +984,42 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="2" indentationWidth="10" reuseIdentifier="LogCell" textLabel="hpv-Qt-OPM" style="IBUITableViewCellStyleDefault" id="IWd-HL-Htv">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="2" indentationWidth="10" reuseIdentifier="LogCell" textLabel="hpv-Qt-OPM" detailTextLabel="GcX-Qx-c56" style="IBUITableViewCellStyleSubtitle" id="IWd-HL-Htv">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IWd-HL-Htv" id="Kh7-zf-SDm">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hpv-Qt-OPM">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Stat info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hpv-Qt-OPM">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GcX-Qx-c56">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadingLogsCell" textLabel="kSs-bf-88u" style="IBUITableViewCellStyleDefault" id="gga-7j-56s">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gga-7j-56s" id="B8Q-R7-IMF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Loading logs..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kSs-bf-88u">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1005,48 +1033,91 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E96-2J-i0k">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Cd5-jL-eoh"/>
+                                    <constraint firstAttribute="width" constant="129" id="QcR-bB-BmU"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Cd5-jL-eoh"/>
+                                        <exclude reference="QcR-bB-BmU"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Cd5-jL-eoh"/>
+                                        <exclude reference="QcR-bB-BmU"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="8rJ-Kc-sve" kind="show" id="wfa-0I-JHa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FqF-Pu-h3S" firstAttribute="trailing" secondItem="7LX-3H-11G" secondAttribute="trailingMargin" id="6DQ-IH-Byo"/>
                             <constraint firstItem="ErC-J9-GWS" firstAttribute="leading" secondItem="7LX-3H-11G" secondAttribute="leadingMargin" id="91M-3B-ZDs"/>
                             <constraint firstItem="FqF-Pu-h3S" firstAttribute="top" secondItem="KZE-aV-s7g" secondAttribute="bottom" id="DdC-qz-dW1"/>
+                            <constraint firstItem="E96-2J-i0k" firstAttribute="leading" secondItem="FqF-Pu-h3S" secondAttribute="trailing" constant="8" id="OKI-dT-ZYA"/>
                             <constraint firstItem="BYE-xK-38x" firstAttribute="top" secondItem="ErC-J9-GWS" secondAttribute="bottom" constant="8" id="a4u-xv-Io3"/>
                             <constraint firstItem="ErC-J9-GWS" firstAttribute="trailing" secondItem="7LX-3H-11G" secondAttribute="trailingMargin" id="fsI-Hg-9Ob"/>
                             <constraint firstItem="FqF-Pu-h3S" firstAttribute="leading" secondItem="7LX-3H-11G" secondAttribute="leadingMargin" id="h7C-9j-GF8"/>
                             <constraint firstItem="ErC-J9-GWS" firstAttribute="top" secondItem="FqF-Pu-h3S" secondAttribute="bottom" constant="8" id="iMj-gD-eSk"/>
+                            <constraint firstItem="E96-2J-i0k" firstAttribute="leading" secondItem="FqF-Pu-h3S" secondAttribute="trailing" constant="8" id="jcP-ie-Hd0"/>
+                            <constraint firstItem="E96-2J-i0k" firstAttribute="trailing" secondItem="7LX-3H-11G" secondAttribute="trailingMargin" id="o85-zK-JlK"/>
+                            <constraint firstItem="E96-2J-i0k" firstAttribute="top" secondItem="7LX-3H-11G" secondAttribute="topMargin" constant="16" id="oaG-5e-J1j"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="FqF-Pu-h3S"/>
                                 <exclude reference="ErC-J9-GWS"/>
+                                <exclude reference="E96-2J-i0k"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="a4u-xv-Io3"/>
                                 <exclude reference="6DQ-IH-Byo"/>
                                 <exclude reference="DdC-qz-dW1"/>
                                 <exclude reference="h7C-9j-GF8"/>
                                 <exclude reference="91M-3B-ZDs"/>
                                 <exclude reference="fsI-Hg-9Ob"/>
                                 <exclude reference="iMj-gD-eSk"/>
+                                <exclude reference="OKI-dT-ZYA"/>
+                                <exclude reference="jcP-ie-Hd0"/>
+                                <exclude reference="o85-zK-JlK"/>
+                                <exclude reference="oaG-5e-J1j"/>
+                                <exclude reference="a4u-xv-Io3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="FqF-Pu-h3S"/>
                                 <include reference="ErC-J9-GWS"/>
+                                <include reference="E96-2J-i0k"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="a4u-xv-Io3"/>
-                                <include reference="6DQ-IH-Byo"/>
+                                <exclude reference="6DQ-IH-Byo"/>
                                 <include reference="DdC-qz-dW1"/>
                                 <include reference="h7C-9j-GF8"/>
                                 <include reference="91M-3B-ZDs"/>
                                 <include reference="fsI-Hg-9Ob"/>
                                 <include reference="iMj-gD-eSk"/>
+                                <include reference="OKI-dT-ZYA"/>
+                                <include reference="jcP-ie-Hd0"/>
+                                <include reference="o85-zK-JlK"/>
+                                <include reference="oaG-5e-J1j"/>
+                                <include reference="a4u-xv-Io3"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="carNameLabel" destination="FqF-Pu-h3S" id="GD5-AH-EHF"/>
+                        <outlet property="logTable" destination="ErC-J9-GWS" id="KnN-Uz-2KM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZs-zy-UyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2285,4 +2356,7 @@
         <image name="second" width="30" height="30"/>
         <image name="speedometer-hi.png" width="600" height="600"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wfa-0I-JHa"/>
+    </inferredMetricsTieBreakers>
 </document>
