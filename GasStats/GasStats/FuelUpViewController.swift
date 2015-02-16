@@ -17,6 +17,8 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var mpgLabel: UILabel!
     
     @IBOutlet weak var postLogView: UIView!
+    @IBOutlet weak var topLabelsView: UIView!
+    @IBOutlet weak var bottomLabelsView: UIView!
     @IBOutlet weak var bestTankLabel: UILabel!
     @IBOutlet weak var lastTankLabel: UILabel!
     @IBOutlet weak var avgTankLabel: UILabel!
@@ -53,16 +55,23 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
         gasStat.userId = user_id
         gasStat.carId = carPicker.selectedRowInComponent(0)
         _insertGasStat(gasStat)
+        updateButtonsAndRecords(false)
     }
     
 	@IBAction func milesChanged(sender: AnyObject) {
 		updateLabel()
-	}
+        updateButtonsAndRecords(true)
+    }
 	
 	@IBAction func gallonsChanged(sender: AnyObject) {
 		updateLabel()
+        updateButtonsAndRecords(true)
 	}
 	
+    @IBAction func costChanged(sender: AnyObject) {
+        updateButtonsAndRecords(true)
+    }
+    
     // MARK: - Private Query Methods
 	func _queryForCars(){
 		let query = GTLQueryGasstats.queryForCarListByUser() as GTLQueryGasstats
@@ -151,5 +160,14 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
 		
 		mpgLabel.text = String(format: "%.2f MPG", mpg)
     }
+    
+    func updateButtonsAndRecords(editing : Bool) {
+        self.logItButton.hidden = !editing
+        self.topLabelsView.hidden = editing
+        self.topLabelsView.opaque = editing
+        self.bottomLabelsView.hidden = editing
+        self.bottomLabelsView.opaque = editing
+    }
+
 }
 

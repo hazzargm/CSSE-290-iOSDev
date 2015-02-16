@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ypd-Gz-NqT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ypd-Gz-NqT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -142,6 +142,9 @@
                                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <connections>
+                                                            <action selector="costChanged:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="Czf-g9-M3p"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -367,16 +370,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKR-4d-0Zt" userLabel="Logging">
                                 <rect key="frame" x="16" y="319" width="568" height="130"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs2-y2-rQb">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" title="Log it!" image="second">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pressedLogIt:" destination="9pv-A4-QxB" eventType="touchUpInside" id="xv2-Vf-KFj"/>
-                                        </connections>
-                                    </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nll-Vp-cZc" userLabel="Top Labels">
                                         <rect key="frame" x="8" y="8" width="552" height="57"/>
                                         <subviews>
@@ -503,6 +496,17 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs2-y2-rQb">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Log it!"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="144" y="27" width="81" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="pressedLogIt:" destination="9pv-A4-QxB" eventType="touchUpInside" id="xv2-Vf-KFj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="3my-zl-mlP" firstAttribute="top" secondItem="Nll-Vp-cZc" secondAttribute="bottom" id="2I3-FN-3ab"/>
@@ -603,6 +607,7 @@
                     <connections>
                         <outlet property="avgTankLabel" destination="LWY-IH-ZmK" id="ZsL-Ak-kht"/>
                         <outlet property="bestTankLabel" destination="8Xr-wy-66Z" id="zhf-7W-nlw"/>
+                        <outlet property="bottomLabelsView" destination="3my-zl-mlP" id="jYQ-Qg-aWe"/>
                         <outlet property="carPicker" destination="zBC-zt-A6U" id="VaF-qb-0ZT"/>
                         <outlet property="costTextField" destination="aKQ-9G-uWD" id="m4h-kV-jWl"/>
                         <outlet property="gallonsTextField" destination="RRt-uL-gyx" id="wc0-mB-cmJ"/>
@@ -612,6 +617,7 @@
                         <outlet property="milesTextField" destination="0Iq-tU-pL9" id="k0r-xH-qSv"/>
                         <outlet property="mpgLabel" destination="QaB-jX-Sbt" id="iXw-Xj-hLb"/>
                         <outlet property="postLogView" destination="CKR-4d-0Zt" id="ty5-jH-fM4"/>
+                        <outlet property="topLabelsView" destination="Nll-Vp-cZc" id="toq-yh-ddy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -1189,7 +1195,7 @@
                                     <rect key="frame" x="322" y="319" width="51" height="31"/>
                                 </variation>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;&lt;textfield/label/both??&gt;&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riC-pH-LKD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;&lt;textfield/label/both??>>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riC-pH-LKD">
                                 <rect key="frame" x="299" y="361" width="204" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1313,7 +1319,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ua1-e8-TKI">
                                 <rect key="frame" x="16" y="186" width="568" height="357"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;this month&gt; Records:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmu-pe-N4u">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;this month> Records:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmu-pe-N4u">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
