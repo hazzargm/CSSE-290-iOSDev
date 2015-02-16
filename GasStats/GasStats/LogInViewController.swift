@@ -9,15 +9,12 @@
 import UIKit
 import CoreData
 
-class LogInViewController: UIViewController {
+class LogInViewController: SuperViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     var logInSegueIdentifier = "LogInSegue"
-    
-    var user_id = 0
-    var car_id = 0
     
     var managedObjectContext: NSManagedObjectContext? = nil
     
@@ -53,13 +50,27 @@ class LogInViewController: UIViewController {
         managedObjectContext!.save(&error)
         if error != nil{
             println("Unresolved Core Data error \(error?.userInfo)")
-            abort()}}
+            abort()
+		}
+	}
     
     // MARK: - Navigation
+	
+	override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+		if(usernameTextField.text.isEmpty){
+			return false
+		}
+		if(passwordTextField.text.isEmpty){
+			return false
+		}
+		return true
+	}
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == logInSegueIdentifier{
 			let nextVc = segue.destinationViewController as GasStatsTabBarViewController
 			nextVc.user_id = user_id
-			nextVc.managedObjectContext = managedObjectContext}}
+			nextVc.managedObjectContext = managedObjectContext
+		}
+	}
 }
