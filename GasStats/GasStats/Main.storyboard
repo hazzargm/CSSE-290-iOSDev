@@ -630,7 +630,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63t-mF-kpx">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63t-mF-kpx">
                                 <rect key="frame" x="16" y="20" width="568" height="266"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuel Logs:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZT-c6-huS">
@@ -796,7 +796,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKv-hH-su5">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZKv-hH-su5">
                                 <rect key="frame" x="16" y="286" width="568" height="265"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Records:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsl-Fx-fhG">
@@ -1080,17 +1080,17 @@
                                 <exclude reference="E96-2J-i0k"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="a4u-xv-Io3"/>
                                 <exclude reference="6DQ-IH-Byo"/>
                                 <exclude reference="DdC-qz-dW1"/>
                                 <exclude reference="h7C-9j-GF8"/>
-                                <exclude reference="91M-3B-ZDs"/>
-                                <exclude reference="fsI-Hg-9Ob"/>
-                                <exclude reference="iMj-gD-eSk"/>
                                 <exclude reference="OKI-dT-ZYA"/>
                                 <exclude reference="jcP-ie-Hd0"/>
                                 <exclude reference="o85-zK-JlK"/>
                                 <exclude reference="oaG-5e-J1j"/>
-                                <exclude reference="a4u-xv-Io3"/>
+                                <exclude reference="91M-3B-ZDs"/>
+                                <exclude reference="fsI-Hg-9Ob"/>
+                                <exclude reference="iMj-gD-eSk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -1100,17 +1100,17 @@
                                 <include reference="E96-2J-i0k"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="a4u-xv-Io3"/>
                                 <exclude reference="6DQ-IH-Byo"/>
                                 <include reference="DdC-qz-dW1"/>
                                 <include reference="h7C-9j-GF8"/>
-                                <include reference="91M-3B-ZDs"/>
-                                <include reference="fsI-Hg-9Ob"/>
-                                <include reference="iMj-gD-eSk"/>
                                 <include reference="OKI-dT-ZYA"/>
                                 <include reference="jcP-ie-Hd0"/>
                                 <include reference="o85-zK-JlK"/>
                                 <include reference="oaG-5e-J1j"/>
-                                <include reference="a4u-xv-Io3"/>
+                                <include reference="91M-3B-ZDs"/>
+                                <include reference="fsI-Hg-9Ob"/>
+                                <include reference="iMj-gD-eSk"/>
                             </mask>
                         </variation>
                     </view>
@@ -2157,7 +2157,7 @@
                                             <segue destination="49e-Tb-3d3" kind="show" identifier="LogInSegue" id="EKu-lx-XAo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5r-Kc-fqK">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5r-Kc-fqK">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Nbe-lA-m5S"/>
@@ -2321,6 +2321,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="Hbp-Mm-ySN" id="sbl-S3-uvP"/>
+                        <outlet property="usernameTextField" destination="hMV-AF-fWX" id="M8D-hn-4US"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIA-cG-CLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
