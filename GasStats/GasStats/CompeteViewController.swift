@@ -24,11 +24,12 @@ class CompeteViewController: SuperViewController, UIPickerViewDelegate, UIPicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		pickerView.delegate = self
-		pickerView.dataSource = self
-		recordTable.delegate = self
-		recordTable.dataSource = self
+		self.pickerView.delegate = self
+		self.pickerView.dataSource = self
+		self.recordTable.delegate = self
+		self.recordTable.dataSource = self
 		self._queryForEpaCars()
+		self._queryForRecords()
     }
 
 	// MARK: - PickerView Methods
@@ -65,14 +66,14 @@ class CompeteViewController: SuperViewController, UIPickerViewDelegate, UIPicker
 	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 		if component == 0 {
 			reloadMakeColumn()
-			pickerView.reloadComponent(1)
+			self.pickerView.reloadComponent(1)
 			reloadModelColumn()
-			pickerView.reloadComponent(2)
+			self.pickerView.reloadComponent(2)
 		} else if component == 1 {
 			reloadModelColumn()
-			pickerView.reloadComponent(2)
+			self.pickerView.reloadComponent(2)
 		}
-
+		self._queryForRecords()
 	}
 
 	func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
@@ -115,28 +116,32 @@ class CompeteViewController: SuperViewController, UIPickerViewDelegate, UIPicker
 
 	// MARK: - Private Helper Methods
 	func _queryForRecords(){
-		let query = GTLQueryGasstats.queryForTankrecordListByCar() as GTLQueryGasstats
-		query.limit = 99
-		query.order = "best_tank"
-		let year = years.objectAtIndex(newCarPicker.selectedRowInComponent(0)) as NSNumber
-		let make = makes.objectAtIndex(newCarPicker.selectedRowInComponent(1)) as NSString
-		let model = models.objectAtIndex(newCarPicker.selectedRowInComponent(2)) as NSString
+		if(!(years.count == 0 || makes.count == 0 || models.count == 0)){
+			self.records = [GTLGasstatsTankRecord]()
+			let query = GTLQueryGasstats.queryForTankrecordListByYearMakeModel() as GTLQueryGasstats
+			query.limit = 99
+			query.order = "best_tank"
 
-		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		service.executeQuery(query, completionHandler: { (ticket, response, e) -> Void in
-			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-			self.initialQueryComplete = true
+			query.year = self.years.objectAtIndex(pickerView.selectedRowInComponent(0)).longLongValue
+			query.make = self.makes.objectAtIndex(pickerView.selectedRowInComponent(1)) as NSString
+			query.model = self.models.objectAtIndex(pickerView.selectedRowInComponent(2)) as NSString
 
-			if(e != nil){
-				self._showErrorDialog(e)
-			}else{
-				let recordCollection = response as GTLGasstatsTankRecordCollection
-				if recordCollection.items() != nil{
-					self.records = recordCollection.items() as [GTLGasstatsTankRecord]
+			UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+			service.executeQuery(query, completionHandler: { (ticket, response, e) -> Void in
+				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+				self.initialQueryComplete = true
+
+				if(e != nil){
+					self._showErrorDialog(e)
+				}else{
+					let recordCollection = response as GTLGasstatsTankRecordCollection
+					if recordCollection.items() != nil{
+						self.records = recordCollection.items() as [GTLGasstatsTankRecord]
+					}
 				}
-			}
-			self.recordTable.reloadData()
-		})
+				self.recordTable.reloadData()
+			})
+		}
 	}
 
 	func _queryForEpaCars(){
@@ -159,6 +164,7 @@ class CompeteViewController: SuperViewController, UIPickerViewDelegate, UIPicker
 			self.reloadMakeColumn()
 			self.reloadModelColumn()
 			self.pickerView.reloadAllComponents()
+			self._queryForRecords()
 		})
 	}
 
