@@ -374,10 +374,4 @@ class GarageViewController: SuperViewController, UITableViewDelegate, UITableVie
             }
         }
     }
-	
-    
-    // MARK: - Navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        (segue.destinationViewController).viewDidLoad()
-//    }
 }
