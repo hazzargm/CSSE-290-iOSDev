@@ -13,7 +13,7 @@
 // Description:
 //   GasStats API
 // Classes:
-//   GTLGasstatsTankRecord (0 custom class methods, 6 custom properties)
+//   GTLGasstatsTankRecord (0 custom class methods, 9 custom properties)
 
 #import "GTLGasstatsTankRecord.h"
 
@@ -23,7 +23,8 @@
 //
 
 @implementation GTLGasstatsTankRecord
-@dynamic avgTank, bestTank, carId, entityKey, lastTank, userId;
+@dynamic avgTank, bestTank, carId, entityKey, lastTank, make, model, userId,
+         year;
 
 + (NSDictionary *)propertyToJSONKeyMap {
   NSDictionary *map =

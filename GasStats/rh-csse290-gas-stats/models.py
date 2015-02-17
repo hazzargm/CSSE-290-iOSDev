@@ -40,9 +40,12 @@ class Driver(EndpointsModel):
     username = ndb.StringProperty()
     
 class TankRecord(EndpointsModel):
-    _message_fields_schema = ("entityKey", "avg_tank", "best_tank", "last_tank", "car_id", "user_id")
+    _message_fields_schema = ("entityKey", "avg_tank", "best_tank", "last_tank", "car_id", "user_id", "year", "make", "model")
     avg_tank = ndb.FloatProperty()
     best_tank = ndb.FloatProperty()
     last_tank = ndb.FloatProperty()
     car_id = ndb.IntegerProperty()
     user_id = ndb.IntegerProperty()
+    year = ndb.IntegerProperty()
+    make = ndb.StringProperty()
+    model = ndb.StringProperty()

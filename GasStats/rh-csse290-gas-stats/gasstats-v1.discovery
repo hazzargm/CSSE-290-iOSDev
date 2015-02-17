@@ -1,0 +1,780 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/TyyyUGNEKkHgLqVEhb0YuMEEuxI\"",
+ "discoveryVersion": "v1",
+ "id": "gasstats:v1",
+ "name": "gasstats",
+ "version": "v1",
+ "description": "GasStats API",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://rh-csse290-gas-stats.appspot.com/_ah/api/",
+ "rpcUrl": "https://rh-csse290-gas-stats.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "Car": {
+   "id": "Car",
+   "type": "object",
+   "properties": {
+    "car_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "create_date_time": {
+     "type": "string"
+    },
+    "entityKey": {
+     "type": "string"
+    },
+    "icon": {
+     "type": "string",
+     "format": "byte"
+    },
+    "make": {
+     "type": "string"
+    },
+    "model": {
+     "type": "string"
+    },
+    "shared": {
+     "type": "boolean"
+    },
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "year": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "CarCollection": {
+   "id": "CarCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Car"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "Driver": {
+   "id": "Driver",
+   "type": "object",
+   "properties": {
+    "create_date_time": {
+     "type": "string"
+    },
+    "email": {
+     "type": "string"
+    },
+    "entityKey": {
+     "type": "string"
+    },
+    "password": {
+     "type": "string"
+    },
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "username": {
+     "type": "string"
+    }
+   }
+  },
+  "DriverCollection": {
+   "id": "DriverCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Driver"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "EpaCar": {
+   "id": "EpaCar",
+   "type": "object",
+   "properties": {
+    "city_mpg": {
+     "type": "number",
+     "format": "double"
+    },
+    "comb_mpg": {
+     "type": "number",
+     "format": "double"
+    },
+    "entityKey": {
+     "type": "string"
+    },
+    "high_mpg": {
+     "type": "number",
+     "format": "double"
+    },
+    "make": {
+     "type": "string"
+    },
+    "model": {
+     "type": "string"
+    },
+    "year": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "EpaCarCollection": {
+   "id": "EpaCarCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "EpaCar"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "GasStat": {
+   "id": "GasStat",
+   "type": "object",
+   "properties": {
+    "car_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "cost": {
+     "type": "number",
+     "format": "double"
+    },
+    "create_date_time": {
+     "type": "string"
+    },
+    "entityKey": {
+     "type": "string"
+    },
+    "gallons": {
+     "type": "number",
+     "format": "double"
+    },
+    "miles": {
+     "type": "number",
+     "format": "double"
+    },
+    "mpg": {
+     "type": "number",
+     "format": "double"
+    },
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "GasStatCollection": {
+   "id": "GasStatCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "GasStat"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "TankRecord": {
+   "id": "TankRecord",
+   "type": "object",
+   "properties": {
+    "avg_tank": {
+     "type": "number",
+     "format": "double"
+    },
+    "best_tank": {
+     "type": "number",
+     "format": "double"
+    },
+    "car_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "entityKey": {
+     "type": "string"
+    },
+    "last_tank": {
+     "type": "number",
+     "format": "double"
+    },
+    "make": {
+     "type": "string"
+    },
+    "model": {
+     "type": "string"
+    },
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "year": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "TankRecordCollection": {
+   "id": "TankRecordCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "TankRecord"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "gasstats.car.delete": {
+   "id": "gasstats.car.delete",
+   "parameters": {
+    "entityKey": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "entityKey"
+   ],
+   "returns": {
+    "$ref": "Car"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.car.insert": {
+   "id": "gasstats.car.insert",
+   "parameters": {
+    "resource": {
+     "$ref": "Car"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Car"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.car.list": {
+   "id": "gasstats.car.list",
+   "allowGet": true,
+   "parameters": {
+    "limit": {
+     "type": "string",
+     "format": "int64"
+    },
+    "order": {
+     "type": "string"
+    },
+    "pageToken": {
+     "type": "string"
+    }
+   },
+   "returns": {
+    "$ref": "CarCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.car.list.by.user": {
+   "id": "gasstats.car.list.by.user",
+   "allowGet": true,
+   "parameters": {
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "CarCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.driver.delete": {
+   "id": "gasstats.driver.delete",
+   "parameters": {
+    "entityKey": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "entityKey"
+   ],
+   "returns": {
+    "$ref": "Driver"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.driver.insert": {
+   "id": "gasstats.driver.insert",
+   "parameters": {
+    "resource": {
+     "$ref": "Driver"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Driver"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.driver.list": {
+   "id": "gasstats.driver.list",
+   "allowGet": true,
+   "parameters": {
+    "limit": {
+     "type": "string",
+     "format": "int64"
+    },
+    "order": {
+     "type": "string"
+    },
+    "pageToken": {
+     "type": "string"
+    }
+   },
+   "returns": {
+    "$ref": "DriverCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.epacar.delete": {
+   "id": "gasstats.epacar.delete",
+   "parameters": {
+    "entityKey": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "entityKey"
+   ],
+   "returns": {
+    "$ref": "EpaCar"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.epacar.insert": {
+   "id": "gasstats.epacar.insert",
+   "parameters": {
+    "resource": {
+     "$ref": "EpaCar"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "EpaCar"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.epacar.list": {
+   "id": "gasstats.epacar.list",
+   "allowGet": true,
+   "parameters": {
+    "limit": {
+     "type": "string",
+     "format": "int64"
+    },
+    "order": {
+     "type": "string"
+    },
+    "pageToken": {
+     "type": "string"
+    }
+   },
+   "returns": {
+    "$ref": "EpaCarCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.epacar.list.by.year": {
+   "id": "gasstats.epacar.list.by.year",
+   "allowGet": true,
+   "parameters": {
+    "year": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "EpaCarCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.epacar.list.by.year.make": {
+   "id": "gasstats.epacar.list.by.year.make",
+   "allowGet": true,
+   "parameters": {
+    "make": {
+     "type": "string"
+    },
+    "year": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "EpaCarCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.gasstat.delete": {
+   "id": "gasstats.gasstat.delete",
+   "parameters": {
+    "entityKey": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "entityKey"
+   ],
+   "returns": {
+    "$ref": "GasStat"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.gasstat.insert": {
+   "id": "gasstats.gasstat.insert",
+   "parameters": {
+    "resource": {
+     "$ref": "GasStat"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "GasStat"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.gasstat.list": {
+   "id": "gasstats.gasstat.list",
+   "allowGet": true,
+   "parameters": {
+    "limit": {
+     "type": "string",
+     "format": "int64"
+    },
+    "order": {
+     "type": "string"
+    },
+    "pageToken": {
+     "type": "string"
+    }
+   },
+   "returns": {
+    "$ref": "GasStatCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.gasstat.list.by.car": {
+   "id": "gasstats.gasstat.list.by.car",
+   "allowGet": true,
+   "parameters": {
+    "car_id": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "GasStatCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.gasstat.list.by.car.user": {
+   "id": "gasstats.gasstat.list.by.car.user",
+   "allowGet": true,
+   "parameters": {
+    "car_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "GasStatCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.gasstat.list.by.user": {
+   "id": "gasstats.gasstat.list.by.user",
+   "allowGet": true,
+   "parameters": {
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "GasStatCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.tankrecord.delete": {
+   "id": "gasstats.tankrecord.delete",
+   "parameters": {
+    "entityKey": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "entityKey"
+   ],
+   "returns": {
+    "$ref": "TankRecord"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.tankrecord.insert": {
+   "id": "gasstats.tankrecord.insert",
+   "parameters": {
+    "resource": {
+     "$ref": "TankRecord"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "TankRecord"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.tankrecord.list": {
+   "id": "gasstats.tankrecord.list",
+   "allowGet": true,
+   "parameters": {
+    "limit": {
+     "type": "string",
+     "format": "int64"
+    },
+    "order": {
+     "type": "string"
+    },
+    "pageToken": {
+     "type": "string"
+    }
+   },
+   "returns": {
+    "$ref": "TankRecordCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.tankrecord.list.by.car": {
+   "id": "gasstats.tankrecord.list.by.car",
+   "allowGet": true,
+   "parameters": {
+    "car_id": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "TankRecordCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.tankrecord.list.by.car.user": {
+   "id": "gasstats.tankrecord.list.by.car.user",
+   "allowGet": true,
+   "parameters": {
+    "car_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "TankRecordCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.tankrecord.list.by.user": {
+   "id": "gasstats.tankrecord.list.by.user",
+   "allowGet": true,
+   "parameters": {
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "TankRecordCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "gasstats.tankrecord.list.by.year.make.model": {
+   "id": "gasstats.tankrecord.list.by.year.make.model",
+   "allowGet": true,
+   "parameters": {
+    "make": {
+     "type": "string"
+    },
+    "model": {
+     "type": "string"
+    },
+    "year": {
+     "type": "string",
+     "format": "int64"
+    }
+   },
+   "returns": {
+    "$ref": "TankRecordCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

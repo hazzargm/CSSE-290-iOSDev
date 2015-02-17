@@ -173,7 +173,10 @@ class GasStatsApi(protorpc.remote.Service):
                          best_tank=request.best_tank,
                          avg_tank=request.avg_tank,
                          last_tank=request.last_tank,
-                         user_id=request.user_id)
+                         user_id=request.user_id,
+                         year=request.year,
+                         make=request.make,
+                         model=request.model)
         my_tankrecord.put()
         return my_tankrecord
     
@@ -195,6 +198,11 @@ class GasStatsApi(protorpc.remote.Service):
     @TankRecord.query_method(path="tankrecord/list/by/car/user", http_method="GET",
                       name="tankrecord.list.by.car.user", query_fields=("car_id","user_id"))
     def tankrecord_list_by_car_user(self, query):
+        return query
+    
+    @TankRecord.query_method(path="tankrecord/list/by/year/make/model", http_method="GET",
+                      name="tankrecord.list.by.year.make.model", query_fields=("year","make", "model"))
+    def tankrecord_list_by_year_make_model(self, query):
         return query
     
     @TankRecord.method(request_fields=("entityKey",), path="tankrecord/delete/{entityKey}",

@@ -13,7 +13,7 @@
 // Description:
 //   GasStats API
 // Classes:
-//   GTLGasstatsTankRecord (0 custom class methods, 6 custom properties)
+//   GTLGasstatsTankRecord (0 custom class methods, 9 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -32,5 +32,8 @@
 @property (retain) NSNumber *carId;  // longLongValue
 @property (copy) NSString *entityKey;
 @property (retain) NSNumber *lastTank;  // doubleValue
+@property (copy) NSString *make;
+@property (copy) NSString *model;
 @property (retain) NSNumber *userId;  // longLongValue
+@property (retain) NSNumber *year;  // longLongValue
 @end

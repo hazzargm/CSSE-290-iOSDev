@@ -33,7 +33,10 @@ class TankRecordHandler(webapp2.RequestHandler):
                       best_tank=self.request.get('best_tank'),
                       avg_tank=self.request.get('avg_tank'),
                       last_tank=self.request.get('last_tank'),
-                      user_id=self.request.get('user_id'))
+                      user_id=self.request.get('user_id'),
+                      year=self.request.get('year'),
+                      make=self.request.get('make'),
+                      model=self.request.get('model'))
         new_tankrecord.put()
         self.redirect(self.request.referer)    
 

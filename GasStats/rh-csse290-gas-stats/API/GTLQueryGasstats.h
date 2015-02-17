@@ -13,7 +13,7 @@
 // Description:
 //   GasStats API
 // Classes:
-//   GTLQueryGasstats (24 custom class methods, 9 custom properties)
+//   GTLQueryGasstats (25 custom class methods, 10 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLQuery.h"
@@ -43,6 +43,7 @@
 @property (copy) NSString *entityKey;
 @property (assign) long long limit;
 @property (copy) NSString *make;
+@property (copy) NSString *model;
 @property (copy) NSString *order;
 @property (copy) NSString *pageToken;
 @property (assign) long long userId;
@@ -288,5 +289,19 @@
 //   kGTLAuthScopeGasstatsUserinfoEmail
 // Fetches a GTLGasstatsTankRecordCollection.
 + (id)queryForTankrecordListByUser;
+
+#pragma mark -
+#pragma mark "tankrecord.list.by.year.make" methods
+// These create a GTLQueryGasstats object.
+
+// Method: gasstats.tankrecord.list.by.year.make.model
+//  Optional:
+//   make: NSString
+//   model: NSString
+//   year: long long
+//  Authorization scope(s):
+//   kGTLAuthScopeGasstatsUserinfoEmail
+// Fetches a GTLGasstatsTankRecordCollection.
++ (id)queryForTankrecordListByYearMakeModel;
 
 @end

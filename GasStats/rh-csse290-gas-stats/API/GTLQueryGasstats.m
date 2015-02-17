@@ -13,7 +13,7 @@
 // Description:
 //   GasStats API
 // Classes:
-//   GTLQueryGasstats (24 custom class methods, 9 custom properties)
+//   GTLQueryGasstats (25 custom class methods, 10 custom properties)
 
 #import "GTLQueryGasstats.h"
 
@@ -30,7 +30,8 @@
 
 @implementation GTLQueryGasstats
 
-@dynamic carId, entityKey, fields, limit, make, order, pageToken, userId, year;
+@dynamic carId, entityKey, fields, limit, make, model, order, pageToken, userId,
+         year;
 
 + (NSDictionary *)parameterNameMap {
   NSDictionary *map =
@@ -290,6 +291,17 @@
 
 + (id)queryForTankrecordListByUser {
   NSString *methodName = @"gasstats.tankrecord.list.by.user";
+  GTLQueryGasstats *query = [self queryWithMethodName:methodName];
+  query.expectedObjectClass = [GTLGasstatsTankRecordCollection class];
+  return query;
+}
+
+#pragma mark -
+#pragma mark "tankrecord.list.by.year.make" methods
+// These create a GTLQueryGasstats object.
+
++ (id)queryForTankrecordListByYearMakeModel {
+  NSString *methodName = @"gasstats.tankrecord.list.by.year.make.model";
   GTLQueryGasstats *query = [self queryWithMethodName:methodName];
   query.expectedObjectClass = [GTLGasstatsTankRecordCollection class];
   return query;
