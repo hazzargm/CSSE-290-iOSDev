@@ -603,7 +603,7 @@
                             <constraint firstItem="f2Q-Hg-esZ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="wIu-KA-oUe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fuel Up" image="second" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Fuel Up" image="home-7.png" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="avgTankLabel" destination="LWY-IH-ZmK" id="ZsL-Ak-kht"/>
                         <outlet property="bestTankLabel" destination="8Xr-wy-66Z" id="zhf-7W-nlw"/>
@@ -1442,7 +1442,7 @@
                             <constraint firstItem="Ua1-e8-TKI" firstAttribute="leading" secondItem="RUV-PU-K2A" secondAttribute="leadingMargin" id="wTG-Oz-Ato"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Compare" image="second" id="PSL-dd-gdY"/>
+                    <tabBarItem key="tabBarItem" title="Compare" image="trophy-7.png" id="PSL-dd-gdY"/>
                     <connections>
                         <outlet property="pickerView" destination="7Z6-n4-GA1" id="s2S-3N-Hq6"/>
                         <outlet property="recordTable" destination="hD1-Hl-A6A" id="yHu-YR-nCl"/>
@@ -1669,7 +1669,7 @@
                             <constraint firstItem="tbX-3a-OXz" firstAttribute="top" secondItem="fIP-I2-MTf" secondAttribute="bottom" id="xce-As-EDb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cars" image="first" id="0JG-3x-gli" userLabel="Third"/>
+                    <tabBarItem key="tabBarItem" title="Cars" image="car-side-7.png" id="0JG-3x-gli" userLabel="Third"/>
                     <connections>
                         <outlet property="garageTable" destination="kb0-dy-hSC" id="rA3-s4-YWb"/>
                         <outlet property="newCarPicker" destination="Ghe-5t-4h8" id="uai-ma-sMS"/>
@@ -1951,7 +1951,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xwW-f6-kUB" secondAttribute="height" multiplier="29:10" id="Kvf-L8-gTH"/>
                                                 </constraints>
-                                                <state key="normal" title="Logout" image="second">
+                                                <state key="normal" title="Logout" image="box-outgoing-7.png">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -2102,7 +2102,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="first" id="mey-1x-yMg" userLabel="Account Tab Icon"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="circle-user-7.png" id="mey-1x-yMg" userLabel="Account Tab Icon"/>
                     <connections>
                         <outlet property="emailLabel" destination="VrV-Nk-e5H" id="fV5-K4-ayh"/>
                         <outlet property="usernameLabel" destination="eqz-Im-LCL" id="iGQ-f4-wXU"/>
@@ -2414,9 +2414,12 @@
     <resources>
         <image name="Color-Gas-Pump.png" width="419" height="541"/>
         <image name="Red-Dodge-Charger.jpg" width="1920" height="1060"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="box-outgoing-7.png" width="29" height="30"/>
+        <image name="car-side-7.png" width="30" height="30"/>
+        <image name="circle-user-7.png" width="30" height="30"/>
+        <image name="home-7.png" width="30" height="30"/>
         <image name="speedometer-hi.png" width="600" height="600"/>
+        <image name="trophy-7.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wfa-0I-JHa"/>
