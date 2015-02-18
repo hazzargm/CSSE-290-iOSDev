@@ -1061,7 +1061,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="8rJ-Kc-sve" kind="show" id="wfa-0I-JHa"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="GoBack" id="X1g-yx-UpT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1127,7 +1127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZs-zy-UyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="-845.25"/>
+            <point key="canvasLocation" x="1469" y="-770.25"/>
         </scene>
         <!--Car View Controller-->
         <scene sceneID="zsd-Eh-EfD">
@@ -1191,6 +1191,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DsY-JX-fDV">
                                 <rect key="frame" x="322" y="319" width="51" height="31"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="322" y="319" width="51" height="31"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="322" y="319" width="51" height="31"/>
                                 </variation>
@@ -2422,6 +2425,6 @@
         <image name="trophy-7.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wfa-0I-JHa"/>
+        <segue reference="X1g-yx-UpT"/>
     </inferredMetricsTieBreakers>
 </document>

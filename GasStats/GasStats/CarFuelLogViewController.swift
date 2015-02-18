@@ -94,7 +94,11 @@ class CarFuelLogViewController: SuperViewController, UITableViewDataSource, UITa
 			}
 		})
 	}
-	
+
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		(segue.destinationViewController as GasStatsTabBarViewController).selectedIndex = 1
+	}
+
 //	func _generateCellStrings(){
 //		
 //	}
