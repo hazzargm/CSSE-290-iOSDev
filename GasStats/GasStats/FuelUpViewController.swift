@@ -259,6 +259,9 @@ class FuelUpViewController: SuperViewController, UIPickerViewDelegate, UIPickerV
         avgTankLabel.text! = NSString(format: "Avg. Tank: %.2f", tankRecord.avgTank.doubleValue)
         lastTankLabel.text! = NSString(format: "last Tank: %.2f", tankRecord.lastTank.doubleValue)
         gasBillLabel.text! = NSString(format: "Gas Bill: $%.2f", 99.99)
+        tankRecord.year = cars[carPicker.selectedRowInComponent(0)].year
+        tankRecord.make = cars[carPicker.selectedRowInComponent(0)].make
+        tankRecord.model = cars[carPicker.selectedRowInComponent(0)].model
         _insertTankRecord(tankRecord)
     }
 
